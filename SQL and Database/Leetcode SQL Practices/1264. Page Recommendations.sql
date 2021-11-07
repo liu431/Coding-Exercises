@@ -9,4 +9,3 @@ from Likes
 where user_id IN (select * from friendid) and 
 # Filter 2: should not recommend pages user 1 already liked
 page_id NOT IN (select page_id from Likes where user_id =1)
-``
