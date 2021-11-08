@@ -33,3 +33,10 @@ df.drop_duplicates([subset=['Name']])
 # Return sorted df by certain values along certain axis
 df.sort_values(by=['Date'], ascending=False) # Sort by Date in descending order
 ```
+
+#### [df.iterrows](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iterrows.html)
+```python
+# Iterate over df rows as (index, series) pairs
+for index, row in df.iterrows():
+    print(row['Name], row['Date])
+```
