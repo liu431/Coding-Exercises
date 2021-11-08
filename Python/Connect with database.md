@@ -29,3 +29,22 @@ def GetTable():
     
 GetTable()
 ```
+
+### Update table columns
+```python
+def UpdateTable(age, name):
+    '''Update information in the table'''
+    query = """
+            UPDATE TABLE
+            SET
+            Age = ?
+            WHERE Name = ?
+            """
+    with engine.connect() as con:
+        con.execute(query, (age, name))
+        con.close()
+
+    return df
+    
+UpdateTable(age=25, name='Ben')
+```
