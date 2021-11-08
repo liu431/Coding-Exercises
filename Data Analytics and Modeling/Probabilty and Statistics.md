@@ -1,10 +1,4 @@
----
-title: "Notes on Math and Stats"
-date: 2019-01-01
-tags: [reviews, statistics]
-excerpt: "reviews, statistics"
-mathjax: "true"
----
+# Notes on Probabilty and Statistics
 
 ## Linear Algebra
 
