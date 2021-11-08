@@ -30,7 +30,7 @@ P(A) + P(Ā) = 1, where Ā denotes all other events that are not A
 
 ### Joint Probability
 
-<img src="https://render.githubusercontent.com/render/math?math==P(A, B) = P(A) * P(B \mid A)">
+<img src="https://render.githubusercontent.com/render/math?math=P(A, B) = P(A) * P(B \mid A)">
 
 P(A, B) = 0 if A and B are mutually exclusive; B = Ā
 
