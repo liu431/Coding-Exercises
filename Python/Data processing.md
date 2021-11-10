@@ -1,4 +1,41 @@
+## Date and Time
 
+### datetime
+```python
+import datetime
+```
+
+#### Display the current date
+```python
+datetime.datetime.now()
+```
+
+#### Datae objects
+```python
+# Create a date object
+x = datetime.datetime(2021, 1, 2)
+# Format date objects into readable strings
+x.strftime("%B") # January
+x.strftime("%m") # 01
+x.strftime("%Y") # 2021
+x.strftime("%d") # 02
+
+
+```
+
+#### Convert between month name and month number
+```python
+# abbreviated month name
+month_name = "Jan"
+month_number = datetime.datetime.strptime(month_name, "%b").month # 1
+
+# full month names
+month_name = "January"
+month_number = datetime.datetime.strptime(month_name, "%B").month # 1
+```
+
+
+## Pandas
 ```python
 # Import packages
 import numpy as np
@@ -6,8 +43,6 @@ import pandas as pd
 # Load data
 df = pd.read_csv(file)
 ```
-
-## Pandas
 ### Dataframe
 #### [df.apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html)
 ```python
