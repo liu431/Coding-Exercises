@@ -13,3 +13,11 @@ FROM cte1
 JOIN cte3 ON ...
 ```
 
+#### [Combine strings under same group](https://stackoverflow.com/questions/31211506/how-stuff-and-for-xml-path-work-in-sql-server)
+```sql
+SELECT ID,  AllNames = STUFF(
+  (SELECT ',' + name FROM temp1 t1 WHERE t1.id = t2.id
+  FOR XML PATH ('')), 1, 1, '') 
+FROM temp1 t2
+GROUP BY ID;
+```
