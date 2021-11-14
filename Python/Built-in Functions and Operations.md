@@ -6,6 +6,7 @@ a = [[1,2],[2,3],[3,1]]
 sorted(a, key=lambda x:x[1], reverse=True) # [[2,3],[1,2],[3,1]]
 ```
 
+### Bit
 #### [Binary equivalent string of a given integer](https://www.programiz.com/python-programming/methods/built-in/bin)
 ```python
 bin(3) #'0b11'
