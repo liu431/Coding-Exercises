@@ -1,3 +1,13 @@
+### Runtime
+
+#### Warnings
+```python
+# Ignore warnings
+import warnings
+warnings.filterwarnings("ignore")
+
+```
+
 ### List
 
 #### [Sort a list according to the second element in sublist](https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/)
