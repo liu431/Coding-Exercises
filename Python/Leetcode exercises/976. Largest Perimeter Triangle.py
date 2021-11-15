@@ -3,7 +3,7 @@ class Solution:
         # Sort the array in descending order
         nums = sorted(nums, reverse=True)
         for i in range(len(nums)-2):
-            # test whether the current 3 largest values would form a triangle
+            # Test whether the current 3 largest values would form a triangle
             c = nums[i]
             b = nums[i+1]
             a = nums[i+2]
