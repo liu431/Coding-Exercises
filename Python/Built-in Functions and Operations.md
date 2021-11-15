@@ -1,11 +1,17 @@
-### Runtime
+###  Miscellaneous operating system interfaces
+#### Path
+```python
+import os
+os.getcwd() # Get current directory
+os.chdir(path) # CHange to a new directory
+```
 
+### Runtime
 #### Warnings
 ```python
 # Ignore warnings
 import warnings
 warnings.filterwarnings("ignore")
-
 ```
 
 ### List
