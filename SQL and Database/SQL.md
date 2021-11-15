@@ -23,7 +23,7 @@ GROUP BY ID;
 ```
 #### Fix date
 ```sql
-# Swap day and month
+# Swap day and month (in SQL Server)
 UPDATE TALE 
 SET Date = 
   DATEFROMPARTS(
