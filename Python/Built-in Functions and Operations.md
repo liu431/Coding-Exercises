@@ -6,6 +6,12 @@ os.getcwd() # Get current directory
 os.chdir(path) # CHange to a new directory
 ```
 
+#### Combine files in the directory
+```python
+for file in os.listdir(path):
+    df = pd.concat(df, pd.read_excel(file, header=None))
+```
+
 ### Runtime
 #### Warnings
 ```python
