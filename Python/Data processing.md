@@ -34,6 +34,13 @@ month_name = "January"
 month_number = datetime.datetime.strptime(month_name, "%B").month # 1
 ```
 
+## Numpy
+#### [np.where](https://numpy.org/doc/stable/reference/generated/numpy.where.html)
+```python
+# Recode gender
+genderList = np.array(['Male', 'Female', 'Male'])
+np.where(genderList == 'Male', 1, 0) # array([1, 0, 1])
+```
 
 ## Pandas
 ```python
@@ -44,13 +51,20 @@ import pandas as pd
 df = pd.read_csv(file)
 ```
 ### Dataframe
-#### [df.to_numpy](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_numpy.html), [df.is_null] (https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isnull.html), [df.fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html)
+#### [df.to_numpy](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_numpy.html), [df.is_null](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isnull.html), [df.fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html)
 
 ```python
 # Detect and fill missing values with 0
 na_values = df.is_null().to_numpy().sum()
 if na_values > 0:
     df = df.fillna(0)
+```
+
+#### [df.sum](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sum.html)
+```python
+df.sum(axis = 0) # Sum over the index
+df.sum(axis = 1) # Sum over the columns
+
 ```
 
 #### [df.apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html)
@@ -83,4 +97,13 @@ df.sort_values(by=['Date'], ascending=False) # Sort by Date in descending order
 # Iterate over df rows as (index, series) pairs
 for index, row in df.iterrows():
     print(row['Name], row['Date])
+```
+
+#### Set one column as index
+```python
+def column2Index(df, colname='ID'):
+    '''Set index column as the dataframe index'''
+    df.index = df[colname]
+    df.drop([colname], axis=1, inplace=True)
+    return df
 ```
