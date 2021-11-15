@@ -3,7 +3,7 @@
 ```python
 import os
 os.getcwd() # Get current directory
-os.chdir(path) # CHange to a new directory
+os.chdir(path) # Change to a new directory
 ```
 
 #### Combine files in the directory
