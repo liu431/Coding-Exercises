@@ -44,14 +44,7 @@ import pandas as pd
 df = pd.read_csv(file)
 ```
 ### Dataframe
-#### [df.to_numpy](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_numpy.html)
-```python
-# Convert the DataFrame to a NumPy array
-df.to_numpy()
-```
-
-#### [df.is_null](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isnull.html)
-#### [df.fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html)
+#### [df.to_numpy](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_numpy.html), [df.is_null] (https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isnull.html), [df.fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html)
 
 ```python
 # Detect and fill missing values with 0
