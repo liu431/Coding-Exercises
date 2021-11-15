@@ -21,3 +21,14 @@ SELECT ID,  AllNames = STUFF(
 FROM temp1 t2
 GROUP BY ID;
 ```
+#### Fix date
+```sql
+# Swap day and month
+UPDATE TALE 
+SET Date = 
+  DATEFROMPARTS(
+    DATEPART(year, [Date]),
+    DATEPART(day, [Date]),  
+    DATEPART(month, [Date]))
+WHERE ...
+```
