@@ -43,9 +43,6 @@ WeekDays(4) # Work done by last Thursday -> 2
 WeekDays(5) # Work done by last Wednesday -> 3
 ```
 
-
-
-
 #### Convert between month name and month number
 ```python
 # abbreviated month name
@@ -63,6 +60,11 @@ month_number = datetime.datetime.strptime(month_name, "%B").month # 1
 # Recode gender
 genderList = np.array(['Male', 'Female', 'Male'])
 np.where(genderList == 'Male', 1, 0) # array([1, 0, 1])
+```
+
+#### Export data
+```python
+np.savetxt('output.csv', df, delimiter=',', fmt='%1.3f')
 ```
 
 ## Pandas
