@@ -10,7 +10,7 @@ import datetime
 datetime.datetime.now()
 ```
 
-#### Datae objects
+#### Data objects
 ```python
 # Create a date object
 x = datetime.datetime(2021, 1, 2)
@@ -19,9 +19,32 @@ x.strftime("%B") # January
 x.strftime("%m") # 01
 x.strftime("%Y") # 2021
 x.strftime("%d") # 02
-
-
 ```
+
+#### Waiting week days
+```python
+from datetime import datetime
+def WeekDays(Days):
+    '''Calculate the waiting week days by excluding the weekends'''
+    if Days >= 5:
+        Days = Days - 2 * (Days // 5)
+    else:
+        # When time clock starts from late last week or during the weekend
+        if Days > datetime.today().weekday():
+            if Days >= 2:
+                Days -= 2
+            else:
+                Days = 0
+    return Days
+WeekDays(1) # Work done by last Sunday -> 0
+WeekDays(2) # Work done by last Saturday -> 0
+WeekDays(3) # Work done by last Friday -> 1
+WeekDays(4) # Work done by last Thursday -> 2
+WeekDays(5) # Work done by last Wednesday -> 3
+```
+
+
+
 
 #### Convert between month name and month number
 ```python
