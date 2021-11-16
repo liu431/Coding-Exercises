@@ -1,4 +1,12 @@
 ###  Miscellaneous operating system interfaces
+
+#### File open/write/close
+```python
+f= open(filepath,"w+")
+f.write(data.to_string(header = False, index = False))
+f.close() 
+```
+
 #### Path
 ```python
 import os
