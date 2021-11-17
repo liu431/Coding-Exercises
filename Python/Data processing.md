@@ -54,6 +54,13 @@ month_name = "January"
 month_number = datetime.datetime.strptime(month_name, "%B").month # 1
 ```
 
+## List, Arrays
+#### List comprehension
+```python
+# Remove empty string form list
+list(filter(None, ['', 'abc', ''])) # ['abc']
+```
+
 ## Numpy
 #### [np.where](https://numpy.org/doc/stable/reference/generated/numpy.where.html)
 ```python
