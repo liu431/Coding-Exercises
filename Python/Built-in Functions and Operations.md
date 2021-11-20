@@ -39,8 +39,18 @@ sorted(a, key=lambda x:x[1], reverse=True) # [[2,3],[1,2],[3,1]]
 ### Bit
 #### [Binary equivalent string of a given integer](https://www.programiz.com/python-programming/methods/built-in/bin)
 ```python
+# Int to binary
 bin(3) #'0b11'
 bin(3)[2:] #'11'
+
+# Binary to int
+## Syntax: int(x=0, base=10); 2 for binary
+int('11', 2) #3
+
+# Add binary
+a = "11"
+b = "1"
+bin(int(a, 2) + int(b, 2))[2:] #"100"
 ```
 
 #### [Bitwise Operators](https://wiki.python.org/moin/BitwiseOperators)
