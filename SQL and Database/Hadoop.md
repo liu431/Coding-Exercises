@@ -1,4 +1,7 @@
 ### Note from Udemy Class [The Ultimate Hands-On Hadoop: Tame your Big Data!](https://www.udemy.com/course/the-ultimate-hands-on-hadoop-tame-your-big-data/)
+
+***Tech: MapReduce, HDFS, Pig, Spark, Flink, Hive, HBase, MongoDB, Cassandra, Kafka...***
+
 #### Set up
 Download Hortonworks Sandbox (v2.6.5): https://www.cloudera.com/downloads/hortonworks-sandbox/hdp.html
 Install VirtualBox: https://www.virtualbox.org/wiki/Downloads
