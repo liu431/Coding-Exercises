@@ -13,7 +13,24 @@ conn_str = 'mssql+pyodbc:///?autocommit=true&odbc_connect={}'.format(params)
 engine = create_engine(conn_str, echo=False)
 ```
 
-### Get query results
+### Get query results as a list
+```python
+def GetList():
+    '''Return query results as a list'''
+    query = """
+            SELECT * FROM TABLE
+            """
+    with engine.connect() as con:
+        result = con.execute(query)
+        res_list = [row[0] for row in result.fetchall()]
+        con.close()
+
+    return res_list
+    
+GetList()
+```
+
+### Get query results as a dataframe
 ```python
 def GetTable():
     '''Return query results as a pandas dataframe'''
