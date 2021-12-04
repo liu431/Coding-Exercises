@@ -1,5 +1,15 @@
 ## SQL Notes
 
+#### Rank()
+* dense_rank(): assign rank to each row within a partition without gaps
+* rank(): assign rank to each row within a partition with gaps
+* percent_rank():returns the percentile rank of a row within a partition that ranges from 0 to 1
+
+```sql
+SELECT product_id, year, RANK() OVER (PARTITION BY product_id ORDER BY year) AS 'rank' 
+FROM Sales;
+```
+
 #### Multiple CTEs
 ```sql
 WITH cte1 AS
