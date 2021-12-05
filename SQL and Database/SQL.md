@@ -1,5 +1,6 @@
 ## SQL Notes
 
+### Windows function
 #### Rank()
 * dense_rank(): assign rank to each row within a partition without gaps
 * rank(): assign rank to each row within a partition with gaps
@@ -8,6 +9,29 @@
 ```sql
 SELECT product_id, year, RANK() OVER (PARTITION BY product_id ORDER BY year) AS 'rank' 
 FROM Sales;
+```
+
+### CTE (Common Table Expressions)
+#### Recursive CTE (having a subquery that refers to its own name)
+```sql
+WITH RECURSIVE cte (n) AS
+(
+  SELECT 1
+  UNION ALL
+  SELECT n + 1 FROM cte WHERE n < 5
+)
+SELECT * FROM cte;
+
+# Result table
++------+
+| n    |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
+|    5 |
++------+
 ```
 
 #### Multiple CTEs
