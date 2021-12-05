@@ -13,3 +13,4 @@ LEFT JOIN s1 ON IDS.product_id = s1.product_id
 LEFT JOIN s2 ON IDS.product_id = s2.product_id
 LEFT JOIN s3 ON IDS.product_id = s3.product_id
 
+# 1795. Rearrange Products Table is the reverse arangement of the table
