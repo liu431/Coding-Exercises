@@ -1,4 +1,10 @@
 ## SQL Notes
+### Syntax
+#### DELETE (delete existing records in a table)
+```sql
+DELETE FROM tbl WHERE Username = 'Test User'
+```
+
 
 ### Windows function
 #### Rank()
