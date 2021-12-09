@@ -6,7 +6,11 @@ OLTP and OLAP both are the online processing systems. OLTP is a transactional pr
 OLTP’s main operations are insert, update and delete whereas, OLAP’s main operation is to extract multidimensional data for analysis.
 
 
-#### Query optimization vs performance tuning
+#### Query optimization vs Database performance tuning
+[Source](https://www.solarwinds.com/database-performance-analyzer/use-cases/database-performance-tuning)
+SQL performance tuning is narrower in scope than database performance tuning. 
+
+SQL performance tuning refers to best practices and procedures designed to ensure relational databases are running as efficiently as possible. This primarily involves tuning, managing, and optimizing SQL queries and indexes.
 
 #### Techniques
 [Example 1](https://beginner-sql-tutorial.com/sql-query-tuning.htm)
