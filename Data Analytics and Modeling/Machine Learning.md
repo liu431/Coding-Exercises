@@ -589,14 +589,15 @@ GBDT loss fucntion
 TO solve problems such as multicollinearity, overfitting, and curse of dimensionality
 
 ### Principal component analysis
-
+[Python example](https://vitalflux.com/pca-explained-variance-concept-python-example/)
 Objective: transform the predictors and then fit a least squares model using the transformed variables instead of the original predictors
 
  <img src="https://render.githubusercontent.com/render/math?math=Z_m = \sum_{j=1}^p \varphi_jm X_j <img src="https://render.githubusercontent.com/render/math?math=	
 
-* uses an eigen decomposition to transform the original data into linearly independent eigenvectors
-
-* most important vectors (with highest eigenvalues) are then selected to represent the features in the transformed space
+* Uses an eigen decomposition to transform the original data into linearly independent eigenvectors
+* Explained variance represents the information explained using a particular principal components (eigenvectors)
+* Explained variance is calculated as ratio of eigenvalue of a articular principal component (eigenvector) with total eigenvalues.
+* Most important vectors (with highest eigenvalues) are then selected to represent the features in the transformed space
 
 ### Non-negative matrix factorization (NMF)
 
