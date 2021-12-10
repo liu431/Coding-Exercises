@@ -59,6 +59,13 @@ month_number = datetime.datetime.strptime(month_name, "%B").month # 1
 ```python
 # Remove empty string form list
 list(filter(None, ['', 'abc', ''])) # ['abc']
+
+# Create new lists with range of values
+a = np.arange(1,11)
+# Create list with odd values
+b = [i for i in a if i%2 == 1]
+# Create list with values from a but not in b
+c = [i for i in a if i not in b]
 ```
 
 ## Numpy
