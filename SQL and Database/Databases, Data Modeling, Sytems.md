@@ -20,3 +20,6 @@ SQL performance tuning refers to best practices and procedures designed to ensur
 * EXISTS is efficient when most of the filter criteria is in the main query
 * Use EXISTS instead of DISTINCT when using joins which involves tables having one-to-many relationship
 * Use UNION ALL in place of UNION
+
+#### [Clustered and nonclustered indexes](https://www.guru99.com/clustered-vs-non-clustered-index.html)
+Cluster index is a type of index that sorts the data rows in the table on their key values whereas the Non-clustered index stores the data at one location and indices at another location.
