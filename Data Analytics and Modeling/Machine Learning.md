@@ -302,6 +302,12 @@ Model parameters: determined/fitted using the training data set
 
 Hyperparameters: adjustable parameters to be tuned for optimal performance
 
+### [Model hyperparameter tuning](https://machinelearningmastery.com/hyperparameter-optimization-with-random-search-and-grid-search/)
+Goal: find the optimal hyperparameters of a model which results in the most ‘accurate’ predictions
+
+* Random Search: randomly sample points in the search place.
+* Grid Search: evaluate every position in the search place.
+
 ## Supervised Machine Learning
 
 [scikit-learn linear models](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.linear_model)
@@ -408,6 +414,11 @@ Application in marketing: likealike model
 
 * Generalized additive models: multiple predictors
 
+#### Non-parametric regression
+
+How: can divide X into many narrow intervals just like we would for a histogram and estimate the conditional distribution of Y and estimate the conditional mean of Y within each bin
+
+Bottom line: Unless your dataset is extremely large or you have a small handful of variables with a low number of unique values, naive nonparametric estimation will not be effective
 
 
 ### Classification
@@ -423,6 +434,15 @@ Task:
  <img src="https://render.githubusercontent.com/render/math?math=f(X) = \frac{e^{\beta_{0}}+\beta_{1}*X}}{1 + e^{\beta_{0}}+\beta_{1}*X}}">
 
 Threshold: f(X)>=0.5, <img src="https://render.githubusercontent.com/render/math?math=\hat{Y}=1">; f(X)<0.5, <img src="https://render.githubusercontent.com/render/math?math=\hat{Y}=1">
+
+#### Imbalanced class distribution
+[Article]https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/)
+Issue: the distribution of examples across the known classes is biased or skewed. This results in models that have poor predictive performance, specifically for the minority class. 
+Tactics:
+1. Collect more data
+2. Change [performance metrics](https://machinelearningmastery.com/classification-accuracy-is-not-enough-more-performance-measures-you-can-use/) from Accuracy to Confusion Matrix/Precision/Recall/F1 Score/ROC Curves
+3. Resample data
+4. Generate synthetic samples
 
 #### Odds
 
@@ -486,11 +506,6 @@ similar to accuracy but increases the penalty for incorrect classifications that
 
 Source: [Kyle McKiou Blog](https://www.linkedin.com/posts/kylemckiou_datascience-dsdj-qanda-activity-6622850903802290179-jJeS)
   
-#### Non-parametric regression
-
-How: can divide X into many narrow intervals just like we would for a histogram and estimate the conditional distribution of Y and estimate the conditional mean of Y within each bin
-
-Bottom line: Unless your dataset is extremely large or you have a small handful of variables with a low number of unique values, naive nonparametric estimation will not be effective
 
 #### K-Nearest classification 
 
@@ -520,7 +535,6 @@ The Naive Bayes assumes the predictors are conditionally independent of one anot
 For continuous predictors, we typically make an additional assumption of normality so that we can use the probability from the probability density function (PDF).
 
 
-
 #### Discriminant analysis (LDA, QDA)
 
 #### Packages & Tools
@@ -530,11 +544,13 @@ For continuous predictors, we typically make an additional assumption of normali
 
 ### Regression vs Classification
 
- Different `y`: 
+Different `y`: 
  
 Regression: response is quantitative (continuous)
  
 Classification: response is qualitative (binary/multinomial)
+
+Different loss functions
 
 ### Tree-based Methods
 
