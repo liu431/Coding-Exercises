@@ -27,6 +27,27 @@ for file in os.listdir(path):
 import warnings
 warnings.filterwarnings("ignore")
 ```
+#### Print error type
+```python
+try: ###
+except Exception as e: 
+    print(e)
+```
+
+#### [Traceback](https://www.geeksforgeeks.org/python-traceback/)
+```python
+import traceback
+# print_exc() method
+try: ###
+except:
+    traceback.print_exc()
+# print_exception() method
+import sys
+try: ###
+except:
+    traceback.print_exception(*sys.exc_info())
+```
+
 
 ### List
 
