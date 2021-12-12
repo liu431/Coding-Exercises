@@ -1,6 +1,6 @@
 ## SQL Notes
 ### Syntax
-Link: [W3 SQL Tutorial](SQL Tutorial)
+Link: [W3 SQL Tutorial](https://www.w3schools.com/sql/)
 ### Table Joins (combine rows from two or more tables)
 * (INNER) JOIN: returns records that have matching values in both tables
 * LEFT (OUTER) JOIN: returns all records from the left table, and the matched records from the right table
@@ -30,8 +30,15 @@ DELETE FROM tbl WHERE Username = 'Test User'
 SELECT product_id, year, RANK() OVER (PARTITION BY product_id ORDER BY year) AS 'rank' 
 FROM Sales;
 ```
+#### Nonaggregate functions
+* [LAG()](https://www.mysqltutorial.org/mysql-window-functions/mysql-lag-function/): get value from row that precedes the current row (before)
+* LEAD(): get value from row that succeeds the current row (after)
+```sql
+SELECT price, price - LAG(price, 1) OVER () AS price_diff
+FROM Orders
+```
 
-#### Aggregation
+#### Aggregate functions
 * COUNT(): return the number of rows that matches a specified criterion.
 * AVG(): return the average value of a numeric column
 * SUM(): return the total sum of a numeric column
