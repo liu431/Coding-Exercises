@@ -67,6 +67,7 @@ Return the first non-null value in a list
 
 ### Date functions
 ```sql
+YEAR(date) # Return the year part of a date
 MONTH(date) # Return the month part of a date
 DAY(date) or DAYOFMONTH(date) # Return the day of the month for a date, 'mon'
 DAYOFWEEK(date) # Return the weekday index for a date; Sunday is 1
