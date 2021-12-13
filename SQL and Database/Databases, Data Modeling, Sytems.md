@@ -31,3 +31,28 @@ SQL performance tuning refers to best practices and procedures designed to ensur
 
 #### [Clustered and nonclustered indexes](https://www.guru99.com/clustered-vs-non-clustered-index.html)
 Cluster index is a type of index that sorts the data rows in the table on their key values whereas the Non-clustered index stores the data at one location and indices at another location.
+
+### Data Models
+
+##### Ex. Can you give me a data model which will help answer the following questions. No SQL queries just the data model. (*Amazon BIE*)
+a. Top grossing movie last year?
+
+b. All movies which starred Brad Pitt.
+
+c. Every actor which Bradd Pitt has worked with.
+
+d. Top Movies (star rating) for 2019?
+
+Ans:
+
+Movies
+- Movie ID
+- Movie Name
+- Movie Year
+- Movie Box Office Results
+- Star Ratings
+
+Actor and Actress
+- ID
+- Name
+- Movie ID
