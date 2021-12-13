@@ -1,3 +1,6 @@
+#### [Foreign keys](https://dev.mysql.com/doc/mysql-tutorial-excerpt/8.0/en/example-foreign-keys.html)
+* Permit cross-referencing related data across tables
+
 #### [DDL, DQL, DML, DCL and TCL](https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/)
 * DDL – Data Definition Language; define the database schema
 * DQl – Data Query Language; get the data out of the database to perform operations with it (SELECT)
