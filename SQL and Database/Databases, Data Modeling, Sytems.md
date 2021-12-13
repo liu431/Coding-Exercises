@@ -1,3 +1,8 @@
+#### Schemas
+[Snowflake vs Star](https://www.xplenty.com/blog/snowflake-schemas-vs-star-schemas-what-are-they-and-how-are-they-different/)
+* Star: contains the Fact Tables and the Dimension Tables; top-down model
+* Snowflake: contains the Fact Tables, Dimension Tables, and the Sub-Dimension Tables; bottom-up model
+
 #### [Foreign keys](https://dev.mysql.com/doc/mysql-tutorial-excerpt/8.0/en/example-foreign-keys.html)
 * Permit cross-referencing related data across tables
 
