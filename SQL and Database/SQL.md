@@ -19,6 +19,19 @@ WHERE condition;
 DELETE FROM tbl WHERE Username = 'Test User'
 ```
 
+#### WHERE & HAVING
+WHERE is applied before GROUP BY, HAVING is applied after (and can filter on aggregates).
+A HAVING clause is like a WHERE clause, but applies only to groups as a whole (that is, to the rows in the result set representing groups), whereas the WHERE clause applies to individual rows. [Link](https://docs.microsoft.com/en-us/sql/ssms/visual-db-tools/use-having-and-where-clauses-in-the-same-query-visual-database-tools?view=sql-server-ver15)
+_MySQL allows referencing SELECT level aliases in GROUP BY, ORDER BY and HAVING._
+
+### Date functions
+```sql
+MONTH(date) # Return the month part of a date
+DAY(date) or DAYOFMONTH(date) # Return the day of the month for a date, 'mon'
+DAYOFWEEK(date) # Return the weekday index for a date; Sunday is 1
+DATEDIFF(date1, date2) # Return number of days between (date1 - date2)
+DATE_FORMAT(date, "%Y-%m") # Return the date as Year-Month
+```
 
 ### Windows function
 #### Rank()
@@ -114,3 +127,23 @@ SET Date =
     DATEPART(month, [Date]))
 WHERE ...
 ```
+
+### Pratical Examples
+#### [Find outliers](https://dataschool.com/how-to-teach-people-sql/how-to-find-outliers-with-sql/)
+##### Order by
+Sort the relevant values in both ascending and descending order
+##### NTILES()
+Separate our data into the same number of groups as the value inside the brackets
+
+#### Pivot — Rows to Columns
+MySQL does not have PIVOT function; use a CASE expression along with an aggregate function
+```sql
+# Get results of each client's order numbers in different month
+SELECT ClientName,  
+SUM(MONTH(Order) = 'January')AS Order_Jan,
+SUM(MONTH(Order) = 'February')AS Order_Feb
+...
+FROM table
+GROUP BY ClientName
+```
+
