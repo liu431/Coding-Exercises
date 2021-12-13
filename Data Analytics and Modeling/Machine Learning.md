@@ -16,9 +16,11 @@
  
 ### Model
 
-  Common form: <img src="https://render.githubusercontent.com/render/math?math=y = f(x) + \epsilon <img src="https://render.githubusercontent.com/render/math?math=; Interested in estimating functional form of f(x)
+Common form: <img src="https://render.githubusercontent.com/render/math?math=y=f(x)">+<img src="https://render.githubusercontent.com/render/math?math=\epsilon">; Interested in estimating functional form of f(x)
   
-  Approaches: parametric; non=parametric estimation
+Approaches: 
+* Parametric
+* Non-parametric estimation
  
 ### Selecting and fitting a model
 
@@ -208,7 +210,7 @@ adjusting the training error to penalize additional features
 
 #### AIC
 
- <img src="https://render.githubusercontent.com/render/math?math=AIC=AIC = −2logL + 2 × d">
+ <img src="https://render.githubusercontent.com/render/math?math=AIC= −2logL + 2 × d">
 
 In the linear model, <img src="https://render.githubusercontent.com/render/math?math=−2LogL = \frac{RSS}{hat{\sigma}^2)}">
 
@@ -228,11 +230,10 @@ The rule suggests to not necessarily choose the model with minimum error, but to
 
 ### Data Preparation
 
-1. Cleaning/Pre-processing
+* Cleaning/Pre-processing
 
-2. Missing data
-
-3. Unbalanced data
+* Missing data
+* Unbalanced data
 
 [How to fix an Unbalanced Dataset@KDnuggets](https://www.kdnuggets.com/2019/05/fix-unbalanced-dataset.html)
 
@@ -240,19 +241,27 @@ The rule suggests to not necessarily choose the model with minimum error, but to
 
 [Diving Deep with Imbalanced Data@Datacamp](https://www.datacamp.com/community/tutorials/diving-deep-imbalanced-data)
 
-4. Feature engineering
+* Feature engineering
 
-5. Feature selection
+Purpose: improve the model performance by selecting and transforming the most relevant variables from raw data using domain knowledge
 
-6. Effective sample size
+* Numeric Data transformation
+ - scaling to a range:  converting floating-point feature values from their natural range into a standard range—usually 0 and 1
+ - clipping: caps all feature values above (or below) a certain value to fixed value
+ - log scaling: improve linear model performance when data has power law distribution (when a handful of your values have many points, while most other values have few points)
+ - z-score: represents the number of standard deviations away from the mean; ensure your feature distributions have mean = 0 and std = 1
 
-7. Time correaltions
+* Feature selection
 
-* backward
+* Effective sample size
 
-* forward
+* Time correaltions
 
-* subset
+ - backward
+
+ - forward
+
+  -subset
 
 * L1
 
@@ -763,6 +772,7 @@ Ads pricing
 Audience expansion
 
 ## Links to online resources
+[Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/ml-intro)
 
 [An Introduction to Statistical Learning](https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf)
 
