@@ -1,17 +1,32 @@
 ## SQL Notes
 ### Syntax
 Link: [W3 SQL Tutorial](https://www.w3schools.com/sql/)
-### Table Joins (combine rows from two or more tables)
+### Table Joins (combine columns from two or more tables)
 * (INNER) JOIN: returns records that have matching values in both tables
 * LEFT (OUTER) JOIN: returns all records from the left table, and the matched records from the right table
 * RIGHT (OUTER) JOIN: returns all records from the right table, and the matched records from the left table
 * FULL (OUTER) JOIN: returns all records when there is a match in either left or right table; Null for unmatched cells
+* CROSS JOIN: returns the Cartesian product which is the product of rows of two associated tables
 
 ```sql
-# SELF JOIN: is a regular join, but the table is joined with itself
+# SELF JOIN: a regular join, but the table is joined with itself
 SELECT column_name(s)
 FROM table1 T1, table1 T2
 WHERE condition;
+## Employee(employee_id,manager_id,join_date); Find all the employees who joined before their manager
+SELECT employee_id
+FROM Employee E1 
+LEFT JOIN Employee E2 ON E1.employee_id = E2.manager_id
+WHERE E1.join_date < E2.join_date
+```
+
+```sql
+# UNION: combine the result-set of two or more SELECT statements; selects only distinct values by default
+# UNION ALL: allow duplicate values
+SELECT Client FROM MarketA
+UNION
+SELECT Client FROM MarketA
+ORDER BY Client;
 ```
 
 #### DELETE (delete existing records in a table)
@@ -23,6 +38,32 @@ DELETE FROM tbl WHERE Username = 'Test User'
 WHERE is applied before GROUP BY, HAVING is applied after (and can filter on aggregates).
 A HAVING clause is like a WHERE clause, but applies only to groups as a whole (that is, to the rows in the result set representing groups), whereas the WHERE clause applies to individual rows. [Link](https://docs.microsoft.com/en-us/sql/ssms/visual-db-tools/use-having-and-where-clauses-in-the-same-query-visual-database-tools?view=sql-server-ver15)
 _MySQL allows referencing SELECT level aliases in GROUP BY, ORDER BY and HAVING._
+
+##### Ex. [Find Duplicate Values](https://chartio.com/learn/databases/how-to-find-duplicate-values-in-a-sql-table/)
+```sql
+SELECT a.* 
+FROM
+(SELECT ID, Name, COUNT(*)
+FROM User 
+GROUP BY ID, Name
+HAVING COUNT(*) > 1) b
+JOIN a.ID = b.ID AND a.Name = b.Name
+```
+
+### CASE
+Go through conditions and return a value when the first condition is met
+#### Ex. FInd customer who only order phone
+```sql
+SELECT CustomerName
+FROM 
+(SELECT *, SUM(CASE WHEN Product='phone' THEN 1 ELSE 0) AS Phones
+FROM Customer
+GROUP BY CustomerName) t
+WHERE Phones > 0
+```
+
+### COALESCE()
+Return the first non-null value in a list
 
 ### Date functions
 ```sql
@@ -56,10 +97,13 @@ FROM Orders
 * AVG(): return the average value of a numeric column
 * SUM(): return the total sum of a numeric column
 
-
+##### Ex. Given salary(department_id,employee_id,salary), list all employees with salary greater than the average department salary and also greather than $50K
 ```sql
-# Count cells that satisfy a condition
-COUNT(CASE WHEN <condition> THEN 1 END)
+SELECT employee_id
+FROM 
+(SELECT *, AVG(SALARY) OVER (PARTITION BY department_id) AS depart_avg
+FROM salary) S
+WHERE salary > 50000
 ```
 
 ### Conditions
@@ -135,15 +179,43 @@ Sort the relevant values in both ascending and descending order
 ##### NTILES()
 Separate our data into the same number of groups as the value inside the brackets
 
-#### Pivot — Rows to Columns
+#### Pivot — Rows to Columns; allow you to display row values as columns
 MySQL does not have PIVOT function; use a CASE expression along with an aggregate function
+[PIVOT and UNPIVOT in SQL Server] (https://docs.microsoft.com/en-us/sql/t-sql/queries/from-using-pivot-and-unpivot?view=sql-server-ver15)
+##### Ex. Get results of each client's order numbers in different month
 ```sql
-# Get results of each client's order numbers in different month
 SELECT ClientName,  
-SUM(MONTH(Order) = 'January')AS Order_Jan,
-SUM(MONTH(Order) = 'February')AS Order_Feb
+SUM(MONTH(Order) = 'January') AS Order_Jan,
+SUM(MONTH(Order) = 'February') AS Order_Feb
 ...
 FROM table
 GROUP BY ClientName
 ```
+
+##### Ex. Given Monthly_Revenue (company_name,month,revenue), Write a query to pull the monthly revenue as columns instead of rows.
+```sql
+SELECT company_name,
+# Using CASE WHEN
+SUM(CASE WHEN (month='January') THEN revenue ELSE NULL END) AS January
+# Using IF
+SUM(IF(month='January', revenue, NULL)) AS January
+...
+FROM Monthly_Revenue
+GROUP BY company_name
+```
+
+```sql
+# PIVOT in SQL Server
+SELECT company_name, [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December]
+FROM Monthly_Revenue
+PIVOT(
+SUM(revenue) FOR month IN ([January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December])
+) as PivotTable
+```
+
+
+
+
+
+
 
