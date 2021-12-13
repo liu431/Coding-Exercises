@@ -1,3 +1,10 @@
+#### [DDL, DQL, DML, DCL and TCL](https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/)
+* DDL – Data Definition Language; define the database schema
+* DQl – Data Query Language; get the data out of the database to perform operations with it (SELECT)
+* DML – Data Manipulation Language; includes: INSERT, UPDATE, DELETE, LOCK
+* DCL – Data Control Language; deal with the rights, permissions, and other controls of the database system
+* TCL - Transaction Control Language; deal with the transaction within the database
+
 #### OLTP and OLAP 
 [Source](https://techdifferences.com/difference-between-oltp-and-olap.html)
 
@@ -8,6 +15,7 @@ OLTP’s main operations are insert, update and delete whereas, OLAP’s main op
 
 #### Query optimization vs Database performance tuning
 [Source](https://www.solarwinds.com/database-performance-analyzer/use-cases/database-performance-tuning)
+
 SQL performance tuning is narrower in scope than database performance tuning. 
 
 SQL performance tuning refers to best practices and procedures designed to ensure relational databases are running as efficiently as possible. This primarily involves tuning, managing, and optimizing SQL queries and indexes.
