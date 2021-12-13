@@ -60,6 +60,8 @@ Data warehousing is the fundemental underpinning of modern data-driven decision 
 * "Blast" data into big data environment, such as Hadoop HDFS, AWS S3, etc
 * Likely used when building data lake
 
+[Comparison](https://www.xplenty.com/blog/etl-vs-elt/#comparison)
+
 #### Initial loading ETL
 * Normally one time only
 * Before data warehouse goes live
