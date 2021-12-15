@@ -173,6 +173,20 @@ SET Date =
 WHERE ...
 ```
 
+### [Variables](https://www.javatpoint.com/mysql-variables)
+To store data in memory and can be used throughout the program
+* User-Defined Variable: starts with @ symbol; pass values from one statement to another statement; does not reinitialized with NULL
+```sql
+# Assign the value in MySQL
+SET @var_name = value;  
+SELECT @var_name := value;  
+
+# Assign the value in SQL Server
+DECLARE @var_name AS INT = YEAR(GETDATE());
+```
+* Local Variable: strongly typed variable; is reinitialized with NULL value each time whenever stored procedure is called
+* System Variable: various system variables that configure its operation, and each system variable contains a default value
+
 ### Pratical Examples
 #### [Find outliers](https://dataschool.com/how-to-teach-people-sql/how-to-find-outliers-with-sql/)
 ##### Order by
