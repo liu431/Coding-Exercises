@@ -29,6 +29,19 @@ SELECT Client FROM MarketA
 ORDER BY Client;
 ```
 
+```sql
+SQL Joins with On or Using
+# USING: shorthand for the situation where the column names are the same
+# Ex. Leetcdoe SQL 1677. Product's Worth Over Invoices
+SELECT name, 
+IFNULL(SUM(rest), 0) AS rest, IFNULL(SUM(paid), 0) AS paid, 
+IFNULL(SUM(canceled), 0) AS canceled, IFNULL(SUM(refunded), 0) AS refunded
+FROM Product
+LEFT JOIN Invoice USING(product_id)
+GROUP BY name
+ORDER BY name
+```
+
 #### DELETE (delete existing records in a table)
 ```sql
 DELETE FROM tbl WHERE Username = 'Test User'
