@@ -98,6 +98,7 @@ DATE_FORMAT(date, "%Y-%m") # Return the date as Year-Month
 SELECT product_id, year, RANK() OVER (PARTITION BY product_id ORDER BY year) AS 'rank' 
 FROM Sales;
 ```
+
 #### Nonaggregate functions
 * [LAG()](https://www.mysqltutorial.org/mysql-window-functions/mysql-lag-function/): get value from row that precedes the current row (before)
 * LEAD(): get value from row that succeeds the current row (after)
@@ -105,6 +106,8 @@ FROM Sales;
 SELECT price, price - LAG(price, 1) OVER () AS price_diff
 FROM Orders
 ```
+* [ROW_NUMBER()](https://www.mysqltutorial.org/mysql-window-functions/mysql-row_number-function/): assigns a sequential number to each row in the result set
+
 
 #### Aggregate functions
 * COUNT(): return the number of rows that matches a specified criterion.
@@ -209,7 +212,9 @@ Separate our data into the same number of groups as the value inside the bracket
 
 #### Pivot — Rows to Columns; allow you to display row values as columns
 MySQL does not have PIVOT function; use a CASE expression along with an aggregate function
-[PIVOT and UNPIVOT in SQL Server] (https://docs.microsoft.com/en-us/sql/t-sql/queries/from-using-pivot-and-unpivot?view=sql-server-ver15)
+
+[PIVOT and UNPIVOT in SQL Server](https://docs.microsoft.com/en-us/sql/t-sql/queries/from-using-pivot-and-unpivot?view=sql-server-ver15)
+
 ##### Ex. Get results of each client's order numbers in different month
 ```sql
 SELECT ClientName,  
@@ -241,9 +246,17 @@ SUM(revenue) FOR month IN ([January], [February], [March], [April], [May], [June
 ) as PivotTable
 ```
 
+##### Ex. (Leetcode 618) Students Report By Geography if it is unknown which continent has the most students, 
 
-
-
+```sql
+## MAX ignores any null values. MAX returns NULL when there is no row to select.
+SELECT
+    MAX(CASE WHEN continent = 'America' THEN name END)AS America,
+    MAX(CASE WHEN continent = 'Asia' THEN name END)AS Asia,
+    MAX(CASE WHEN continent = 'Europe' THEN name END)AS Europe  
+FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY continent ORDER BY name) AS id FROM student) AS t
+GROUP BY id
+```
 
 
 
