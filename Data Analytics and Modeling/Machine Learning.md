@@ -1,6 +1,4 @@
-# Notes on Machine Learning
-
-## Concepts
+## Notes for Machine Learning
 
 ### Statistical Learning vs Machine Learning
 
