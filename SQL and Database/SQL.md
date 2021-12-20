@@ -1,5 +1,4 @@
 ## SQL Notes
-### Syntax
 Link: [W3 SQL Tutorial](https://www.w3schools.com/sql/)
 ### Table Joins (combine columns from two or more tables)
 * (INNER) JOIN: returns records that have matching values in both tables
@@ -8,29 +7,31 @@ Link: [W3 SQL Tutorial](https://www.w3schools.com/sql/)
 * FULL (OUTER) JOIN: returns all records when there is a match in either left or right table; Null for unmatched cells
 * CROSS JOIN: returns the Cartesian product which is the product of rows of two associated tables
 
+#### SELF JOIN: a regular join, but the table is joined with itself
 ```sql
-# SELF JOIN: a regular join, but the table is joined with itself
 SELECT column_name(s)
 FROM table1 T1, table1 T2
 WHERE condition;
-## Employee(employee_id,manager_id,join_date); Find all the employees who joined before their manager
+```
+##### Ex. Find all the employees who joined before their manager
+```sql
+# Table Employee(employee_id,manager_id,join_date);
 SELECT employee_id
 FROM Employee E1 
 LEFT JOIN Employee E2 ON E1.employee_id = E2.manager_id
 WHERE E1.join_date < E2.join_date
 ```
 
+#### UNION: combine the result-set of two or more SELECT statements; selects only distinct values by default
 ```sql
-# UNION: combine the result-set of two or more SELECT statements; selects only distinct values by default
 # UNION ALL: allow duplicate values
 SELECT Client FROM MarketA
 UNION
 SELECT Client FROM MarketA
 ORDER BY Client;
 ```
-
+#### SQL Joins with On or Using
 ```sql
-SQL Joins with On or Using
 # USING: shorthand for the situation where the column names are the same
 # Ex. Leetcdoe SQL 1677. Product's Worth Over Invoices
 SELECT name, 
@@ -42,15 +43,38 @@ GROUP BY name
 ORDER BY name
 ```
 
+### Edit Data
 #### DELETE (delete existing records in a table)
 ```sql
 DELETE FROM tbl WHERE Username = 'Test User'
 ```
 
+#### Fix date
+```sql
+# Swap day and month (in SQL Server)
+UPDATE TALE 
+SET Date = 
+  DATEFROMPARTS(
+    DATEPART(year, [Date]),
+    DATEPART(day, [Date]),  
+    DATEPART(month, [Date]))
+WHERE ...
+```
+
+### Filter Data
 #### WHERE & HAVING
 WHERE is applied before GROUP BY, HAVING is applied after (and can filter on aggregates).
 A HAVING clause is like a WHERE clause, but applies only to groups as a whole (that is, to the rows in the result set representing groups), whereas the WHERE clause applies to individual rows. [Link](https://docs.microsoft.com/en-us/sql/ssms/visual-db-tools/use-having-and-where-clauses-in-the-same-query-visual-database-tools?view=sql-server-ver15)
 _MySQL allows referencing SELECT level aliases in GROUP BY, ORDER BY and HAVING._
+
+
+#### EXISTS: test for the existence of any record in a subquery; return TRUE if the subquery returns one or more records
+##### Ex. Find clients who have purchased products over $100
+```sql
+SELECT ClientName
+FROM Client
+WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.ClientName = Suppliers.ClientName AND Price > 100)
+```
 
 ##### Ex. [Find Duplicate Values](https://chartio.com/learn/databases/how-to-find-duplicate-values-in-a-sql-table/)
 ```sql
@@ -63,9 +87,10 @@ HAVING COUNT(*) > 1) b
 JOIN a.ID = b.ID AND a.Name = b.Name
 ```
 
-### CASE
+#### CASE
 Go through conditions and return a value when the first condition is met
-#### Ex. FInd customer who only order phone
+#### Use CASE and SUM together to get counts 
+##### Ex. Find customer who only order phone
 ```sql
 SELECT CustomerName
 FROM 
@@ -75,10 +100,11 @@ GROUP BY CustomerName) t
 WHERE Phones > 0
 ```
 
-### COALESCE()
+#### COALESCE()
 Return the first non-null value in a list
 
-### Date functions
+### Transform Data
+#### Date functions
 ```sql
 YEAR(date) # Return the year part of a date
 MONTH(date) # Return the month part of a date
@@ -88,15 +114,17 @@ DATEDIFF(date1, date2) # Return number of days between (date1 - date2)
 DATE_FORMAT(date, "%Y-%m") # Return the date as Year-Month
 ```
 
-### Windows function
-#### Rank()
+#### Ranking function
 * dense_rank(): assign rank to each row within a partition without gaps
 * rank(): assign rank to each row within a partition with gaps
-* percent_rank():returns the percentile rank of a row within a partition that ranges from 0 to 1
+* percent_rank(): returns the percentile rank of a row within a partition that ranges from 0 to 1
 
+##### Ex. Find years when products were first sold 
 ```sql
-SELECT product_id, year, RANK() OVER (PARTITION BY product_id ORDER BY year) AS 'rank' 
-FROM Sales;
+SELECT product_id, year
+FROM (SELECT product_id, year, RANK() OVER (PARTITION BY product_id ORDER BY year) AS 'rank' 
+FROM Sales) t
+WHERE rank = 1;
 ```
 
 #### Nonaggregate functions
@@ -111,9 +139,20 @@ FROM Orders
 
 #### Aggregate functions
 * COUNT(): return the number of rows that matches a specified criterion.
-* AVG(): return the average value of a numeric column
 * SUM(): return the total sum of a numeric column
 
+##### [Running total](https://popsql.com/learn-sql/mysql/how-to-calculate-cumulative-sum-running-total-in-mysql)
+```sql
+WITH ClientCountsByYear AS 
+(SELECT YEAR(PurchaseDate), COUNT(*) As ClientCounts
+FROM Clients
+GROUP BY year)
+SELECT year, SUM(Counts) OVER (ORDER BY year) AS cum_sum
+FROM ClientCountsByYear;
+```
+
+* AVG(): return the average value of a numeric column
+ 
 ##### Ex. Given salary(department_id,employee_id,salary), list all employees with salary greater than the average department salary and also greather than $50K
 ```sql
 SELECT employee_id
@@ -123,14 +162,13 @@ FROM salary) S
 WHERE salary > 50000
 ```
 
-### Conditions
-#### WHERE
-EXISTS:test for the existence of any record in a subquery; return TRUE if the subquery returns one or more records
+#### [Combine strings under same group](https://stackoverflow.com/questions/31211506/how-stuff-and-for-xml-path-work-in-sql-server)
 ```sql
-# Ex: FInd clients who have purchased products over $100
-SELECT ClientName
-FROM Client
-WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.ClientName = Suppliers.ClientName AND Price > 100)
+SELECT ID,  AllNames = STUFF(
+  (SELECT ',' + name FROM temp1 t1 WHERE t1.id = t2.id
+  FOR XML PATH ('')), 1, 1, '') 
+FROM temp1 t2
+GROUP BY ID;
 ```
 
 ### CTE (Common Table Expressions)
@@ -169,25 +207,6 @@ FROM cte1
 JOIN cte3 ON ...
 ```
 
-#### [Combine strings under same group](https://stackoverflow.com/questions/31211506/how-stuff-and-for-xml-path-work-in-sql-server)
-```sql
-SELECT ID,  AllNames = STUFF(
-  (SELECT ',' + name FROM temp1 t1 WHERE t1.id = t2.id
-  FOR XML PATH ('')), 1, 1, '') 
-FROM temp1 t2
-GROUP BY ID;
-```
-#### Fix date
-```sql
-# Swap day and month (in SQL Server)
-UPDATE TALE 
-SET Date = 
-  DATEFROMPARTS(
-    DATEPART(year, [Date]),
-    DATEPART(day, [Date]),  
-    DATEPART(month, [Date]))
-WHERE ...
-```
 
 ### [Variables](https://www.javatpoint.com/mysql-variables)
 To store data in memory and can be used throughout the program
