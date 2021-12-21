@@ -22,6 +22,14 @@ LEFT JOIN Employee E2 ON E1.employee_id = E2.manager_id
 WHERE E1.join_date < E2.join_date
 ```
 
+##### Ex. (Leetcode 1459) Rectangles Area
+```sql
+SELECT P1.id AS p1, P2.id AS p2, ABS((P1.x_value - P2.x_value) * (P1.y_value - P2.y_value)) AS area
+FROM Points P1
+JOIN Points P2 ON P1.id < P2.id AND P1.x_value != P2.x_value AND P1.y_value != P2.y_value
+ORDER BY area DESC, p1, p2
+```
+
 #### UNION: combine the result-set of two or more SELECT statements; selects only distinct values by default
 ```sql
 # UNION ALL: allow duplicate values
