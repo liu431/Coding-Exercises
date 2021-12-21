@@ -45,13 +45,23 @@ Bill Inmon (1990): a data warehouse is a subject oriented, integrated, time-vari
 * Bottom Tier − the data warehouse database server. It is the relational database system. We use the back end tools and utilities to feed data into the bottom tier by performing the Extract, Clean, Load, and refresh functions.
 
 * Middle Tier − the OLAP Server that can be implemented in either of the following ways.
-
   - By Relational OLAP (ROLAP): an extended relational database management system; maps the operations on multidimensional data to standard relational operations.
-
   - By Multidimensional OLAP (MOLAP) model: directly implements the multidimensional data and operations.
-
 * Top-Tier - the front-end client layer; holds the query tools and reporting tools, analysis tools and data mining tools.
 
+#### Online Analytical Processing Server (OLAP) 
+
+* Relational OLAP (ROLAP): uses relational or extended-relational DBMS
+List of OLAP operations
+  - Roll-up: performs aggregation on a data cube by climbing up a concept hierarchy for a dimension or dimension reduction
+  - Drill-down: one or more dimensions from the data cube are added
+  - Slice: select one particular dimension from a given cube and provides a new sub-cube
+  - Dice: selects two or more dimensions from a given cube and provides a new sub-cube
+  - Pivot (rotate): rotates the data axes in view in order to provide an alternative presentation of data
+   
+* Multidimensional OLAP (MOLAP): uses array-based multidimensional storage engines for multidimensional views of data
+* Hybrid OLAP (HOLAP): offers higher scalability of ROLAP and faster computation of MOLAP
+* Specialized SQL Servers: provides advanced query language and query processing support for SQL queries over star and snowflake schemas in a read-only environment
 
 #### Centralized Data Warehouse
 * Use single database; One stop shopping for data to support business decisions
