@@ -2,9 +2,25 @@
 
 Taken from [Udemy class Data Warehouse Fundamentals for Begineers](https://www.udemy.com/course/data-warehouse-fundamentals-for-beginners/)
 
+[Tutorialspoint Data Warehousing Tutorial](https://www.tutorialspoint.com/dwh/index.htm)
+
 ### Data Warehousing Concepts
 #### Value
 Data warehousing is the fundemental underpinning of modern data-driven decision making (past, present, future, the unknown).
+
+Bill Inmon (1990): a data warehouse is a subject oriented, integrated, time-variant, and non-volatile collection of data
+
+#### Terminologies
+* Metadata: data that are used to represent other data
+* Metadata Repository: contains the following metadata (Business, Operational, Data for mapping from operational environment to data warehouse, The algorithms for summarization)
+* Data Cube: represent data in multiple dimensions; defined by dimensions and facts
+* Data Mart: subset of organization-wide data that is valuable to specific groups of people in an organization
+ 
+#### Process Flow 
+* Extract and load the data.
+* Cleaning and transforming the data.
+* Backup and archive the data.
+* Managing queries and directing them to the appropriate data sources.
 
 #### What is a data warehouse
 
@@ -18,6 +34,25 @@ Data warehousing is the fundemental underpinning of modern data-driven decision 
 * Data virtualization is read-only DDBMS (distributed database management system).
 
 ### Data Warehousing Architecture
+
+#### Business Analysis Framework
+* Top-down view: allows the selection of relevant information needed for a data warehouse.
+* Data source view: presents the information being captured, stored, and managed by the operational system.
+* Data warehouse view: includes the fact tables and dimension tables. It represents the information stored inside the data warehouse.
+* Business query view : view of the data from the viewpoint of the end-user
+
+#### Three-Tier Architecture
+* Bottom Tier − the data warehouse database server. It is the relational database system. We use the back end tools and utilities to feed data into the bottom tier by performing the Extract, Clean, Load, and refresh functions.
+
+* Middle Tier − the OLAP Server that can be implemented in either of the following ways.
+
+  - By Relational OLAP (ROLAP): an extended relational database management system; maps the operations on multidimensional data to standard relational operations.
+
+  - By Multidimensional OLAP (MOLAP) model: directly implements the multidimensional data and operations.
+
+* Top-Tier - the front-end client layer; holds the query tools and reporting tools, analysis tools and data mining tools.
+
+
 #### Centralized Data Warehouse
 * Use single database; One stop shopping for data to support business decisions
 * Hostorical challenges: technology, work processes
