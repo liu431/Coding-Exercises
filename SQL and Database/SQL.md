@@ -105,6 +105,7 @@ Return the first non-null value in a list
 
 ### Transform Data
 #### Date functions
+[DATE_FORMAT](https://www.w3schools.com/sql/func_mysql_date_format.asp)
 ```sql
 YEAR(date) # Return the year part of a date
 MONTH(date) # Return the month part of a date
@@ -112,6 +113,7 @@ DAY(date) or DAYOFMONTH(date) # Return the day of the month for a date, 'mon'
 DAYOFWEEK(date) # Return the weekday index for a date; Sunday is 1
 DATEDIFF(date1, date2) # Return number of days between (date1 - date2)
 DATE_FORMAT(date, "%Y-%m") # Return the date as Year-Month
+DATE_FORMAT(day, "%W, %M %e, %Y") # "day_name, month_name day, year" Ex.  Tuesday, April 12, 2022
 ```
 
 #### Ranking function
