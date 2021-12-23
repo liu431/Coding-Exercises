@@ -232,8 +232,16 @@ SELECT ID,  AllNames = STUFF(
 FROM temp1 t2
 GROUP BY ID;
 ```
+### [Subqueries](https://mode.com/sql-tutorial/sql-sub-queries/)
+* To aggregate in multiple stages
+* In Conditional logic (in conjunction with WHERE, JOIN/ON, or CASE)
+* Joining subqueries
+* UNION to combine tables vertically
+
 
 ### CTE (Common Table Expressions)
+A query that we create using WITH clause before writing the main query
+
 #### Recursive CTE (having a subquery that refers to its own name)
 ```sql
 WITH RECURSIVE cte (n) AS
