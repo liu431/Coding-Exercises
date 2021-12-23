@@ -102,7 +102,7 @@ Go through conditions and return a value when the first condition is met
 ```sql
 SELECT CustomerName
 FROM 
-(SELECT *, SUM(CASE WHEN Product='phone' THEN 1 ELSE 0) AS Phones
+(SELECT *, SUM(CASE WHEN Product='phone' THEN 1 ELSE 0 END) AS Phones
 FROM Customer
 GROUP BY CustomerName) t
 WHERE Phones > 0
@@ -133,7 +133,7 @@ MONTH(date) # Return the month part of a date
 DAY(date) or DAYOFMONTH(date) # Return the day of the month for a date, 'mon'
 DAYOFWEEK(date) # Return the weekday index for a date; Sunday is 1
 DATEDIFF(date1, date2) # Return number of days between (date1 - date2)
-DATE_FORMAT(date, "%Y-%m") # Return the date as Year-Month
+DATE_FORMAT(date, "%Y-%m") # Return the date as Year-Month; m: month number; M: English word of the month 
 DATE_FORMAT(day, "%W, %M %e, %Y") # "day_name, month_name day, year" Ex.  Tuesday, April 12, 2022
 ```
 
