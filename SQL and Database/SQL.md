@@ -112,6 +112,19 @@ WHERE Phones > 0
 Return the first non-null value in a list
 
 ### Transform Data
+
+#### Strings
+
+* [SUBSTRING(string, start, length)](https://www.w3schools.com/sql/func_mysql_substring.asp): extract a substring from a string
+* [LENGTH()](https://www.w3schools.com/sql/func_mysql_length.asp): return the length of the string
+
+##### Ex. (Leetcode 1667) Fix the names so that only the first character is uppercase and the rest are lowercase
+```sql
+SELECT user_id, CONCAT(UPPER(LEFT(name,1)), LOWER(SUBSTRING(name, 2))) AS name
+FROM Users
+ORDER BY user_id
+```
+
 #### Date functions
 [DATE_FORMAT](https://www.w3schools.com/sql/func_mysql_date_format.asp)
 ```sql
