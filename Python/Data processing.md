@@ -146,3 +146,7 @@ def column2Index(df, colname='ID'):
     df.drop([colname], axis=1, inplace=True)
     return df
 ```
+
+
+### Summary of commands
+![](https://media-exp1.licdn.com/dms/image/C4E22AQGEBF8Ihm81ng/feedshare-shrink_800/0/1640185264820?e=1643241600&v=beta&t=6TQHBPZPpuRpL5ue0hQNNk6hNUo_J91sgIaGlt9dlms)
