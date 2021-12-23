@@ -137,10 +137,31 @@ DATE_FORMAT(date, "%Y-%m") # Return the date as Year-Month; m: month number; M: 
 DATE_FORMAT(day, "%W, %M %e, %Y") # "day_name, month_name day, year" Ex.  Tuesday, April 12, 2022
 ```
 
+
+### [Windows](https://mode.com/sql-tutorial/sql-window-functions/)
+Def:  performs a calculation across a set of table rows that are somehow related to the current row; the rows retain their separate identities
+
+_OVER()_: designates it as a window function
+
+_PARTITION BY_: narrow the window from the entire dataset to individual groups
+
+#### Window alias
+Purpose: avoid rewriting same window functions several times
+
+Syntax: WINDOWS _name_ AS (PARTITION BY _var1_ ORDER BY _var2_); come after the WHERE clause
+
+```sql
+SELECT State, ClientValue, NTILE(4) OVER ntile_window AS quartile, NTILE(100) OVER ntile_window AS percentile
+FROM tbl
+WINDOWS ntile_window AS (PARTITION BY State ORDER BY ClientValue)
+ORDER BY State, ClientValue
+```
+
 #### Ranking function
-* dense_rank(): assign rank to each row within a partition without gaps
-* rank(): assign rank to each row within a partition with gaps
-* percent_rank(): returns the percentile rank of a row within a partition that ranges from 0 to 1
+* DENSE_RANK(): assign rank to each row within a partition without gaps. Ex. 1,1,2
+* RANK(): assign rank to each row within a partition with gaps. Ex. 1,1,3
+* PERCENT_RANK(): returns the percentile rank of a row within a partition that ranges from 0 to 1
+* NTILE(*# of buckets*): identify what percentile (or quartile, or any other subdivision) a given row falls into
 
 ##### Ex. Find years when products were first sold 
 ```sql
@@ -160,9 +181,10 @@ FROM Orders
 * [ROW_NUMBER()](https://www.mysqltutorial.org/mysql-window-functions/mysql-row_number-function/): assigns a sequential number to each row in the result set
 
 
-#### Aggregate functions
+#### Aggregation
 * COUNT(): return the number of rows that matches a specified criterion.
 * SUM(): return the total sum of a numeric column
+* AVG(): return the average of a numeric column
 
 ##### [Running total](https://popsql.com/learn-sql/mysql/how-to-calculate-cumulative-sum-running-total-in-mysql)
 ```sql
@@ -174,8 +196,6 @@ SELECT year, SUM(Counts) OVER (ORDER BY year) AS cum_sum
 FROM ClientCountsByYear;
 ```
 
-* AVG(): return the average value of a numeric column
- 
 ##### Ex. Given salary(department_id,employee_id,salary), list all employees with salary greater than the average department salary and also greather than $50K
 ```sql
 SELECT employee_id
