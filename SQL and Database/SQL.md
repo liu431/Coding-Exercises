@@ -1,5 +1,9 @@
 ## SQL Notes
-Link: [W3 SQL Tutorial](https://www.w3schools.com/sql/)
+Links: 
+[W3 SQL Tutorial](https://www.w3schools.com/sql/)
+
+[Model Advanced SQL](https://mode.com/sql-tutorial/intro-to-advanced-sql/)
+
 ### Table Joins (combine columns from two or more tables)
 * (INNER) JOIN: returns records that have matching values in both tables
 * LEFT (OUTER) JOIN: returns all records from the left table, and the matched records from the right table
@@ -111,12 +115,26 @@ WHERE Phones > 0
 #### COALESCE()
 Return the first non-null value in a list
 
+COALESCE() vs. ISNULL()
+* COALESCE translates to CASE expression and ISNULL is a built-in implemented in the database engine.
+* COALESCE() can have multiple inputs and it will evaluate in order until one of them is not null such as COALESCE(Col1, Col2, Col3, 'N/A')
+
 ### Transform Data
+
+#### Change data types
+* CAST(column_name AS integer)
+* column_name::integer
 
 #### Strings
 
 * [SUBSTRING(string, start, length)](https://www.w3schools.com/sql/func_mysql_substring.asp): extract a substring from a string
 * [LENGTH()](https://www.w3schools.com/sql/func_mysql_length.asp): return the length of the string
+* LEFT(string, number of characters): pull a certain number of characters from the left side of a string 
+* RIGHT(string, number of characters): pull a certain number of characters from the right side of a string 
+* TRIM(both '()' FROM col): remove '(' and ')' from both 'leading' and 'trailing' from the string col
+* POSITION('A' IN col) OR STRPOS(col, 'A'): returns a numerical value equal to the character number (counting from left) where that substring first appears in the target string; similar to s.index('A') + 1 in Python 
+* SUBSTR(*string*, *starting character position*, *# of characters*): start in the middle of a string
+* CONCAT(col1, '', col2) or (col1 || ' ' || col2): combine strings from several columns together (and with hard-coded values)
 
 ##### Ex. (Leetcode 1667) Fix the names so that only the first character is uppercase and the rest are lowercase
 ```sql
@@ -127,15 +145,16 @@ ORDER BY user_id
 
 #### Date functions
 [DATE_FORMAT](https://www.w3schools.com/sql/func_mysql_date_format.asp)
-```sql
-YEAR(date) # Return the year part of a date
-MONTH(date) # Return the month part of a date
-DAY(date) or DAYOFMONTH(date) # Return the day of the month for a date, 'mon'
-DAYOFWEEK(date) # Return the weekday index for a date; Sunday is 1
-DATEDIFF(date1, date2) # Return number of days between (date1 - date2)
-DATE_FORMAT(date, "%Y-%m") # Return the date as Year-Month; m: month number; M: English word of the month 
-DATE_FORMAT(day, "%W, %M %e, %Y") # "day_name, month_name day, year" Ex.  Tuesday, April 12, 2022
-```
+
+* YEAR(date) # Return the year part of a date
+* MONTH(date) # Return the month part of a date
+* DAY(date) or DAYOFMONTH(date) # Return the day of the month for a date, 'mon'
+* DAYOFWEEK(date) # Return the weekday index for a date; Sunday is 1
+* DATEDIFF(date1, date2) # Return number of days between (date1 - date2)
+* DATE_FORMAT(date, "%Y-%m") # Return the date as Year-Month; m: month number; M: English word of the month 
+* DATE_FORMAT(day, "%W, %M %e, %Y") # "day_name, month_name day, year" Ex.  Tuesday, April 12, 2022
+* NOW() # Get current time as "YYYY-MM-DD HH-MM-SS" (string)
+* [DATE_TRUNC('[interval]', time_column)](https://mode.com/blog/date-trunc-sql-timestamp-function-count-on/)
 
 
 ### [Windows](https://mode.com/sql-tutorial/sql-window-functions/)
