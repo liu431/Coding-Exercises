@@ -299,7 +299,9 @@ Sort the relevant values in both ascending and descending order
 ##### NTILES()
 Separate our data into the same number of groups as the value inside the brackets
 
-#### Pivot — Rows to Columns; allow you to display row values as columns
+#### [Pivot](https://mode.com/sql-tutorial/sql-pivot-table/)
+Rows to Columns; allow you to display row values as columns
+
 MySQL does not have PIVOT function; use a CASE expression along with an aggregate function
 
 [PIVOT and UNPIVOT in SQL Server](https://docs.microsoft.com/en-us/sql/t-sql/queries/from-using-pivot-and-unpivot?view=sql-server-ver15)
