@@ -51,10 +51,45 @@ except:
 
 ### List
 
+#### [Use a dictionary to count the items in a list](https://stackoverflow.com/questions/3496518/using-a-dictionary-to-count-the-items-in-a-list)
+```python
+# Use Counter
+from collections import Counter
+Counter(s)
+
+# Use .get method in dictionary
+counts = dict()
+for i in s:
+  counts[i] = counts.get(i, 0) + 1
+  
+# Use count method in list
+{x : s.count(x) for x in set(s)}
+
+# For loop
+counts = {}
+for i in s:
+    if i not in s:
+        s[i] = 1
+     else:
+        s[i] += 1
+```
+
+
 #### [Sort a list according to the second element in sublist](https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/)
 ```python
 a = [[1,2],[2,3],[3,1]]
-sorted(a, key=lambda x:x[1], reverse=True) # [[2,3],[1,2],[3,1]]
+sorted(a, key=lambda x: x[1], reverse=True) # [[2,3],[1,2],[3,1]]
+```
+
+#### [Sort a list by multiple attributes](https://stackoverflow.com/questions/4233476/sort-a-list-by-multiple-attributes/4233482)
+```python
+# Use lambda function that returns a tuple
+s = sorted(s, key = lambda x: (x[1], x[2]))
+
+# Use itemgetter 
+import operator
+s = sorted(s, key = operator.itemgetter(1, 2))
+s.sort(key = operator.itemgetter(1, 2))
 ```
 
 ### Bit
