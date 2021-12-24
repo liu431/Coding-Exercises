@@ -79,6 +79,14 @@ WHERE is applied before GROUP BY, HAVING is applied after (and can filter on agg
 A HAVING clause is like a WHERE clause, but applies only to groups as a whole (that is, to the rows in the result set representing groups), whereas the WHERE clause applies to individual rows. [Link](https://docs.microsoft.com/en-us/sql/ssms/visual-db-tools/use-having-and-where-clauses-in-the-same-query-visual-database-tools?view=sql-server-ver15)
 _MySQL allows referencing SELECT level aliases in GROUP BY, ORDER BY and HAVING._
 
+#### [IN, ANY and ALL](https://stackoverflow.com/questions/3699356/difference-between-in-and-any-operators-in-sql/22779071)
+Perform a comparison between a single column value and a range of other values.
+* IN (): equals to anything in the List
+* ANY(): compare value to each value returned by the subquery
+  - < ANY: less than the maximum value in the list
+  - > ANY: more than the minimum value in the list
+  - =ANY: equivalent to In operator
+* ALL(): compare value To every value returned by the subquery
 
 #### EXISTS: test for the existence of any record in a subquery; return TRUE if the subquery returns one or more records
 ##### Ex. Find clients who have purchased products over $100
@@ -232,6 +240,7 @@ SELECT ID,  AllNames = STUFF(
 FROM temp1 t2
 GROUP BY ID;
 ```
+
 ### [Subqueries](https://mode.com/sql-tutorial/sql-sub-queries/)
 * To aggregate in multiple stages
 * In Conditional logic (in conjunction with WHERE, JOIN/ON, or CASE)
