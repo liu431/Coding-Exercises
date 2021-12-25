@@ -23,3 +23,7 @@ SELECT DISTINCT(spend_date), 'both' platform FROM Spending)
 SELECT spend_date, platform, IFNULL(SUM(amount), 0) AS total_amount, IFNULL(COUNT(DISTINCT user_id), 0) AS total_users
 FROM grouplist LEFT JOIN NewS USING (spend_date, platform)
 GROUP BY spend_date, platform
+
+
+# not quite optimized
+# better solution idea: https://leetcode.com/problems/user-purchase-platform/discuss/338776/MySQL-Solution-With-Explanations-(Faster-Than-100)
