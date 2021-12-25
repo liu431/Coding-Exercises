@@ -225,25 +225,162 @@ Primary key: combination of all foreign keys (surrogare) relating back to dim ta
       - Ex. Academic advisors assigned to students
         - Advisor_Assign_fact: Student_Key (PK, FK), Advisor_Key (PK, FK), Date_Begin_Key (PK, FK), Date_End_Key (PK, FK)
 
+* SQL for Dim and Fact Tables
+  - Star schema dim tables
+    ```sql
+    CREATE TABLE FACULTY_DIM (
+    Faculty_Key    INT NOT NULL,
+    Faculty_ID     VARCHAR(10) NOT NULL,
+    Year_Joined    INT,
+    ...
+    Dept_ID        VARCHAR(10) NOT NULL,
+    ...
+    College_ID     VARCHAR(10) NOT NULL,
+    ...
+    PRIMARY KEY(Faculty_Key)
+    );
+    ```
+    
+   - Snowflake schema 
+     - Non-terminal dim tables
+     ```sql
+     CREATE TABLE FACULTY_DIM (
+     Faculty_Key    INT NOT NULL,
+     Faculty_ID     VARCHAR(10) NOT NULL,
+     Year_Joined    INT,
+     Department_Key INT NOT NULL,
+     PRIMARY KEY(Faculty_Key),
+     FOREIGN KEY (Department_Key) REFERENCES Department_DIM (Department_Key)
+     );
+     ```
+
+     - Terminal dim tables (no foreign key to references other tables)
+     ```sql
+     CREATE TABLE College_DIM (
+     Faculty_Key    INT NOT NULL,
+     Faculty_ID     VARCHAR(10) NOT NULL,
+     Year_Joined    INT,
+     PRIMARY KEY(College_Key),
+     );
+     ```
+
+   - Transaction-grained fact table
+     ```sql
+     CREATE TABLE Tuition_Bill_Fact (
+     Student_Key       INT NOT NULL,
+     Date_Key          INT NOT NULL,
+     Tuition_Bill_Amt  DECIMAL(8,2) NOT NULL,
+     PRIMARY KEY (Student_Key, Date_Key),
+     FOREIGN KEY (Student_Key) REFERENCES Student_DIM (Student_Key),
+     FOREIGN KEY (Date_Key) REFERENCES Date_DIM (Date_Key)
+     );
+     ```   
+
+   - Periodic snapshot fact table
+     ```sql
+     CREATE TABLE Meal_Card_Pmt_Fact (
+     Student_Key        INT NOT NULL,
+     Date_Key           INT NOT NULL,
+     Campus_Food_Key    INT NOT NULL,
+     Meal-Card_Balance  DECIMAL(8,2) NOT NULL,
+     PRIMARY KEY (Student_Key, Date_Key, Campus_Food_Key),
+     FOREIGN KEY (Student_Key) REFERENCES Student_DIM (Student_Key),
+     FOREIGN KEY (Date_Key) REFERENCES Date_DIM (Date_Key),
+     FOREIGN KEY (Campus_Food_Key) REFERENCES Date_DIM (Campus_Food_Key)
+     );
 
 
 
 
+### Slowly Changing Dimensions
+* Techniques to manage history within data warehouse
+* Enables warehouse to appropriately manage history regardless of policies in transactional applications
+* 3 main policies for historical data
+  - Overwrite old date; no history retention -> Type 1
+  - Maintain unlimited history with new row -> Type 2
+  - Maintain limited history with new column -> Type 3
+  - (Always retain original value -> Type 0)
+
+* Compare 3 main SCD types
+
+| SCD Type | Techniques | Implications |
+| -------- | ---------- | ----------- |
+| Type 1 | "In-Place Update" ETL pattern | Simpliest, but no history maintained
+| Type 2 | Create new dim table row for each new history version | Most architecturally complex, but robust representation of hostory |
+| Type 3 | Smallest number of dim table columns for multiple history versions | Easily switch back and forth between "as-is" and "as-was" reporting, but limited use cases |
+
+* Design a Type 1 SCD
+  - Replace old value with new value at same place; common for correct errors
+  - UPDATE statement
+
+| Adv | Disadv | 
+| -------- | ---------- |
+| Simpliest and most straightforward | Might still want hostory of errors for auditing purposes|
+| Data warehouse content errors are purged forever | Reporting before and after Type 1 change could vary |
+| best for error correction and any other "don't need any history" situations | Tendency to overuse Type 1 changes since much simpler than Type 2 |
 
 
+* Design a Type 2 SCD
+  - Existing row remains as-is; common for new/update attribute value
+  - New row added to the dim table
+  - New role reflects current state of all attributes
+  - Complications with reporting and analytics
+  - Best handled through careful "multi-step" SQL between dim tables and fact tables
+  - Indicate order of versions
+    - Use Current_Flag 
+    - Use effective/expiration dates
+    - Kimball (DW Toolkit): use both flag and effective/expiration dates
+ 
+ * Design a Type 3 SCD
+   - Add new column rather than new row to reflect changes
+   - "Old value" column and "new value" column
+   - For flexible reporting
+   - Use case where every row in a dim table is changed at the same time, such as reorganization
+   - Could have 3 or 4 columns
+
+### Design ETL
+* Factors for design: ETL architecture, Dim & Fact table models, Star & Snowflake schemas, Slowly changing dim
+* Limit amount of incoming data to be processes; use "change data capture" (use transactional data timestamps to process only new data)
+* Process dim tables before fact tables as dimension table surrogate keys are needed for fact tables
+* Opportunities for parallel processing
+* ETL for Dim table with star scheme
+  - Step 1: prepare data; significant smallest amount of data subset
+  - Step 2: transform data
+  - Step 3: process new dim rows
+    - For each row:
+      - If new: add to DIM table
+      - If not new: process any Type 1 and Type 2 changes
+  - Step 4: process SCD Type 1 changes
+    - Basic in-place update
+    - Might need to apply any given Type 1 change to more than 1 row; Look for all dim table rows for that natural key 
+  - Step 5: process SCD Type 2 changes
+    - Basic append with new surrogate key
+    - Use natural key as the guide
+
+* ETL for fact tables
+  - Transactional systems provide natural keys
+  - Recommend using combination of both flag and effective/expiration dates
 
 
+### Environment
+#### Cloud vs. On-premise
+* Adv to cloud-based DH
+  - Offload routine syste, maintenance and upgrades
+  - Lower initial platform investment
+  - Diaster recovery
+  - Data lake/big data synergies
 
+* Disadv to clou-based DH
+  - Security
+  - Migrate existing DWs from on-premises to cloud
+  - Cloud-to-cloud data transport
+  - Expensive for data egress
 
+* Trend
+  - Shift to cloud
+  - Dake lakes alongside or succeed DH
 
-
-
-
-
-
-
-
-
+Think dimensional (at least for user-facing BI)!
 
 
 
