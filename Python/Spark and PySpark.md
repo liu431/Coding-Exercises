@@ -94,6 +94,14 @@ jupyter notebook
 ### Python and Spark 2.0 DataFrames
 * Spark DataFrames hold data in a column and row format
 
+```python
+import findspark
+findspark.init('/home/ubuntu/spark-3.2.0-bin-hadoop3.2')
+import pyspark
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.appName('Basics').getOrCreate()
+df = spark.read.json()
+...
 
 ### PySpark Project Exercise
 
