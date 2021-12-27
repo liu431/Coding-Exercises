@@ -38,4 +38,38 @@ Impression -> Click -> Install -> Open -> Signup -> Purchase -? Re-purchase -> U
     - Tip: use paid ads to find your customer or improve SEO
   - Egp + trust in others (affiliates, influencers, etc)
 
-### Organic Acquisitions
+### Organic Acquisitions and SEO
+* SEO stack for 2020
+  - Target by __intent__
+  - Build __topical authority__
+  - Design __UX__ to fulfill intent
+  - Create __premium content__ to fulfill intent
+  - Drive users to __convert__ on their intent
+
+
+### Virality and User Driven Growth
+* Turn app users into advocates
+* 3 levels to pull: incentives, ego, emotion
+* Build a referral program
+  - Simple to understand
+  - Cear CTA (call to action) button
+  - Give an incentive
+  - Appeal to emotion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
