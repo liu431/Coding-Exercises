@@ -69,13 +69,53 @@ Acquisition -> Activiation -> Retention -> Referral -> Revenue
 
 * Activation metrics -> north Star metric
   - Signup rate -> Active users
+    - Signups = # Users (signed out) * Clicked signup trigger -> Clicked signup button 
   - App install rate -> App users 
   - Subscription rate -> Subscribers
   - Extension instll rate -> Extension users 
   - Purchase rate -> GMV (gross mechandise value)
   - First pin rate -> Active pinners
 
-* 
+### Retention
+* Undserstand why users churn
+
+| Reason | Research method |
+| --- | --- |
+|Product market fit| Net Promoter Score|
+|Activation|Completion of onboardin/ new user experience|
+|Usage frequency|Compare against similar products|
+|Cost|Pricing analysis|
+|Bugs|Customer support, twitter, reviews|
+|Low intent users|Surveys, screen recording|
+
+* Retention tactics
+  - Make the onboarding process efficient and easy
+  - Define and track LTV: reaccess your growth channels to determine which users have the greatest LTV and which sources they came from
+  - Get push notifications right
+  - Bring personalization to every aspect of customer communciations
+  - Use referrals as a re-engagement strategy
+  - A/B test: test and measure
+  - Drive users to the app from all channels
+
+### Measurement
+* Metrics
+  - Brand awareness (direct traffic, branded searches)
+  - Lead generation
+  - Customer acquisition
+  - Engagement
+  - Revenue
+  - Customer retention or loyalty
+  - Lead management and nurturing
+
+* Cohort analysis questions
+  - Which ad campaign drives the most revenue from acquired users?
+  - Am I retaining users that I acquire from ads over time?
+  - Which ad campaign gives me the highest ROI?
+  - Cross-channel retention: Are retention rates higher for my paid users or my organic users?
+  - Which channel acquires users with the highest LTV?
+  - For users I re-engage in an email campaign, how much revenue do I drive on web vs. app?
+  - 
+
 
 
 
