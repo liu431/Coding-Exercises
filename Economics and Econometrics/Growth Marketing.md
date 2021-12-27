@@ -56,6 +56,27 @@ Impression -> Click -> Install -> Open -> Signup -> Purchase -? Re-purchase -> U
   - Give an incentive
   - Appeal to emotion
 
+* Measurement of virality
+  - ROI: measure ROI on D180 after date of acquisition
+  - __K-factor__ as a growth rate where K = number of invites each user sends out * conversion rate at which invitions convert into new users
+    - K > 1: user base growth
+    - K = 1: steady state
+    - K < 1: use base declines
+ 
+### Activation (convert acquired users to grow the north star)
+* Lifecycle
+Acquisition -> Activiation -> Retention -> Referral -> Revenue
+
+* Activation metrics -> north Star metric
+  - Signup rate -> Active users
+  - App install rate -> App users 
+  - Subscription rate -> Subscribers
+  - Extension instll rate -> Extension users 
+  - Purchase rate -> GMV (gross mechandise value)
+  - First pin rate -> Active pinners
+
+* 
+
 
 
 
