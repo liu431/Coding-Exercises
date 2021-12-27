@@ -48,11 +48,52 @@ Spark will run on a cluster on a service, like AWS.
   - EC2: provide resizable compute capacity in the cloud
   - A VM we can access through the internet
   - How to connect: [Connect to your Linux instance from Windows using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
+  - Host name: ubuntu@DNS_Name; Browse ppk key; Connect
+  - Installations on EC2
+  
+```bash
+sudo apt-get update # update everything
+clear # clear console
+sudo apt install python3-pip # install python
+pip3 install jupyter # install jupyter
+sudo apt-get install default-jre # install Java
+java -version # confirm java instllation
+sudo apt-get install scala
+scala -version # confirm scala instllation
+pip3 install py4j # py4j library
+wget http://archive.apache.org/dist/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz # install Spark
+sudo tar -zxvf spark-3.2.0-bin-hadoop3.2.tgz # unzip file
+ls # list files
+cd spark-3.2.0-bin-hadoop3.2/ # change directory
+pwd # print working directory (/home/ubuntu/spark-3.2.0-bin-hadoop3.2)
+cd # return to home directory
+pip3 install findspark # help connect Pythonand Spark
+sudo -H pip install jupyter # fix jupyter 
+jupyter notebook --generate-config # generate config .py file
+mkdir certs # make new dir certs
+cd certs # open certs dir
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mycert.pem -out mycert.pem # create certification
+cd ~/.jupyter/
+vi jupyter_notebook_config.py
+# in vi editor, press 'i' for insert
+c = get_config()
+c.NotebookApp.certfile = u'/home/ubuntu/certs/mycert.pem'
+c.NotebookApp.ip = '*'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port = 8888
+# type "Esc" and type ":wq!" to quite vi
+sudo chmod 777 mycert.pem
+cd
+jupyter notebook
+# Copy the IP address; replace localhost with DNS from AWS
+```
 
 * Databricks Notebook System
 * AWS EMR Notebook
 
 ### Python and Spark 2.0 DataFrames
+* Spark DataFrames hold data in a column and row format
+
 
 ### PySpark Project Exercise
 
