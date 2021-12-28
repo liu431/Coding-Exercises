@@ -19,6 +19,15 @@
 * IAP LTV: The LTV from in-app purchases for a user cohort. 
 * Ads LTV: The LTV from ads revenue for a user cohort. The ads revenue is the total revenue from the AdMob Network, your bidding ad sources, and your estimated third-party revenue. 
 
+#### Profitability 
+* Return on Investment (ROI)
+  - Evaluate the efficiency or profitability of an investment or compare the efficiency of a number of different investments  
+  - ROI = (Current Value of Investment - Cost of Investment) / Cost of Investment
+* [Rate of Return (RoR)](https://www.investopedia.com/terms/r/rateofreturn.asp)
+  - Net gain or loss of an investment over a specified time period, expressed as a percentage of the investment’s initial cost.   
+  - RoR = [(Current Value - Initial Value) / Initial Value] * 100
+  
+
 #### Price and Cost
 * [Gross margin](https://www.profitwell.com/recur/all/blog/gross-margin/): subtract the cost of goods sold from net sales
 * [Average Revenue Per User (ARPU)](https://www.profitwell.com/recur/all/average-revenue-per-user): divide total revenue by average users during a specific period
