@@ -12,7 +12,7 @@
  
  > Field of study that gives computers the ability to learn without being explicitly programmed. -Arthur Samuel, IBM, 1959
  
-### Model
+### General terms for ML Model
 
 Common form: <img src="https://render.githubusercontent.com/render/math?math=y=f(x)">+<img src="https://render.githubusercontent.com/render/math?math=\epsilon">; Interested in estimating functional form of f(x)
   
@@ -20,9 +20,7 @@ Approaches:
 * Parametric
 * Non-parametric estimation
  
-### Selecting and fitting a model
-
-### Flexible models vs. inflexible models 
+#### Flexible models vs. inflexible models 
  
   `Flexibility` is a measure of how much a fitted model can vary with a given data.
   
@@ -30,11 +28,11 @@ Approaches:
   
   * Example of inflexible models (low variance, high bias): linear regression
 
- * When a inflexible model is preferred:
+ * When an inflexible model is preferred:
  
    1. interpretablility: understand how the explanatory variables affect the response variable
       
-   2. a small e size (small n) and large number of predictors (large p)
+   2. a small sample size (small n) and large number of predictors (large p)
    
    3. the variance of the error terms, i.e. <img src="https://render.githubusercontent.com/render/math?math=sigma^{2}=Var(\epsilon)">, is extremely high
  
@@ -48,38 +46,26 @@ A flexible model will cause you to fit too much of the noise in the problem (whe
 
 [Quora answer](https://www.quora.com/What-are-flexible-statistical-learning-methods)
 
-### Error
-
-Error = Irreducible Error + <img src="https://render.githubusercontent.com/render/math?math=Bias^2"> + Variance
-
-### Error/ Bias / Variance
-
-#### Bias
-
-Error caused by choosing an algorithm that cannot accurately model the signal in the data, i.e. the model is too general or was incorrectly selected. For example, selecting a simple linear regression to model highly non-linear data would result in error due to bias.
-
-#### Variance
-
-Error from an estimator being too specific and learning relationships that are specific to the training set but do not generalize to new samples well. Variance can come from fitting too closely to noise in the data, and models with high variance are extremely sensitive to changing inputs. Example: Creating a decision tree that splits the training set until every leaf node only contains 1 sample.
-
-#### Irreducible error 
-
-error caused by noise in the data that cannot be removed through modeling. Example: inaccuracy in data collection causes irreducible error.
-
-[Kyle McKiou Blog](https://www.linkedin.com/posts/kylemckiou_datascience-dsdj-qanda-activity-6619603364747575296-w0Ka)
-
+#### [Error/ Bias / Variance]((https://www.linkedin.com/posts/kylemckiou_datascience-dsdj-qanda-activity-6619603364747575296-w0Ka))
 [Tradeoff Infographics](https://elitedatascience.com/bias-variance-tradeoff)
 
+* Error = Irreducible Error + <img src="https://render.githubusercontent.com/render/math?math=Bias^2"> + Variance
+* Bias
+Error caused by choosing an algorithm that cannot accurately model the signal in the data, i.e. the model is too general or was incorrectly selected. For example, selecting a simple linear regression to model highly non-linear data would result in error due to bias.
 
-#### Bias-variance tradeoff
+* Variance
+Error from an estimator being too specific and learning relationships that are specific to the training set but do not generalize to new samples well. Variance can come from fitting too closely to noise in the data, and models with high variance are extremely sensitive to changing inputs. Example: Creating a decision tree that splits the training set until every leaf node only contains 1 sample.
 
-trade-off between underfitting and overfitting
+* Irreducible error 
+Error caused by noise in the data that cannot be removed through modeling. Example: inaccuracy in data collection causes irreducible error.
 
-From simple to complex models, flexibility increases, variance increases, bias decreases.
+* Bias-variance tradeoff
+
+From simple to complex models, flexibility increases, variance increases, bias decreases; underfitting -> overfitting
 
 As you decrease variance, you tend to increase bias. As you decrease bias, you tend to increase variance.
 
-<img src="/images/ML/Biasvariance.png" class="img-responsive" alt=""> 
+![](http://scott.fortmann-roe.com/docs/docs/BiasVariance/biasvariance.png)
 
 Metrics for evaluating models
 
@@ -87,19 +73,17 @@ Metrics for evaluating models
 
 ### TPR/FPR/TNR/FNR
 
-Optimization Methods
+### Optimization Methods
 
-1. Netwon's method
+* Netwon's method
 
-2. Quasi-Newton methods (ex. LBFGS)
+* Quasi-Newton methods (ex. LBFGS)
+* Gradient Descent
 
-3. Gradient Descent
-
-### Overfitting
-
+#### [Overfitting]((https://www.linkedin.com/posts/kylemckiou_datascience-dsdj-machinelearning-activity-6613065673839120386-vAYB))
 When a model makes much better predictions on known data (data included in the training set) than unknown data (data not included in the training set); High variance, low bias; Flexible model
 
-Combate overfitting:
+Deal with overfitting:
 
 * simplify the model by use fewer parameters
 * simply the model by changing the hyperparameters
@@ -108,136 +92,14 @@ Combate overfitting:
 * use more training data
 * gather better quality data
 
-[Kyle McKiou Blog](https://www.linkedin.com/posts/kylemckiou_datascience-dsdj-machinelearning-activity-6613065673839120386-vAYB)
 
-
-Hyper-parameter tuning 
-
-### Resampling Methods
-
-* Essential to test and evaluate statistical models
-
-* Repeatedly draw from your original sample to obtain additional information about the model
-
-### Encoding categorical data
-
-* Label encoding (non-ordinal) - each category is assigned a numeric value not representing any ordering. Example: [red, blue, green] could be encoded to [8, 5, 11].
-
-* Label encoding (ordinal) - each category is assigned a numeric value representing an ordering. Example: [small, medium, large] could be encoded to [1, 2, 3]
-
-* One-hot encoding - each category is transformed into a new binary feature, with all records being marked 1/True or 0/False. Example: color = [red, blue, green] could be encoded to color_red = [1, 0, 0], color_blue = [0, 1, 0], color_green = [0, 0, 1]
-
-[Kyle McKiou Blog](https://www.linkedin.com/posts/kylemckiou_describe-basic-feature-encoding-for-categorical-activity-6621763235186118656-PKU7)
-
-### Train and testing set
-
-* training set is used for model construction (can be reused many times to build different models)
-
-* test set is used to evaluate the performance of the final model (can be used only once)
-
-### Validation
-
-* Intuition: fit the model and evaluate it many times on the same data
-
-* Method: split half of the training data as validation set
-
-* Drawback: validation estimates of the test error rates can be highly variable depending on which observations are sampled into the training and validation sets (ex. outliers in the validation sets)
-
-### Cross-validation
-
-_for evaluating a model’s performance relative to other models_
-
-1. LOOCV: leave-one-out cross validation
-
-only remove one observation for the validation set, and keep all remaining observations in the training set
-
- <img src="https://render.githubusercontent.com/render/math?math= CV_N = {\frac{1}{N}}{\sum_{i=1}^{N}}MSE_i <img src="https://render.githubusercontent.com/render/math?math=
-
-* Pro: unbiased compared to naive 1-stage validation approach
-
-* Pro: highly flexible and works with any kind of predictive modeling
-
-* Cro: high variance because the N "training sets" are so similar to one another; 
-
-* Cro: computationally expensive
-
-2. K-fold cross-validation: divides the observations into K folds of approximately equal size
-
-Typical K= 5 or 10; Random sampling without replacement
-
- <img src="https://render.githubusercontent.com/render/math?math= CV_K = \frac{1}{K}\sum_{i=1}^{K}MSE_i <img src="https://render.githubusercontent.com/render/math?math=
-
-* Pro: less variance in test error estimate compared with LOOCV
-
-* Cro: leads to a slight increase in usually bias
-
-3. Other validations
-
-* Stratified cross-validation
-
-* Repeated cross-validation 
-
-* Cross-validation with time series data
-
-### Bootstrapping
-
-_non-parametric measure of the accuracy of a parameter estimate or method_
-
-Purpose: quantify uncertainty associated with some estimator
-
-Loss
-
-1. MSE/Sum of squared errors
-
-2. Cross-entropy
-
-3. Kullback-Leibler (KL) divergence
-
-4. Gini impurity for decision tree
-
-5. Information gain
-
-### Estimators of errors
-
-adjusting the training error to penalize additional features
-
-#### Mallows’s Cp
-
- <img src="https://render.githubusercontent.com/render/math?math=C_{p} = \frac{1}{n}(RSS+2d hat{\sigma}^2)">
-[Wiki](https://en.wikipedia.org/wiki/Mallows%27s_Cp)
-
-#### AIC
-
- <img src="https://render.githubusercontent.com/render/math?math=AIC= −2logL + 2 × d">
-
-In the linear model, <img src="https://render.githubusercontent.com/render/math?math=−2LogL = \frac{RSS}{hat{\sigma}^2)}">
-
-#### BIC
-
- <img src="https://render.githubusercontent.com/render/math?math=BIC = \frac{1}{n}(RSS+log(n) * hat{\sigma}^2)">
-
-(imposes harsher penalty on models with more features, resulting in selection of less complex models)
-
-#### Adjusted R^2
-
-">Adjust R^2 = 1-\frac{RSS/(n-d-1)}{TSS/(n-1)}">
-
-### 1SE Rule
-
-The rule suggests to not necessarily choose the model with minimum error, but to choose the simplest model within one SE of the min error.
-
-### Data Preparation
-
+### Data
 * Cleaning/Pre-processing
-
-* Missing data
-* Unbalanced data
-
-[How to fix an Unbalanced Dataset@KDnuggets](https://www.kdnuggets.com/2019/05/fix-unbalanced-dataset.html)
-
-[Resampling strategies for imbalanced datasets@Kaggle](https://www.kaggle.com/rafjaa/resampling-strategies-for-imbalanced-datasets)
-
-[Diving Deep with Imbalanced Data@Datacamp](https://www.datacamp.com/community/tutorials/diving-deep-imbalanced-data)
+  - Missing data
+  - Unbalanced data
+    - [How to fix an Unbalanced Dataset@KDnuggets](https://www.kdnuggets.com/2019/05/fix-unbalanced-dataset.html)
+    - [Resampling strategies for imbalanced datasets@Kaggle](https://www.kaggle.com/rafjaa/resampling-strategies-for-imbalanced-datasets
+    - [Diving Deep with Imbalanced Data@Datacamp](https://www.datacamp.com/community/tutorials/diving-deep-imbalanced-data)
 
 * Feature engineering
 
@@ -266,6 +128,96 @@ Purpose: improve the model performance by selecting and transforming the most re
 * L2
 
 * PCA
+#### Resampling Methods
+* Essential to test and evaluate statistical models
+* Repeatedly draw from your original sample to obtain additional information about the model
+
+#### [Encoding categorical data](https://www.linkedin.com/posts/kylemckiou_describe-basic-feature-encoding-for-categorical-activity-6621763235186118656-PKU7)
+* Label encoding (non-ordinal) - each category is assigned a numeric value not representing any ordering. Example: [red, blue, green] could be encoded to [8, 5, 11].
+* Label encoding (ordinal) - each category is assigned a numeric value representing an ordering. Example: [small, medium, large] could be encoded to [1, 2, 3]
+* One-hot encoding - each category is transformed into a new binary feature, with all records being marked 1/True or 0/False. Example: color = [red, blue, green] could be encoded to color_red = [1, 0, 0], color_blue = [0, 1, 0], color_green = [0, 0, 1]
+
+#### Train and testing set
+* Training set is used for model construction (can be reused many times to build different models)
+* Test set is used to evaluate the performance of the final model (can be used only once)
+
+#### Validation
+* Intuition: fit the model and evaluate it many times on the same data
+* Method: split half of the training data as validation set
+* Drawback: validation estimates of the test error rates can be highly variable depending on which observations are sampled into the training and validation sets (ex. outliers in the validation sets)
+
+#### Cross-validation
+
+_for evaluating a model’s performance relative to other models_
+
+* LOOCV: leave-one-out cross validation
+
+only remove one observation for the validation set, and keep all remaining observations in the training set
+
+ <img src="https://render.githubusercontent.com/render/math?math=CV_N = {\frac{1}{N}}{\sum_{i=1}^{N}}MSE_i">
+ 
+  - Pro: unbiased compared to naive 1-stage validation approach; highly flexible and works with any kind of predictive modeling
+  - Cro: high variance because the N "training sets" are so similar to one another; computationally expensive
+
+* K-fold cross-validation: divides the observations into K folds of approximately equal size; typical K= 5 or 10; Random sampling without replacement
+
+ <img src="https://render.githubusercontent.com/render/math?math=CV_K = {\frac{1}{K}}{\sum_{i=1}^{K}}MSE_i">
+
+  - Pro: less variance in test error estimate compared with LOOCV
+  - Cro: leads to a slight increase in usually bias
+
+* Other validations
+  - Stratified cross-validation
+  - Repeated cross-validation 
+
+* Cross-validation with time series data
+
+#### Bootstrapping
+
+_non-parametric measure of the accuracy of a parameter estimate or method_
+
+Purpose: quantify uncertainty associated with some estimator
+
+### Model Selection
+#### Errors / Loss 
+
+1. MSE/Sum of squared errors
+
+2. Cross-entropy
+
+3. Kullback-Leibler (KL) divergence
+
+4. Gini impurity for decision tree
+
+5. Information gain
+
+### Estimators of errors
+
+adjusting the training error to penalize additional features
+
+#### Mallows’s Cp
+Assess the fit of a regression model that has been estimated using ordinary least squares
+ <img src="https://render.githubusercontent.com/render/math?math=C_{p} = \frac{1}{n}(RSS+2d hat{\sigma}^2)">
+
+#### AIC (Akaike Information Criterion)
+
+ <img src="https://render.githubusercontent.com/render/math?math=AIC= −2logL + 2 × d">
+
+In the linear model, <img src="https://render.githubusercontent.com/render/math?math=−2LogL = \frac{RSS}{hat{\sigma}^2)}">
+
+#### BIC (Bayesian Information Criterion)
+
+ <img src="https://render.githubusercontent.com/render/math?math=BIC = \frac{1}{n}(RSS+log(n) * hat{\sigma}^2)">
+
+(imposes harsher penalty on models with more features, resulting in selection of less complex models)
+
+#### Adjusted R^2
+
+<img src="https://render.githubusercontent.com/render/math?math=Adjust R^2 = 1-\frac{RSS/(n-d-1)}{TSS/(n-1)}">
+
+#### 1SE Rule
+
+The rule suggests to not necessarily choose the model with minimum error, but to choose the simplest model within one SE of the min error.
 
 ### Ensemble learning
 
@@ -297,31 +249,22 @@ Occam's Razor
 
 ### Building ML Model
 
-<img src="/images/ML/ML.jfif" class="img-responsive" alt=""> 
+#### Model parameter v.s. Learning hyperparameter
 
-### Model parameter v.s. Learning hyperparameter
+* Model parameters are the rules that mathematically describe the final model that makes predictions, such as slopes or intercept in a linear regression model; determined/fitted using the training data set
 
-* Model parameters are the rules that mathematically describe the final model that makes predictions, such as slopes or intercept in a linear regression model.
+* Learning hyperparameter describes the way in which a model parameter is learned and settings for training the model, e.g. learning rate, penalty terms, number of features to include in a weak predictor, etc; adjustable parameters to be tuned for optimal performance
 
-* Learning hyperparameter describes the way in which a model parameter is learned and settings for training the model, e.g. learning rate, penalty terms, number of features to include in a weak predictor, etc.
-
-Model parameters: determined/fitted using the training data set
-
-Hyperparameters: adjustable parameters to be tuned for optimal performance
-
-### [Model hyperparameter tuning](https://machinelearningmastery.com/hyperparameter-optimization-with-random-search-and-grid-search/)
+ - [Model hyperparameter tuning](https://machinelearningmastery.com/hyperparameter-optimization-with-random-search-and-grid-search/)
 Goal: find the optimal hyperparameters of a model which results in the most ‘accurate’ predictions
+   - Random Search: randomly sample points in the search place.
+   - Grid Search: evaluate every position in the search place.
 
-* Random Search: randomly sample points in the search place.
-* Grid Search: evaluate every position in the search place.
+### Supervised Machine Learning
+#### Common packages
+[Python: scikit-learn linear models](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.linear_model)
 
-## Supervised Machine Learning
-
-[scikit-learn linear models](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.linear_model)
-
-[glmnet in R](https://web.stanford.edu/~hastie/glmnet/glmnet_alpha.html)
-
-### Regression
+[R: glmnet](https://web.stanford.edu/~hastie/glmnet/glmnet_alpha.html)
 
 #### Linear Model
  
@@ -365,20 +308,16 @@ Linear model selection
 
 7. Monotonic relationship
 
-### [Shrinkage/Regularization](https://www.datacamp.com/community/tutorials/tutorial-ridge-lasso-elastic-net)
+#### [Shrinkage/Regularization](https://www.datacamp.com/community/tutorials/tutorial-ridge-lasso-elastic-net)
 
-shrinkage employs a technique to constrain or regularize the coefficient estimates
-
-can significantly reduce their variance, and ultimately the error in the model, resulting in stronger predictions
+Shrinkage employs a technique to constrain or regularize the coefficient estimates to significantly reduce their variance, and ultimately the error in the model, resulting in stronger predictions
 
 
-1. Ridge
-
-estimates the coefficients that minimize <img src="https://render.githubusercontent.com/render/math?math=RSS + \lambda \sum_{j=1}^{p} {\beta_{j}}^2">
-
-where <img src="https://render.githubusercontent.com/render/math?math=\lambda"> is a tuning parameter, which is the penalty we are imposing on the estimates
+* Ridge
+Estimates the coefficients that minimize <img src="https://render.githubusercontent.com/render/math?math=RSS \+ \lambda \sum_{j=1}^{p} {\beta_{j}}^2"> where <img src="https://render.githubusercontent.com/render/math?math=\lambda"> is a tuning parameter, which is the penalty we are imposing on the estimates
 
 2. Lasso 
+
 
 3. Elastic-net
 
