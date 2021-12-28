@@ -64,7 +64,7 @@ If X and Y are statistically independent, then E(XY) = E(X)E(Y)
 
 #### Conditional expectation
 
-If Y is a discrete random variable, then <img src="https://render.githubusercontent.com/render/math?math=E(Y \ mid X=x) = \sum_{y}^{} yP(Y=y) \mid X=x">
+If Y is a discrete random variable, then <img src="https://render.githubusercontent.com/render/math?math=E(Y \mid X=x) = \sum_{y}^{} yP(Y=y) \mid X=x">
 
 If Y is a continuous random variable, then <img src="https://render.githubusercontent.com/render/math?math=E(Y \mid X=x) = \int_{y}^{} yf(y \mid x)dy">
 
