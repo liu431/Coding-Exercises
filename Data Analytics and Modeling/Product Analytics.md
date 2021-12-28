@@ -24,3 +24,19 @@
 * [Average Revenue Per User (ARPU)](https://www.profitwell.com/recur/all/average-revenue-per-user): divide total revenue by average users during a specific period
 * Customer Acquisition Cost: divide all sales and marketing costs by the number of customers acquired over a given time period; used for determine profitability and efficiency
 * [LTV/CAC Ratio](https://www.profitwell.com/recur/all/youre-calculating-cac-wrong): benchmark ratio is 3:1
+
+#### Case: [referral program](https://www.referralcandy.com/blog/referral-program-kpis/)
+* ROI: a quick overview of how successful the program was and it is going in the right direction. 
+* Average Referral Count: help correct referring materials if necessary
+* Rate of Participation: determine if program materials needs improvement
+* Assess the Level of Reward Attainability
+* Referral Conversion Rate: find out how many referrals have converted to customers
+* Timing: see what parts of referral program marketing took most and least of the time
+
+
+
+
+
+
+
+
