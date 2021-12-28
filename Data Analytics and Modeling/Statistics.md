@@ -12,23 +12,8 @@
 Related to your sample size, and shows how many 'free' data points are available in your test for making comparisons. The greater the degrees of freedom, the better your statistical test will work
 
 
-#### Effect size
 
-Cohen's d is an effect size used to indicate the standardised difference between two means. 
 
-Cohen's d can be calculated as the difference between the means divided by the pooled SD:
- <img src="https://render.githubusercontent.com/render/math?math=\frac{Mean Difference}{Standard Deviation}">
-
-[Cohen's d](https://en.wikiversity.org/wiki/Cohen%27s_d)
-
-[Computation of Effect Sizes] (https://www.psychometrica.de/effect_size.html)
-
-Ex. The effect size was d=0.1, n1 is the number of units in treatment group, n2 is the number of units in control group
-
-```{r}
-library(psych)
-cohen.d.ci(d = .1, n1 = 100, n2 = 100)
-````
 
 ### Hypothesis Testing
 #### [Hypothesis](https://www.scribbr.com/statistics/hypothesis-testing/)
@@ -51,6 +36,36 @@ When testing an hypothesis, the p-value is the likelihood that we would observe 
 95% confidence interval: a range of values that you can be 95% certain contains the population mean; range of numbers within which the true difference in means will be 95% of the time
 
 [Using Confidence Intervals to Compare Means](https://statisticsbyjim.com/hypothesis-testing/confidence-intervals-compare-means/)
+
+#### [Errors](https://machinelearningmastery.com/statistical-power-and-power-analysis-in-python/)
+Type I Error: reject the null hypothesis when there is in fact no significant effect (false positive). The p-value is optimistically small.
+Type II Error: not reject the null hypothesis when there is a significant effect (false negative). The p-value is pessimistically large.
+
+
+#### Significance level 
+- Boundary for specifying a statistically significant finding when interpreting the p-value, such as 0.05
+- Probability of rejecting the null hypothesis if it were true (false positive / Type 1 Error)
+
+#### [Statistical Power](https://machinelearningmastery.com/statistical-power-and-power-analysis-in-python/)
+- Probability that the test correctly rejects the null hypothesis (true positive); COmmon: 0.8
+  - Power = 1 - Type II Error
+  - Pr(True Positive) = 1 - Pr(False Negative)
+  - Low Statistical Power: Large risk of committing Type II errors, e.g. a false negative.
+  - High Statistical Power: Small risk of committing Type II errors. 
+- It is only useful when the null hypothesis is rejected.
+- Can be used to estimate the minimum sample size required for an experiment, given a desired significance level, effect size, and statistical power
+
+#### [Effect size]((https://machinelearningmastery.com/statistical-power-and-power-analysis-in-python/))
+- The quantified magnitude of a result present in the population. 
+- Calculated using a specific statistical measure, such as Pearson’s correlation coefficient for the relationship between variables or Cohen’s d for the difference between groups
+
+##### [Cohen's d](https://en.wikiversity.org/wiki/Cohen%27s_d)
+- An effect size used to indicate the standardised difference between two means. 
+- Calculated as the difference between the means divided by the pooled SD:
+ <img src="https://render.githubusercontent.com/render/math?math=\frac{Mean Difference}{Standard Deviation}">
+- [Computation of Effect Sizes] (https://www.psychometrica.de/effect_size.html)
+- Ex. The effect size was d=0.1, n1 is the number of units in treatment group, n2 is the number of units in control group
+
 
 #### Tests
 [Statistical Tests — When to use Which](https://towardsdatascience.com/statistical-tests-when-to-use-which-704557554740)
@@ -147,7 +162,6 @@ Maxmimum Likelihood Estimation
 
 ### AB Test and Experiments
 
-Power
 
 Sample Size
 
