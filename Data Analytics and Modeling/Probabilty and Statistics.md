@@ -1,18 +1,4 @@
-# Notes on Probabilty and Statistics
-
-## Linear Algebra
-
-Vector Space
-
-Basis
-
-Linear Independent
-
-Rank
-
-Column & Row Space
-
-Linear Transformation
+## Notes
 
 ## Probability
 
@@ -22,23 +8,21 @@ X is a random variable that can take different values (Ex. X=1 if an individual 
 
 P(X=1): probability that an individual randomly drawn from a population is female, which corresponds to the proportion of the population that are female
 
-### Marginal probability
-
 0 ≤ P(A) ≤ 1
 
 P(A) + P(Ā) = 1, where Ā denotes all other events that are not A
 
-### Joint Probability
+<img src="https://render.githubusercontent.com/render/math?math=P(A, B) = P(A) * P(B \mid A)">;  <img src="https://render.githubusercontent.com/render/math?math=P(B|A) = \frac{P(A,B)}{P(A)}">
 
-<img src="https://render.githubusercontent.com/render/math?math=P(A, B) = P(A) * P(B \mid A)">
 
 P(A, B) = 0 if A and B are mutually exclusive; B = Ā
 
 Chain rule: <img src="https://render.githubusercontent.com/render/math?math=P(A, B, C) = P(A) * P(B \mid A) * P(C \mid B,A)">
 
-### Conditional probability
+* Joint probability: probability of two events occurring simultaneously.
+* Marginal probability: probability of an event irrespective of the outcome of another variable.
+* Conditional probability: probability of one event occurring in the presence of a second event. 
 
- <img src="https://render.githubusercontent.com/render/math?math=P(B|A) = \frac{P(A,B)}{P(A)}">
 
 ### Statistical independence
 
