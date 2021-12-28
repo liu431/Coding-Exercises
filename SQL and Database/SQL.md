@@ -85,7 +85,7 @@ Perform a comparison between a single column value and a range of other values.
 * ANY(): compare value to each value returned by the subquery
   - < ANY: less than the maximum value in the list
   - > ANY: more than the minimum value in the list
-  - =ANY: equivalent to In operator
+  - = ANY: equivalent to In operator
 * ALL(): compare value To every value returned by the subquery
 
 #### EXISTS: test for the existence of any record in a subquery; return TRUE if the subquery returns one or more records
@@ -153,14 +153,14 @@ ORDER BY user_id
 
 #### Date functions
 [DATE_FORMAT](https://www.w3schools.com/sql/func_mysql_date_format.asp)
+* DATE_FORMAT(date, "%Y-%m") # Return the date as Year-Month; m: month number; M: English word of the month 
+* DATE_FORMAT(day, "%W, %M %e, %Y") # "day_name, month_name day, year" Ex.  Tuesday, April 12, 2022
 
 * YEAR(date) # Return the year part of a date
 * MONTH(date) # Return the month part of a date
 * DAY(date) or DAYOFMONTH(date) # Return the day of the month for a date, 'mon'
 * DAYOFWEEK(date) # Return the weekday index for a date; Sunday is 1
 * DATEDIFF(date1, date2) # Return number of days between (date1 - date2)
-* DATE_FORMAT(date, "%Y-%m") # Return the date as Year-Month; m: month number; M: English word of the month 
-* DATE_FORMAT(day, "%W, %M %e, %Y") # "day_name, month_name day, year" Ex.  Tuesday, April 12, 2022
 * NOW() # Get current time as "YYYY-MM-DD HH-MM-SS" (string)
 * [DATE_TRUNC('[interval]', time_column)](https://mode.com/blog/date-trunc-sql-timestamp-function-count-on/)
 
