@@ -220,10 +220,10 @@ FROM Orders
 ##### [Running total](https://popsql.com/learn-sql/mysql/how-to-calculate-cumulative-sum-running-total-in-mysql)
 ```sql
 WITH ClientCountsByYear AS 
-(SELECT YEAR(PurchaseDate), COUNT(*) As ClientCounts
+(SELECT YEAR(PurchaseDate) As PurchaseYear, COUNT(*) As ClientCounts
 FROM Clients
-GROUP BY year)
-SELECT year, SUM(Counts) OVER (ORDER BY year) AS cum_sum
+GROUP BY 1)
+SELECT PurchaseYear, SUM(ClientCounts) OVER (ORDER BY PurchaseYear) AS cum_sum
 FROM ClientCountsByYear;
 ```
 
