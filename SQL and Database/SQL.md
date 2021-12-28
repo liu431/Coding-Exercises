@@ -291,9 +291,12 @@ JOIN cte3 ON ...
 ```
 
 
-### [Variables](https://www.javatpoint.com/mysql-variables)
+### [Functions and variables](https://www.javatpoint.com/mysql-variables)
 To store data in memory and can be used throughout the program
-* User-Defined Variable: starts with @ symbol; pass values from one statement to another statement; does not reinitialized with NULL
+#### Variables
+
+* User-Defined Variablestarts with @ symbol; pass values from one statement to another statement; does not reinitialized with NULL
+
 ```sql
 # Assign the value in MySQL
 SET @var_name = value;  
@@ -304,6 +307,18 @@ DECLARE @var_name AS INT = YEAR(GETDATE());
 ```
 * Local Variable: strongly typed variable; is reinitialized with NULL value each time whenever stored procedure is called
 * System Variable: various system variables that configure its operation, and each system variable contains a default value
+
+#### UDF (User-Defined Functions)
+Piece of code that extends the functionality of a SQL server that behaves just like a native (built-in) function
+
+[Example of SQL on Databricks](https://databricks.com/blog/2021/10/20/introducing-sql-user-defined-functions.html)
+```sql
+CREATE FUNCTION blue()
+  RETURNS STRING
+  COMMENT 'Blue color code'
+  LANGUAGE SQL
+  RETURN '0000FF'
+```
 
 ### Pratical Examples
 #### [Find outliers](https://dataschool.com/how-to-teach-people-sql/how-to-find-outliers-with-sql/)
@@ -363,4 +378,13 @@ GROUP BY id
 ```
 
 
+### Process data 
 
+#### [JSON flattening](https://www.holistics.io/blog/how-to-extract-nested-json-data-in-mysql-8-0/)
+##### 2 main forms
+* Key-value object: a single record which consists of multiple named or indexed fields (or keys) paired with values
+* Nested Array/Table: a table built with multiple key-value objects in a hierarchical format
+
+##### Functions
+* [JSON_EXTRACT()](https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html) OR ->>
+* JSON_TABLE()
