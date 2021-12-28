@@ -1,6 +1,6 @@
 ## Notes
 
-## Probability
+### Probability
 
 A, B, and C are distinct events; 
 
@@ -24,27 +24,29 @@ Chain rule: <img src="https://render.githubusercontent.com/render/math?math=P(A,
 * Conditional probability: probability of one event occurring in the presence of a second event. 
 
 
-### Statistical independence
+#### Statistical independence
 
 If A and B are statistically independent events, then <img src="https://render.githubusercontent.com/render/math?math=P(B \mid A) = P(B)"> and <img src="https://render.githubusercontent.com/render/math?math=P(A,B) = P(A) * P(B)">
 
-### Bayes’ Theorem
+If x and y are independent, then f(x,y) = f(x)f(y)
+
+#### Bayes’ Theorem
 
  <img src="https://render.githubusercontent.com/render/math?math=P(B|A)=\frac{P(A|B) * P(B)}{P(A)}">
 
-### Probability density for continuous random variables
+* Bayes’ Theorem for continuous random variables X and Y
+
+ <img src="https://render.githubusercontent.com/render/math?math=f(y|x) = \frac{f(x,y)}{f(x)} = \frac{f(x|y)f(y)}{f(x)}">
+ 
+#### Probability density for continuous random variables
 
 For a discrete random variable Y, P(Y = y) is the probability that Y takes value y, and <img src="https://render.githubusercontent.com/render/math?math=1=\sum_{k}^{} P(Y=y)">.
 
 For a continuous random variable Y, 𝑓(𝑦) is the probability density of y, and <img src="https://render.githubusercontent.com/render/math?math=1=\int_{y}^{} f(y)dy=1">.
 
-### Bayes’ Theorem for continuous random variables X and Y
 
- <img src="https://render.githubusercontent.com/render/math?math=f(y|x) = \frac{f(x,y)}{f(x)} = \frac{f(x|y)f(y)}{f(x)}">
 
-If x and y are independent, then f(x,y) = f(x)f(y)
-
-### Expectation
+#### Expectation
 
 a and b are constants; X, Y, and Z are random variables
 
@@ -76,7 +78,7 @@ If Y is a discrete random variable, then
 If Y is a discrete random variable, then
  <img src="https://render.githubusercontent.com/render/math?math=E(Y) = \int_{}^{} \int_{}^{} yf(y \mid x)f(x)dydx">
 
-### Variance and Covariance
+#### Variance and Covariance
 
 1. <img src="https://render.githubusercontent.com/render/math?math=Var(X) = E{[X-E(X)]^{2}} = E(X^{2})-[E(X)]^{2}">
 
@@ -102,18 +104,26 @@ Otherwise, <img src="https://render.githubusercontent.com/render/math?math=Var(X
 
 11. <img src="https://render.githubusercontent.com/render/math?math=Cov(X+Y,Z) = Cov(X,Z)+Cov(Y,Z)">
 
+#### Central Limit Theorem (CLT)
+The distribution of the sampling distribution tends toward a normal disyrbution when n is large
 
+#### Law of Large Number
+As the number of identically distributed, randomly generated variables/trials increases, the sample mean (average) approaches their theoretical mean (expected mean).
 
+#### Distributions
+[Discrete Probability Distributions](https://www.dummies.com/article/academics-the-arts/math/statistics/discrete-probability-distributions-188347)
 
-Distributions
+![](https://www.dummies.com/wp-content/uploads/250474.image0.jpg)
 
-* Binomial
+[Continuous probability distributions](https://www.dummies.com/article/academics-the-arts/math/statistics/probability-for-dummies-cheat-sheet-208653)
 
-* Poisson
+![](https://www.dummies.com/wp-content/uploads/250463.image0.jpg)
 
-* Normal 
+[Distribution charts](https://www.adrian.idv.hk/2018-03-19-distribution/)
 
+![](https://www.adrian.idv.hk/img/distribution.png)
 
+#### Stochastic probability
 Discrete time Markov chain
 
 Poisson process
