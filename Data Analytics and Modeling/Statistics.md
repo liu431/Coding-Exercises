@@ -1,44 +1,18 @@
 ## Statistical Inference
 
-### Standard error; Standard deviation
-
-
-[Standard error](https://www.investopedia.com/terms/s/standard-error.asp) measures how accurate is a sample represents a population.
-
-[Standard Error](https://www.khanacademy.org/math/probability/data-distributions-a1/summarizing-spread-distributions/a/calculating-standard-deviation-step-by-step) is used to measure the statistical accuracy of an estimate. 
+### Statistic
+* [Standard error](https://www.investopedia.com/terms/s/standard-error.asp): measures how accurate is a sample represents a population.
+* [Standard deviation](https://www.khanacademy.org/math/probability/data-distributions-a1/summarizing-spread-distributions/a/calculating-standard-deviation-step-by-step): measure the statistical accuracy of an estimate. 
 
 [Difference](https://keydifferences.com/difference-between-standard-deviation-and-standard-error.html)
 
-### p value
-
-When testing an hypothesis, the p-value is the likelihood that we would observe results at least as extreme as our result due purely to random chance if the null hypothesis were true.
-
-  * A small p-value (typically ≤ 0.05) indicates strong evidence against the null hypothesis, so we say that the result is "statistically significant" and reject the null hypothesis.
-  
-  (relatively rare for the our results to be purely from random variations in observations.)
-
-  * A large p-value (> 0.05) indicates weak evidence against the null hypothesis, so we fail to reject the null hypothesis.
-
-  * p-values very close to the cutoff (0.05) are considered to be marginal (could go either way). Always report the p-value so our readers can draw their own conclusions.
-  [Link](https://www.dummies.com/education/math/statistics/what-a-p-value-tells-you-about-statistical-data/)
-
-### Statistical Tests 
-* z-score
-* t-test
-* Chi-square test
-* ANOVA
-[Statistical Tests — When to use Which](https://towardsdatascience.com/statistical-tests-when-to-use-which-704557554740)
-
-[Interactive Visualization of Statistical Power and Significance Testing](https://rpsychologist.com/d3/nhst/)
-
-### Confidence Interval
-
-95% confidence interval: a range of values that you can be 95% certain contains the population mean
-
-[Using Confidence Intervals to Compare Means](https://statisticsbyjim.com/hypothesis-testing/confidence-intervals-compare-means/)
 
 
-### Effect size
+#### [Degrees of freedom](https://www.scribbr.com/statistics/t-test/)
+Related to your sample size, and shows how many 'free' data points are available in your test for making comparisons. The greater the degrees of freedom, the better your statistical test will work
+
+
+#### Effect size
 
 Cohen's d is an effect size used to indicate the standardised difference between two means. 
 
@@ -56,9 +30,47 @@ library(psych)
 cohen.d.ci(d = .1, n1 = 100, n2 = 100)
 ````
 
+### Hypothesis Testing
+#### [Hypothesis](https://www.scribbr.com/statistics/hypothesis-testing/)
+Null hypothesis: a prediction of no relationship between the variables you are interested in
+Alternate hypothesis: there is a relationship between variables
+
+#### p value
+
+When testing an hypothesis, the p-value is the likelihood that we would observe results at least as extreme as our result due purely to random chance if the null hypothesis were true.
+
+  - A small p-value (typically ≤ 0.05) indicates strong evidence against the null hypothesis, so we say that the result is "statistically significant" and reject the null hypothesis. In other words, it is unlikely that the differences between these groups came about by chance.
+
+  - A large p-value (> 0.05) indicates weak evidence against the null hypothesis, so we fail to reject the null hypothesis. In other words, any difference you measure between groups is due to chance.
+
+  - p-values very close to the cutoff (0.05) are considered to be marginal (could go either way). Always report the p-value so our readers can draw their own conclusions.
+  [Link](https://www.dummies.com/education/math/statistics/what-a-p-value-tells-you-about-statistical-data/)
+
+#### Confidence Interval
+
+95% confidence interval: a range of values that you can be 95% certain contains the population mean; range of numbers within which the true difference in means will be 95% of the time
+
+[Using Confidence Intervals to Compare Means](https://statisticsbyjim.com/hypothesis-testing/confidence-intervals-compare-means/)
+
+#### Tests
+[Statistical Tests — When to use Which](https://towardsdatascience.com/statistical-tests-when-to-use-which-704557554740)
+
+[Interactive Visualization of Statistical Power and Significance Testing](https://rpsychologist.com/d3/nhst/)
+
+[Overview of statistical tests](https://www.r-bloggers.com/2019/03/overview-of-statistical-tests/)
+
+![](http://philipppro.github.io/images/Overview_statistical_tests.png)
+
+[Equations of statistical tests](https://www.pinterest.com/pin/3799980919780691/)
+
+![](https://i.pinimg.com/originals/50/d9/b3/50d9b31222262b570f91b4967aa2374b.png)
+
+
+
 ### Mediation Analysis
 
 [Various package options for conducting mediation analysis](https://m-clark.github.io/posts/2019-03-12-mediation-models/)
+
 
 ### Posterior distributions
 
@@ -106,13 +118,20 @@ Stochastic processes
 
 Measurement models (SEMs, factor analysis…)
 
-## Statistics
+## Regressions
 
 ### Linear Regression
+Model the relationship between a single dependent variable Y and one or more predictors
+* [4 Assumptions](https://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/R/R5_Correlation-Regression/R5_Correlation-Regression4.html)
+  - Linearity: the relationship between X and the mean of Y is linear.
+  - Homoscedasticity: the variance of residual is the same for any value of X.
+  - Independence: observations are independent of each other.
+  - Normality: for any fixed value of X, Y is normally distributed.
 
-4 Assumptions
-
-Remove multicolinearity
+* Multicolinearity
+  - Multicollinearity: condition when there is a significant dependency or association between the independent variables or the predictor variables
+  - Issue: overestimate the coefficients and interpretations can be misleading 
+  - Detect: Variance Inflation Factor (VIF) (threshold: 5) corresponding to every independent variable in the data.
 
 [Beyond OLS](https://stats.idre.ucla.edu/stata/webbooks/reg/chapter4/regressionwith-statachapter-4-beyond-ols-2/)
 
