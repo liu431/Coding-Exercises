@@ -316,10 +316,10 @@ Shrinkage employs a technique to constrain or regularize the coefficient estimat
 * Ridge
 Estimates the coefficients that minimize <img src="https://render.githubusercontent.com/render/math?math=RSS \+ \lambda \sum_{j=1}^{p} {\beta_{j}}^2"> where <img src="https://render.githubusercontent.com/render/math?math=\lambda"> is a tuning parameter, which is the penalty we are imposing on the estimates
 
-2. Lasso 
+* Lasso 
 
 
-3. Elastic-net
+* Elastic-net
 
 Bayesian linear regression
 
@@ -394,11 +394,7 @@ Tactics:
 
 Probability of one outcome divided by the probability of the other outcome <img src="https://render.githubusercontent.com/render/math?math=\frac{}{}">
 
-#### [Key terms: Sensitivity_and_specificity](https://en.wikipedia.org/wiki/Sensitivity_and_specificity)
 
-[Data Science in Medicine](https://medium.com/@alon.lek/should-i-look-at-precision-recall-or-specificity-sensitivity-3946158aace1)
-
-Purpose: categorize all the variables that form the output
 
 Softmax classifier
 
@@ -411,15 +407,38 @@ Support vector machine
 #### [Evaluation metrics for classification](https://www.linkedin.com/posts/kylemckiou_datascience-dsdj-qanda-activity-6622850903802290179-jJeS/)
 * __Accuracy__: measure the percentage of the time the model correctly classifies samples: (true positive + true negative) / all samples
 * __Precision__:measure the percentage of the predicted members that were correctly classified: true positives / (true positives + false positives)
-* __Recall__: measure the percentage of true members that were correctly classified by the algorithm: true positives / (true positives + false negative)
+* __Recall / Sensitivity / True Positive Rate__: measure the percentage of true members that were correctly classified by the algorithm: true positives / (true positives + false negative)
+* __Specificity / True Negative Rate__: proportion of those who do not have the condition that received a negative result on this test: true negatives / (true negatives + false positives)
 * __F1__: measurement that balances accuracy and precision (or you can think of it as balancing Type I and Type II error)
 * __[AUC (Area Under The Curve)]((https://arogozhnikov.github.io/2015/10/05/roc-curve.html))__: represent degree or measure of separability; probability that a classifier will rank a randomly chosen positive instance higher than a randomly chosen negative one
 * __[ROC (Receiver Operating Characteristic]((https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5))s__: probability curve
 * __Gini__: a scale and centered version of AUC
 * __Log-loss__: similar to accuracy but increases the penalty for incorrect classifications that are "further" away from their true class. For log-loss, lower values are better.
 
+[Data Science in Medicine](https://medium.com/@alon.lek/should-i-look-at-precision-recall-or-specificity-sensitivity-3946158aace1)
+
 ![](https://ml8ygptwlcsq.i.optimole.com/fMKjlhs.Uu7U~1cdff/w:1000/h:492/q:auto/https://www.unite.ai/wp-content/uploads/2019/12/Preventive_Medicine-e1576294312614.png)
-  
+
+Ex. Classify whether a patient has COVID or not
+
+| Actual | Prediction | Result |
+| ---| --- | --- |
+| X | ✓ | FP (Type 1) |
+| X | X | TN |
+| ✓ | ✓ | TP |
+| ✓ | X | FN (Type 2) |
+| X | X | TN |
+
+- Accuracy = (TN + TP) / N = 3/5
+- Precision = TP / (TP + FP) = 1/2
+- Recall / Sensitivity (True Positive Rate) = TP / (TP + FN) = 1/2
+- Specificity (True Negative Rate) = TN / (TN + FP) = 2/3
+
+
+
+
+
+
 #### K-Nearest classification 
 
 Similar to kNN regression, given a positive integer K and a test observation x0, the kNN classifier identifies the K nearest training observations to x0, represented by N0.
