@@ -396,8 +396,6 @@ Probability of one outcome divided by the probability of the other outcome <img 
 
 #### [Key terms: Sensitivity_and_specificity](https://en.wikipedia.org/wiki/Sensitivity_and_specificity)
 
-<img src="/images/ML/CLassficationTerms.png" class="img-responsive" alt=""> 
-
 [Data Science in Medicine](https://medium.com/@alon.lek/should-i-look-at-precision-recall-or-specificity-sensitivity-3946158aace1)
 
 Purpose: categorize all the variables that form the output
@@ -410,49 +408,18 @@ Naïve bayes
 
 Support vector machine
 
-#### Evaluation metrics for classification
+#### [Evaluation metrics for classification](https://www.linkedin.com/posts/kylemckiou_datascience-dsdj-qanda-activity-6622850903802290179-jJeS/)
+* __Accuracy__: measure the percentage of the time the model correctly classifies samples: (true positive + true negative) / all samples
+* __Precision__:measure the percentage of the predicted members that were correctly classified: true positives / (true positives + false positives)
+* __Recall__: measure the percentage of true members that were correctly classified by the algorithm: true positives / (true positives + false negative)
+* __F1__: measurement that balances accuracy and precision (or you can think of it as balancing Type I and Type II error)
+* __[AUC (Area Under The Curve)]((https://arogozhnikov.github.io/2015/10/05/roc-curve.html))__: represent degree or measure of separability; probability that a classifier will rank a randomly chosen positive instance higher than a randomly chosen negative one
+* __[ROC (Receiver Operating Characteristic]((https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5))s__: probability curve
+* __Gini__: a scale and centered version of AUC
+* __Log-loss__: similar to accuracy but increases the penalty for incorrect classifications that are "further" away from their true class. For log-loss, lower values are better.
 
-* Accuracy 
-
-measures the percentage of the time you correctly classify samples: (true positive + true negative) / all samples
-
-* Precision 
-
-measures the percentage of the predicted members that were correctly classified: true positives / (true positives + false positives)
-
-* Recall
-
-measures the percentage of true members that were correctly classified by the algorithm: true positives / (true positives + false negative)
-
-* F1
-
-measurement that balances accuracy and precision (or you can think of it as balancing Type I and Type II error)
-
-* AUC
-
-Area Under The Curve---represents degree or measure of separability
-
-describes the probability that a classifier will rank a randomly chosen positive instance higher than a randomly chosen negative one
-
-[Blog](https://arogozhnikov.github.io/2015/10/05/roc-curve.html)
-
-* ROC
-
-Receiver Operating Characteristics---probability curve
-
-[Blog](https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)
-
-* Gini
-
-a scale and centered version of AUC
-
-* Log-loss
-
-similar to accuracy but increases the penalty for incorrect classifications that are "further" away from their true class. For log-loss, lower values are better.
-
-Source: [Kyle McKiou Blog](https://www.linkedin.com/posts/kylemckiou_datascience-dsdj-qanda-activity-6622850903802290179-jJeS)
+![](https://ml8ygptwlcsq.i.optimole.com/fMKjlhs.Uu7U~1cdff/w:1000/h:492/q:auto/https://www.unite.ai/wp-content/uploads/2019/12/Preventive_Medicine-e1576294312614.png)
   
-
 #### K-Nearest classification 
 
 Similar to kNN regression, given a positive integer K and a test observation x0, the kNN classifier identifies the K nearest training observations to x0, represented by N0.
@@ -513,11 +480,10 @@ Different loss functions
 GBDT loss fucntion
 
 
-## Unsupervised Machine Learning
+### Unsupervised Machine Learning
 
-### Exploratoty data analysis
 
-### Visualization 
+#### Visualization 
 
 1. Histograms
 
@@ -525,11 +491,11 @@ GBDT loss fucntion
 
 3. t-SNE
 
-### Factor analysis
+#### Factor analysis
 
-### Discriminant analysis
+#### Discriminant analysis
 
-### Clustering
+#### Clustering
 
 1. Distance
 
@@ -545,9 +511,9 @@ GBDT loss fucntion
 
 7. Gaussian mixture models
 
-### Association rule mining
+#### Association rule mining
 
-## Dimensionality reduction
+### Dimensionality reduction
 
 TO solve problems such as multicollinearity, overfitting, and curse of dimensionality
 
@@ -562,11 +528,11 @@ Objective: transform the predictors and then fit a least squares model using the
 * Explained variance is calculated as ratio of eigenvalue of a articular principal component (eigenvector) with total eigenvalues.
 * Most important vectors (with highest eigenvalues) are then selected to represent the features in the transformed space
 
-### Non-negative matrix factorization (NMF)
+#### Non-negative matrix factorization (NMF)
 
 * can be used to reduce dimensionality for certain problem types while preserving more information than PCA
 
-### Embedding techniques 
+#### Embedding techniques 
 
 * various embedding techniques, e.g. finding local neighbors as done in Local Linear Embedding, can be used to reduce dimensionality
 
@@ -587,13 +553,13 @@ Q: write a function to return ngram(string,n)  eg: ngram("abc",2) ---> ["a","b",
 
 [Towards DS: Text Summarization with Amazon Reviews](https://towardsdatascience.com/text-summarization-with-amazon-reviews-41801c2210b)
 
-## Reinforcement Learning
+### Reinforcement Learning
 
 Purpose: max the performance of the machine in a way that helps it to grow
 
 GAN
 
-## Deep Learning
+### Deep Learning
 
 [Book by Amazon Scientists: Dive into Deep Learning](http://d2l.ai/)
 
@@ -617,11 +583,11 @@ Keras
 
 Tensorflow
 
-## Recommendation Systems
+### Recommendation Systems
 
 Collaborative Filtering
 
-## Information Retrieval
+### Information Retrieval
 
 Search/Display
 
@@ -637,7 +603,7 @@ Ads pricing
 
 Audience expansion
 
-## Links to online resources
+### Links to online resources
 [Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/ml-intro)
 
 [An Introduction to Statistical Learning](https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf)
