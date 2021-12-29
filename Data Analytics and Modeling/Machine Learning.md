@@ -411,7 +411,12 @@ Support vector machine
 * __Specificity / True Negative Rate__: proportion of those who do not have the condition that received a negative result on this test: true negatives / (true negatives + false positives)
 * __F1__: measurement that balances accuracy and precision (or you can think of it as balancing Type I and Type II error)
 * __[AUC (Area Under The Curve)]((https://arogozhnikov.github.io/2015/10/05/roc-curve.html))__: represent degree or measure of separability; probability that a classifier will rank a randomly chosen positive instance higher than a randomly chosen negative one
-* __[ROC (Receiver Operating Characteristic]((https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5))s__: probability curve
+* __[ROC (Receiver Operating Characteristics)]((https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5))s__: probability curve
+* __AUROC (Area Under the Receiver Operating Characteristics)__
+  - performance measurement for the classification problems at various threshold settings
+  - It tells how much the model is capable of distinguishing between classes
+  - Plotted with TPR against the FPR where TPR (Sensitivity) is on the y-axis and FPR (1-Specificity) is on the x-axis.
+    ![](https://miro.medium.com/max/496/1*pk05QGzoWhCgRiiFbz-oKQ.png)
 * __Gini__: a scale and centered version of AUC
 * __Log-loss__: similar to accuracy but increases the penalty for incorrect classifications that are "further" away from their true class. For log-loss, lower values are better.
 
