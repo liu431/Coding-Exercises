@@ -47,7 +47,8 @@ Type II Error: not reject the null hypothesis when there is a significant effect
 - Probability of rejecting the null hypothesis if it were true (false positive / Type 1 Error)
 
 #### [Statistical Power](https://machinelearningmastery.com/statistical-power-and-power-analysis-in-python/)
-- Probability that the test correctly rejects the null hypothesis (true positive); COmmon: 0.8
+- Probability of a hypothesis test of finding an effect if there is an effect to be found.
+- Probability that the test correctly rejects the null hypothesis (true positive); Common: 0.8
   - Power = 1 - Type II Error
   - Pr(True Positive) = 1 - Pr(False Negative)
   - Low Statistical Power: Large risk of committing Type II errors, e.g. a false negative.
