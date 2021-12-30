@@ -71,8 +71,6 @@ Metrics for evaluating models
 
 "No Free Lunch Theorem"
 
-### TPR/FPR/TNR/FNR
-
 ### Optimization Methods
 
 * Netwon's method
@@ -94,6 +92,11 @@ Deal with overfitting:
 
 
 ### Data
+* Getting data
+  - [Is more data always better?](https://analyticsindiamag.com/is-more-data-always-better-for-building-analytics-models/)
+    - Yes, if it leads to lower estimation variance and hence better predictive performance 
+    - No, if it contains mostly noise and have data quality issues.
+  
 * Cleaning/Pre-processing
   - Missing data
   - Unbalanced data
@@ -312,11 +315,17 @@ Linear model selection
 
 Shrinkage employs a technique to constrain or regularize the coefficient estimates to significantly reduce their variance, and ultimately the error in the model, resulting in stronger predictions
 
+* L1 and L2 regularization
 
 * Ridge
-Estimates the coefficients that minimize <img src="https://render.githubusercontent.com/render/math?math=RSS \+ \lambda \sum_{j=1}^{p} {\beta_{j}}^2"> where <img src="https://render.githubusercontent.com/render/math?math=\lambda"> is a tuning parameter, which is the penalty we are imposing on the estimates
+  - Estimates the coefficients that minimize <img src="https://render.githubusercontent.com/render/math?math={RSS + \lambda \sum_{j=1}^{p} {\beta_{j}}^2}"> where <img src="https://render.githubusercontent.com/render/math?math=\lambda"> is a tuning parameter, which is the penalty we are imposing on the estimates
+  - Use l2 norm of the weight vector (“squared magnitude” )
+  - Large <img src="https://render.githubusercontent.com/render/math?math=\lambda"> -> Under-fitting
 
 * Lasso 
+  - Estimates the coefficients that minimize <img src="https://render.githubusercontent.com/render/math?math={RSS + \lambda \sum_{j=1}^{p} {|\beta_{j}|}}"> where <img src="https://render.githubusercontent.com/render/math?math=\lambda"> is a tuning parameter, which is the penalty we are imposing on the estimates
+  - Use l1 norm of the weight vector (“absolute value of magnitude”)
+  - Completely eliminate the weights of the least important features to 0 -> automatically perform feature selection and outputs a sparse model
 
 
 * Elastic-net
