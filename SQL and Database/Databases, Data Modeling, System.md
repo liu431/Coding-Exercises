@@ -84,3 +84,18 @@ Actor and Actress
 - ID
 - Name
 - Movie ID
+
+### Database Management
+[Create View](https://dev.mysql.com/doc/refman/8.0/en/create-view.html)
+
+Redunant data
+
+Database view
+
+Stored procedure
+
+[Stored routines](https://zetcode.com/mysql/routines/)
+
+[With rollup](https://mariadb.com/kb/en/select-with-rollup/)
+
+[View Processing Algorithms](https://dev.mysql.com/doc/refman/8.0/en/view-algorithms.html#:~:text=The%20optional%20ALGORITHM%20clause%20for,MERGE%20%2C%20TEMPTABLE%20%2C%20or%20UNDEFINED%20.)
