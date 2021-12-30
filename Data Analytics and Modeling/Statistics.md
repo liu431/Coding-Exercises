@@ -152,7 +152,8 @@ Model the relationship between a single dependent variable Y and one or more pre
 
 ### Logistic Regression
 
-Maxmimum Likelihood Estimation
+[Maxmimum Likelihood Estimation](https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1)
+  - Determines values for the parameters of a model that maximise the likelihood that the process described by the model produced the data that were actually observed
 
 ### Generalized Linear Models
 
