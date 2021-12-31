@@ -51,7 +51,19 @@ except:
 
 ### List
 
-#### [Use a dictionary to count the items in a list](https://stackoverflow.com/questions/3496518/using-a-dictionary-to-count-the-items-in-a-list)
+#### List comprehension
+```python
+# 243. Shortest Word Distance
+def shortestDistance(self, wordsDict: List[str], word1: str, word2: str) -> int:
+    # Get all indexes of word occurrences
+    w1_ind = [i for i in range(len(wordsDict)) if wordsDict[i] == word1] 
+    w2_ind = [i for i in range(len(wordsDict)) if wordsDict[i] == word2]
+
+    # Find closest indexes as the shortest distance
+    return min([abs(i1-i2) for i1 in w1_ind for i2 in w2_ind])
+```
+
+##### [Use a dictionary to count the items in a list](https://stackoverflow.com/questions/3496518/using-a-dictionary-to-count-the-items-in-a-list)
 ```python
 # Use Counter
 from collections import Counter
@@ -75,13 +87,13 @@ for i in s:
 ```
 
 
-#### [Sort a list according to the second element in sublist](https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/)
+##### [Sort a list according to the second element in sublist](https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/)
 ```python
 a = [[1,2],[2,3],[3,1]]
 sorted(a, key=lambda x: x[1], reverse=True) # [[2,3],[1,2],[3,1]]
 ```
 
-#### [Sort a list by multiple attributes](https://stackoverflow.com/questions/4233476/sort-a-list-by-multiple-attributes/4233482)
+##### [Sort a list by multiple attributes](https://stackoverflow.com/questions/4233476/sort-a-list-by-multiple-attributes/4233482)
 ```python
 # Use lambda function that returns a tuple
 s = sorted(s, key = lambda x: (x[1], x[2]))
