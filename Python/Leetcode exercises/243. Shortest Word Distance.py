@@ -1,6 +1,6 @@
 class Solution:
     def shortestDistance(self, wordsDict: List[str], word1: str, word2: str) -> int:
-        # Get all index occurences
+        # Get all indexes of word occurrences
         w1_ind = [i for i in range(len(wordsDict)) if wordsDict[i] == word1] 
         w2_ind = [i for i in range(len(wordsDict)) if wordsDict[i] == word2]
         
