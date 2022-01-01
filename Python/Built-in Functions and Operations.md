@@ -103,6 +103,17 @@ import operator
 s = sorted(s, key = operator.itemgetter(1, 2))
 s.sort(key = operator.itemgetter(1, 2))
 ```
+### Letters
+#### [Letters and numbers conversion](https://www.kite.com/python/answers/how-to-convert-letters-to-numbers-in-python)
+```python
+# Letters -> Numbers
+ord('a') - 97 #0
+ord('A') - 65 #0
+# Numbers -> Letters
+chr(97) #'a'
+chr(65) #'A'
+```
+
 
 ### Bit
 #### [Binary equivalent string of a given integer](https://www.programiz.com/python-programming/methods/built-in/bin)
