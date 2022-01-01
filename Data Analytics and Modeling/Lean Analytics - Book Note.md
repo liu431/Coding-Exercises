@@ -35,9 +35,8 @@ Authors: Alistair Croll and Benjamin Yoskovitz
   - Correlated (predict what will happen) vs Causal (you can change itif knowing the cause)
 
 * Moving targets
-Adjust goals and how you define the key metrics is acceptable.
-
-Update metrcis accordingly provided that you're able to prove the value created.
+  - Adjust goals and how you define the key metrics is acceptable.
+  - Update metrcis accordingly provided that you're able to prove the value created.
 
 * Testing
   - Segmentation: a group that shares some common characteristics
