@@ -138,6 +138,38 @@ Authors: Alistair Croll and Benjamin Yoskovitz
 Avertising, Consulting, Data, Lead generation, licensing fee, listing fee, Ownership/hardware, Rental, Sponsorship, Subscription, Transaction fee, Virtual goods
 
 ##### Model 1: E-commerce 
+Ex. Amazon, Wayfair, Chewy, Walmart, Expedia, Alibaba, Vroom, Cargurus, JD, Wish, Zappos...
+* Key metrics
+  * Conversion rate - % of visitors to your site who buy something; could be sliced by demographics, copy, referral, and so on
+  * Purchases per year - # of purchases made by each customer per year
+  * Average shoping cart size - $ spent on a purchase
+  * Abandonment - % of people who begin to make a purchase, and then don't; opposite of conversion rate
+  * Cost of customer acquisition - $ spent to get someone to buy something; measure ads effectiveness
+  * __Revenue per customer__ - lifetime value of each customer; aggregate metric of shopping cart size, conversion, and abandonment
+  * Top keywords driving traffic to the site - terms people are looking for and associate with you
+  * Top search terms - those lead to revenue and those don't have any results
+  * Effectiveness of recommendation engines - how likely a visitor is to add a recommended product to the shopping cart; how much additional revenue am I generating through recommendations?
+  * Virality - word of mouth, and sharing per visitor
+  * Mailing list effectiveness - click-through rates and ability to make buyers return and buy
+    * Campaign contribution metric = added revenue - cost of the campaign and loss due to unsubscribes
+  * Shipping time - link to how effectively the retailer handles logistics
+  * Stock availability - improve inventory management by hiding out-of-stock items from searches or appear lower in results
+
+* Takeaways
+  * Vital to know whether the focus in loyalty or acquisition
+  * Ultimate metric: revenue per customer
+
+##### Model 2: Software as a Service (SaaS)
+Ex. Salesforce, Gmail, Basecamp, Asana, Slack, Teams, Hulu, Dropbox...
+* Key metrics
+  * Attention
+  * Enrollment
+  * Stickiness
+  * Conversion
+  * Revenue per customer
+  * Customer acquisition cost
+  * Virality
+  * Upselling 
 
 
 
