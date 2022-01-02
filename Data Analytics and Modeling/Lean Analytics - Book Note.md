@@ -45,7 +45,25 @@ Authors: Alistair Croll and Benjamin Yoskovitz
   - Lean Analytics cycle: find a meaning metric, then run experiments to improve it until that metric is good enough for you to move to the next problem or the next stage of the business
 
 #### Deciding what to do with your life
+* Lean Canvas
+  1. Problems - real problems people know they have
+  2. Customer segments - target markets, targeting messages
+  3. Unique value proposition - clear, distinctive, memorable way to explain why you're better or different
+  4. Solution - solve the problems in the right way
+  5. Channels - get product or service to customers and their money nack to you
+  6. Revenue streams - one-time/recurring, direct/indirect transaction
+  7. Cost structure - direct, variable, and indirect costs to pay for
+  8. Metrics - numbers to track to understand if you're making progress
+  9. Unfair advantage - "force multiplier" that makes efforts have greater impact than competitors
+  10. _Do you want to do it?_ - passion for solving the problem
+      - Can I do this thing I'm hoping to do well?
+      - Whether you like doing this thing?
+      - Be sure you can make money doing it.
 
+* Fundamental question at early stages: Should I go build this thing?
+
+#### Data-Driven vs. Data-Informed
+* Quan data is great for tetsing hypotheses, but it's lousy for generating new ones unless combined with human introspection.
 
 
 
