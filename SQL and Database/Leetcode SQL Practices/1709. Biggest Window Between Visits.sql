@@ -7,10 +7,10 @@ With V AS (SELECT DISTINCT user_id, '2021-1-1' AS visit_date
             UNION
             SELECT * FROM UserVisits),
 ## Use LAG() to find the windows between visits
-WinDays AS (SELECT user_id, DATEDIFF(visit_date, LAG(visit_date) OVER          (PARTITION BY user_id ORDER BY visit_date)) AS windows
-        FROM (SELECT user_id, visit_date 
-             FROM V 
-             ORDER BY 1, 2) t)
+WinDays AS (SELECT user_id, DATEDIFF(visit_date, LAG(visit_date) OVER (PARTITION BY user_id ORDER BY visit_date)) AS windows
+            FROM (SELECT user_id, visit_date 
+                 FROM V 
+                  ORDER BY 1, 2) t)
 
 ## Find the largest window of days for each user
 SELECT user_id, MAX(windows) AS biggest_window
