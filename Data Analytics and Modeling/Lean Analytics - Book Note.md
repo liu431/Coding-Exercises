@@ -7,7 +7,7 @@ Authors: Alistair Croll and Benjamin Yoskovitz
 * Lean startup: build -> measure -> learn cycle
 > A startup is an organization formed to search for a scalable and repeatable business model. --- Steve Blank
 
-### Stop ling to yourself
+### Part 1: Stop lying to yourself
 #### We're all liars
 * Instincts are experiments. Data is proof.
 * Reply less on your reality distortion field, and rely more on on Lean Analytics.
@@ -63,17 +63,55 @@ Authors: Alistair Croll and Benjamin Yoskovitz
 * Fundamental question at early stages: Should I go build this thing?
 
 #### Data-Driven vs. Data-Informed
-* Quan data is great for tetsing hypotheses, but it's lousy for generating new ones unless combined with human introspection.
+* Quan data is great for testing hypotheses, but it's lousy for generating new ones unless combined with human introspection.
+* Founders are actually building a tool to learn what product to build.
+
+### Part 2: Finding the right metric for right now
+#### Analytics Frameworks
+* Dave McClure's pirate metrics
+
+|Element|Function|Relevant metrics|
+|---|---|---|
+|Acquisition|Generate attention throgh a variety of means, both organic and inorganic|Traffic, mentions, cost per click, search results, cost of acquisition, open rate|
+|Activation|Turn the resulting drive-by visitors into users who are somehow enrolled|Enrollments, signups, completed onboarding process, used the service at least once, subscriptions|
+|Retention|Convince users to come back repeatedly, exhibiting sticky behavior|Engagement, time since last visit, daily and monthly active use, churns|
+|Revenue|Business outcomes, such as purchases, ad clicks, content creation, subscriptions, etc.|Customer lifetime value, conversion rate, shopping cart size, click-through revenue|
+|Referral|Viral and word-of-mouth invitations to other potential users|Invites sent, viral coefficient, viral cycle time|
+
+* Eric Ries's engines of growth
+  - Sticky engine - get users to return and keep using the product
+    - KPI: customer retention, churn rates, usage frquency, time since last visit, email open rates, click-through rates...
+  - Virality engine -  get the words out
+    - KPI: viral coefficient (number of new users that each user brings on), actions that make up the cycle, viral cycle time (speed which a user invites another), type of virality
+  - Paid engine - payment
+     - KPI: CLV (customer lifetime value), CAC (customer acquisition cost), time to customer breakeven (recoup the acquisition cost of a customer)
+
+* Ash Maurya's Lean Canvas
+
+|Lean Canvas box|Some relevant metrics|
+|---|---|
+|Problem|Respondents who have this need, respondents who are aware of having the need|
+|Solution|Respondents who try the MVP, engagement, churn, most-used/least-used features, people willing to buy|
+|Unique value proposition|Feedback scores, independnet ratings, sentiment analysis, customer-worded descriptions, surveys, search and competitive analysis|
+|Customer segments|How easy is it to find groups of prospects, uniqe key-word segments, targeted funnel traffic from a particular source|
+|Channels|Leads and customers per channel, viral coefficients and cycle, net promoter score, oepn rate, affiliate margins, click-through rate, PageRank, message reach|
+|Unfair advantage|Respondents' understanding of the unique value proposition, patents, brand equity, barrier to entry, number of new entrants, exclusivity of relationships|
+|Cost structure|Fixed costs, cost of customer acquisition, cost of servicing the n-th customer, support costs, keyword costs|
+
+* Sean Ellis's startup growth pyramid
+  - Product/market fit -> decide what you sell to whom, then prove it
+  - Stack the odds -> Find a defensible unfair advantage and tweak it
+  - Scale growth -> step on the gas in new markets, products, and channels
+
+* Long funnel - customers make several tentative visits prior to a conversion
+  - Help understand how you first come to someone's attention, and the journey she takes from that initial awareness through to a goal you wnat her to complete
+
+* Lean analytics stages: Empathy, Stickiness, Virality, Revenue, Scale   
 
 
 
-### Finding the right metric for right now
 
-
-
-
-
-### Lines in the sand
+### Part 3: Lines in the sand
 
 
 
@@ -90,7 +128,7 @@ Authors: Alistair Croll and Benjamin Yoskovitz
 
 
 
-### Putting lean analytics to work
+### Part 4: Putting lean analytics to work
 
 
 
