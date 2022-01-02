@@ -43,9 +43,11 @@ SELECT Client FROM MarketA
 ORDER BY Client;
 ```
 #### SQL Joins with On or Using
+
+Using: shorthand for the situation where the column names are the same
+
+##### Ex. (Leetcdoe 1677) Product's Worth Over Invoices
 ```sql
-# USING: shorthand for the situation where the column names are the same
-# Ex. Leetcdoe SQL 1677. Product's Worth Over Invoices
 SELECT name, 
 IFNULL(SUM(rest), 0) AS rest, IFNULL(SUM(paid), 0) AS paid, 
 IFNULL(SUM(canceled), 0) AS canceled, IFNULL(SUM(refunded), 0) AS refunded
@@ -203,12 +205,32 @@ WHERE rank = 1;
 ```
 
 #### Nonaggregate functions
-* [LAG()](https://www.mysqltutorial.org/mysql-window-functions/mysql-lag-function/): get value from row that precedes the current row (before)
-* LEAD(): get value from row that succeeds the current row (after)
+* [LAG(column_name,context,default_value)](https://www.mysqltutorial.org/mysql-window-functions/mysql-lag-function/): get value from row that precedes the current row (before)
+* LEAD(column_name,context,default_value): get value from row that succeeds the current row (after)
+- column name: where you want to check the next/previous row in a column
+- context: how many rows you would like to check 
+- default_value: value if there is no value present after the last date or before the first date
+
 ```sql
 SELECT price, price - LAG(price, 1) OVER () AS price_diff
 FROM Orders
 ```
+##### Ex. (Leetcode 1709) Biggest Window Between Visits
+```sql
+SELECT user_id, MAX(daydiff) AS biggest_window
+FROM
+(
+	SELECT user_id, 
+	   DATEDIFF(LEAD(visit_date, 1, '2021-01-01') OVER (PARTITION BY user_id ORDER BY visit_date), visit_date) AS daydiff
+	FROM userVisits
+) a
+GROUP BY 1
+ORDER BY 1
+```
+
+
+
+
 * [ROW_NUMBER()](https://www.mysqltutorial.org/mysql-window-functions/mysql-row_number-function/): assigns a sequential number to each row in the result set
 
 
