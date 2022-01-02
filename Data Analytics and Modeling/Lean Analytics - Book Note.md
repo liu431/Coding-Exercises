@@ -41,7 +41,7 @@ Authors: Alistair Croll and Benjamin Yoskovitz
 * Testing
   - Segmentation: a group that shares some common characteristics
   - Cohort analysis: compare similar groups over time; patterns against the lifecycle of a customer
-  - A/B and multivariate testing: differnet groups of test subjects are given different experiences at the same time
+  - A/B and multivariate testing: different groups of test subjects are given different experiences at the same time
   - Lean Analytics cycle: find a meaning metric, then run experiments to improve it until that metric is good enough for you to move to the next problem or the next stage of the business
 
 #### Deciding what to do with your life
@@ -108,6 +108,36 @@ Authors: Alistair Croll and Benjamin Yoskovitz
 
 * Lean analytics stages: Empathy, Stickiness, Virality, Revenue, Scale   
 
+#### The discipline of one metric that matters
+* Secret to startup success: __focus__
+* Pick a minimal set of KPIs to saty focus
+* Changes depending on the company's stage
+  - Acquire users: which acquisition channels are working best or the conversion rate from signup to active user
+  - Retention: churn, experiment with pricing, features, improve customer support, and so on.
+* What success looks like?
+  - Business model
+  - Look at what's normal or ideal, such as industry baseline
+
+#### What business are you in?
+* 5 "knobs" for business growth
+  - More stuff - add products or services that customers wnat
+  - More people - add users through virality or world of mouth
+  - More often - stickiness, reduced churn, repeated use
+  - More money - unsell and maximize the price users will pay, or the revenue from ad clicks, or the accoumt of content they create, or the number of in-game purchases they make
+  - More efficiently - reduce the cost of delivering and supporting your service, lower the cost of customer acquisition by doing less paid advertising and more word of mouth
+
+* Business model flipbook
+  - Acquisition channel: how people find out about you
+  - Selling tactic: how you comvince visitors to become users or users to become customers
+  - Revenue source: how you make money
+  - Product type: what value your business offers in return for the revenue
+  - Delivery model: how you get product to the customer
+
+* 12 revenue models
+
+Avertising, Consulting, Data, Lead generation, licensing fee, listing fee, Ownership/hardware, Rental, Sponsorship, Subscription, Transaction fee, Virtual goods
+
+##### Model 1: E-commerce 
 
 
 
