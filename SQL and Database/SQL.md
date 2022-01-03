@@ -211,24 +211,28 @@ WHERE rank = 1;
 - context: how many rows you would like to check 
 - default_value: value if there is no value present after the last date or before the first date
 
+
+##### Ex. (Leetcode 180) Find all numbers that appear at least three times consecutively
 ```sql
-SELECT price, price - LAG(price, 1) OVER () AS price_diff
-FROM Orders
+# Use LAG() to get previous two numbers
+SELECT DISTINCT num AS ConsecutiveNums 
+FROM (SELECT id, num, LEAD(num, 1) OVER () AS n2, LEAD(num, 2) OVER () AS n3
+    FROM Logs) t
+WHERE num = n2  AND n2 = n3
 ```
+
 ##### Ex. (Leetcode 1709) Biggest Window Between Visits
 ```sql
 SELECT user_id, MAX(daydiff) AS biggest_window
 FROM
-(
+	(
 	SELECT user_id, 
 	   DATEDIFF(LEAD(visit_date, 1, '2021-01-01') OVER (PARTITION BY user_id ORDER BY visit_date), visit_date) AS daydiff
 	FROM userVisits
-) a
+	) a
 GROUP BY 1
 ORDER BY 1
 ```
-
-
 
 
 * [ROW_NUMBER()](https://www.mysqltutorial.org/mysql-window-functions/mysql-row_number-function/): assigns a sequential number to each row in the result set
