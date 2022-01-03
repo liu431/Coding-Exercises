@@ -162,14 +162,51 @@ Ex. Amazon, Wayfair, Chewy, Walmart, Expedia, Alibaba, Vroom, Cargurus, JD, Wish
 ##### Model 2: Software as a Service (SaaS)
 Ex. Salesforce, Gmail, Basecamp, Asana, Slack, Teams, Hulu, Dropbox...
 * Key metrics
-  * Attention
-  * Enrollment
-  * Stickiness
-  * Conversion
-  * Revenue per customer
-  * Customer acquisition cost
-  * Virality
-  * Upselling 
+  * Attention - how effectively the business attracts visitors
+  * Enrollment - how many visitors become free or trial users
+  * Stickiness - how much the customers use the product
+  * Conversion - how many of the users become paying customers, and how many of those switch to a higher-paying tier
+  * Revenue per customer - how much money a customer brings in within a given time period
+  * Customer acquisition cost - how much it costs to get a paying user
+  * Virality - how likely customers are to invite others and spread the word, and how long it takes them to do so
+  * Upselling - what makes customers increase their spending, and how often that happens
+  * Uptime and reliability - how many complaints, problem escalations, or outages the company has
+  * __Churn__ - how many users and customers leave in a given time period; track churn for both users (not paid) and customers (paid)
+    * Formula = (# churns during period) / ([(# customers at beginning of period) + (# customers at end of period)] * 0.5)
+    * Lifetime value = (100 / churn rate) * average monthly revenue per user
+  * Lifetime value - how much customers are worth from cradle to grave
+  * Engagement - daily use; look for usage patterns throughout the application
+
+##### Model 3: Free mobile app
+Ex. Jerry, Wechat, Facebook, Venmo
+* Ways to make money
+  - Downloadable content, such as new maps or vehicles
+  - Flair and customization of in-character appearance and gaming content
+  - Advatages, such as better weapons, upgrades
+  - Saving time
+  - Elimination of countdown timers
+  - Upselling to a paid version
+  - In-game ads
+
+* Key metrics
+  - Downloads - how many people have downloaded the app, app store placement, and ratings
+  - Customer acquisition cost (CAC) - $ to get a user and to get a paying customer
+  - Launch rate - % of people who downoad the app, launch it, and create an account
+  - % of active users/players - % of users who've launched the app and use it on a daily and monthly basis
+    - DAU: daily active users
+    - MAU: monthly active users
+  - % of users who pay - how many of users ever pay for anything
+  - Time to first purchase - how long it takes after activation for a user to make a purchase
+  - __Monthly average revenue per user (ARPU)__, __Average revenue per paying user (ARPPU)__ - from both purchases and watched ads 
+  - Ratings click-through - % of users who put a rating or review in an app store
+  - Virality - # other users a user invites on average
+  - __Churn__ - # customers who uninstall the app or haven't launched it in a certain time period
+  - Customer lifetime value - how much customers are worth from cradle to grave
+
+
+
+
+
 
 
 
