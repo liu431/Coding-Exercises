@@ -90,6 +90,13 @@ import pandas as pd
 df = pd.read_csv(file)
 ```
 ### Dataframe
+#### [pd.DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html)
+```python
+listA = [1,2]
+listB = [3, 4]
+df = pd.DataFrame({'A': listA, 'B': listB})
+```
+
 #### [df.to_numpy](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_numpy.html), [df.is_null](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isnull.html), [df.fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html)
 
 ```python
@@ -103,6 +110,7 @@ if na_values > 0:
 ```python
 df.sum(axis = 0) # Sum over the index
 df.sum(axis = 1) # Sum over the columns
+df['A'].sum() # Sum of one column
 
 ```
 
@@ -128,7 +136,10 @@ df.drop_duplicates([subset=['Name']])
 #### [df.sort_values](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html)
 ```python
 # Return sorted df by certain values along certain axis
+## Sort in place
 df.sort_values(by=['Date'], ascending=False) # Sort by Date in descending order
+## Store sorted object and replace the existing object
+df = df.sort_values(by=['Date'])
 ```
 
 #### [df.iterrows](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iterrows.html)
@@ -146,7 +157,6 @@ def column2Index(df, colname='ID'):
     df.drop([colname], axis=1, inplace=True)
     return df
 ```
-
 
 ### Summary of commands
 ![](https://media-exp1.licdn.com/dms/image/C4E22AQGEBF8Ihm81ng/feedshare-shrink_800/0/1640185264820?e=1643241600&v=beta&t=6TQHBPZPpuRpL5ue0hQNNk6hNUo_J91sgIaGlt9dlms)
