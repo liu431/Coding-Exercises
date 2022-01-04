@@ -1,4 +1,3 @@
-## Functions
 
 ### Recursion
 A function that calls itself
