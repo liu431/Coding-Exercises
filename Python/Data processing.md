@@ -78,8 +78,13 @@ np.where(genderList == 'Male', 1, 0) # array([1, 0, 1])
 ```
 
 #### Export data
+##### [np.savetxt()](https://numpy.org/doc/stable/reference/generated/numpy.savetxt.html)
+
+[fmt option](https://stackoverflow.com/questions/17043393/setting-the-fmt-option-in-numpy-savetxt)
+
 ```python
-np.savetxt('output.csv', df, delimiter=',', fmt='%1.3f')
+np.savetxt('output.csv', arr, delimiter=',', fmt='%1.3f') # 3 decimal spaces
+np.savetxt('output.csv', arr, fmt='%s') # output as string
 ```
 
 ## Pandas
@@ -151,7 +156,7 @@ df[~df['Name].isin(nameList)] # roww with names not in the list
 
 #### Transforming table
 ##### [df.drop()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html)
-##### [df.drop_duplicates](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html)
+##### [df.drop_duplicates()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html)
 ```python
 df.drop(columns=['ExtraCol'], inplace=True) # Drop columns in-place
 df.drop_duplicates([subset=['Name']]) # Return df with duplicated rows of same name removed
