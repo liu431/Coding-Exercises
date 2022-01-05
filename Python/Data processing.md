@@ -69,7 +69,8 @@ c = [i for i in a if i not in b]
 ```
 
 ## Numpy
-#### [np.where](https://numpy.org/doc/stable/reference/generated/numpy.where.html)
+#### [np.where(condition, val_if_yes, val_if_false)](https://numpy.org/doc/stable/reference/generated/numpy.where.html): return elements chosen from x or y depending on condition.
+
 ```python
 # Recode gender
 genderList = np.array(['Male', 'Female', 'Male'])
@@ -82,22 +83,24 @@ np.savetxt('output.csv', df, delimiter=',', fmt='%1.3f')
 ```
 
 ## Pandas
+#### Reading data
 ```python
 # Import packages
 import numpy as np
 import pandas as pd
 # Load data
-df = pd.read_csv(file)
+df = pd.read_csv(file.csv)
+df = pd.read_excel(file.xlsx, header=None)
 ```
-### Dataframe
-#### [pd.DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html)
+
+#### Transforming data
+##### [pd.DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html)
 ```python
 listA = [1,2]
 listB = [3, 4]
 df = pd.DataFrame({'A': listA, 'B': listB})
 ```
-
-#### [df.to_numpy](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_numpy.html), [df.is_null](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isnull.html), [df.fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html)
+##### [df.to_numpy](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_numpy.html), [df.is_null](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isnull.html), [df.fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html)
 
 ```python
 # Detect and fill missing values with 0
@@ -106,34 +109,55 @@ if na_values > 0:
     df = df.fillna(0)
 ```
 
-#### [df.sum](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sum.html)
+##### [df.sum](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sum.html)
 ```python
 df.sum(axis = 0) # Sum over the index
 df.sum(axis = 1) # Sum over the columns
 df['A'].sum() # Sum of one column
-
 ```
 
-#### [df.apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html)
+#### Wrangling data
+##### [df.str.len()](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.len.html): compute the length of each element in the Series/Index.
+
+##### [df.str.split(' ')](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.split.html): split strings around given separator/delimiter.
+
+##### [df.apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html)
 ```python
 # Get the last name from the Name column
 df['Name'].apply(lambda i : i.split(' ')[-1])
 ```
-
-#### [df.str.contains](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.contains.html)
+##### [df.astype()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.astype.html): cast a pandas object to a specified `dtype` dtype.
+##### [df.str.strip()](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.strip.html): remove leading and trailing characters.
 ```python
+df['Name'] = df['Name'].str.strip() 
+```
+
+#### Filtering data
+
+##### [df.str.contains](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.contains.html): test if pattern or regex is contained within a string of a Series or Index.
+```python
+# Get first name only
+df['firstName'] = df['Name'].str.split(' ').str[0]
 # Return rows where Name column contains/doesn't contain certain strings; Fill False value for missing values
 df[df['Name'].str.contains('Ben', na=False)]
 df[~df['Name'].str.contains('Ben', na=False)]
 ```
-
-#### [df.drop_duplicates](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html)
+##### [df.isin(list)](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isin.html): whether each element in the DataFrame is contained in values.
 ```python
-# Return df with duplicated rows of same name removed
-df.drop_duplicates([subset=['Name']])
+nameList = ['A', 'B', 'C']
+df[df['Name].isin(nameList)] # rows with names in the list
+df[~df['Name].isin(nameList)] # roww with names not in the list
 ```
 
-#### [df.sort_values](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html)
+#### Transforming table
+##### [df.drop()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html)
+##### [df.drop_duplicates](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html)
+```python
+df.drop(columns=['ExtraCol'], inplace=True) # Drop columns in-place
+df.drop_duplicates([subset=['Name']]) # Return df with duplicated rows of same name removed
+```
+
+##### [df.sort_values](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html)
 ```python
 # Return sorted df by certain values along certain axis
 ## Sort in place
@@ -142,14 +166,20 @@ df.sort_values(by=['Date'], ascending=False) # Sort by Date in descending order
 df = df.sort_values(by=['Date'])
 ```
 
-#### [df.iterrows](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iterrows.html)
+##### [df.rank(axis=0, method='average', na_option='keep', ascending=True)](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rank.html): compute numerical data ranks (1 through n) along axis.
+```python
+df['ageRank'] = df['Age'].rank(method='dense').astype(int)
+```
+
+
+##### [df.iterrows](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iterrows.html)
 ```python
 # Iterate over df rows as (index, series) pairs
 for index, row in df.iterrows():
     print(row['Name], row['Date])
 ```
 
-#### Set one column as index
+##### Set one column as index
 ```python
 def column2Index(df, colname='ID'):
     '''Set index column as the dataframe index'''
