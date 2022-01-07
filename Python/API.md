@@ -105,6 +105,54 @@ def jprint(obj):
 jprint(jsondata)
 ```
 
-##### Parameters
+##### Query Parameters
+Fetch more specific data from an API to tailor the needs
+```python
+query_params = {"q": "labradoodle"}
+endpoint = "https://api.thedogapi.com/v1/breeds/search"
+requests.get(endpoint, params=query_params).json()
+```
+
+##### Pagination
+ Split large amounts of data into multiple smaller pieces
+
+* `page` attribute: defines which page you’re currently requesting
+* `size` attribute: defines the size of each page
+
+```python
+# per_page=: number of items to return
+# page=: allows you to paginate through multiple results
+response = requests.get("https://api.github.com/events?per_page=1&page=0")
+response.json()[0]['id']
+```    
+
+##### Rate Limiting
+Restricts the number of requests that users can make in a given time frame.
+
+
+### Example: Get COVID cases in Hampshire County, MA in last week
+```python
+from datetime import date, timedelta
+today = date.today()
+startday = today - timedelta(days=7)
+country = "united-states"
+endpoint = f"https://api.covid19api.com/country/{country}/status/confirmed"
+params = {"from": str(startday), "to": str(today)}
+
+response = requests.get(endpoint, params=params).json()
+for r in response:
+    if r['Province'] == 'Massachusetts' and r['City'] == 'Hampshire':
+        print(f"Hampshire county case numbers on {r['Date'].split('T')[0]}: {r['Cases']}")
+```
+
+
+
+
+
+
+
+
+
+
 
 
