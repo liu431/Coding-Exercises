@@ -165,10 +165,10 @@ ORDER BY user_id
 * DATEDIFF(date1, date2) # Return number of days between (date1 - date2)
 * NOW() # Get current time as "YYYY-MM-DD HH-MM-SS" (string)
 * [DATE_TRUNC('[interval]', time_column)](https://mode.com/blog/date-trunc-sql-timestamp-function-count-on/)
+* [TIMESTAMPDIFF(unit, firstdate, seconddate)](https://www.w3resource.com/mysql/date-and-time-functions/mysql-timestampdiff-function.php): returns a value after subtracting a datetime expression from another
+* [PERIOD_DIFF()](https://www.w3schools.com/sql/func_mysql_period_diff.asp): returns the difference between two periods. The result will be in months.
 
-[TIMESTAMPDIFF(unit, firstdate, seconddate)](https://www.w3resource.com/mysql/date-and-time-functions/mysql-timestampdiff-function.php)
 
-returns a value after subtracting a datetime expression from another
 
 
 ### [Windows](https://mode.com/sql-tutorial/sql-window-functions/)
