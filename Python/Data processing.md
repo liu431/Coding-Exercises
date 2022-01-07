@@ -128,8 +128,14 @@ df['A'].sum() # Sum of one column
 
 ##### [df.apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html)
 ```python
-# Get the last name from the Name column
+# Ex. Get last name from names
+## Use lambda function
 df['Name'].apply(lambda i : i.split(' ')[-1])
+
+## Define function 
+def extractLastName(val)
+    return val.split(' ')[-1]
+df['Name'].apply(extractLastName)
 ```
 ##### [df.astype()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.astype.html): cast a pandas object to a specified `dtype` dtype.
 ##### [df.str.strip()](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.strip.html): remove leading and trailing characters.
@@ -167,8 +173,13 @@ df.drop_duplicates([subset=['Name']]) # Return df with duplicated rows of same n
 # Return sorted df by certain values along certain axis
 ## Sort in place
 df.sort_values(by=['Date'], ascending=False) # Sort by Date in descending order
+
 ## Store sorted object and replace the existing object
 df = df.sort_values(by=['Date'])
+
+## Sort values by a list
+listName = ['A', 'B']
+df.set_index('Name').loc[listName].reset_index()
 ```
 
 ##### [df.rank(axis=0, method='average', na_option='keep', ascending=True)](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rank.html): compute numerical data ranks (1 through n) along axis.
