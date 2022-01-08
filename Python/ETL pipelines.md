@@ -19,12 +19,31 @@ __Links to resources__: [Deutsche Börse Public Dataset (DBG PDS)](https://githu
 * Standard libaries: pyvenv, venv
 * Third-party libraries: virtualenv, pyenv, pyenv-virtualenv, virtualenvwrapper, pyenv-virtualenvwrapper, __pipenv__
 
+[Differences](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe),
 [Python Dev Environment](https://dev.to/bowmanjd/python-dev-environment-part-1-setup-py-venv-and-pip-22gd)
 
-```python
+```command
+# Change to project dir
 cd C:\Users\lliu9\OneDrive\Data Engineering\Udemy class - ETL Pipelines\xetra_project
+# Create virtial environment of Python 3.10
 pipenv shell --python C:\Users\lliu9\AppData\Local\Programs\Python\Python310\python.exe
+# List of installed packages
+pip list
+# Virtual environment location
+pipenv --venv
+# Install packages
+pipenv install pandas
+pipenv install awscli
+pipenv install jupyter
+pipenv install boto3
+# Launch virtual environment
+pipenv shell
+# AWS S3 location - check data access
+aws s3 ls deutsche-boerse-xetra-pds/2021-04-21 --recursive --no-sign-request
+# Launch jupyter notebook
 ```
+
+
 
 
 ### Functional Approach
