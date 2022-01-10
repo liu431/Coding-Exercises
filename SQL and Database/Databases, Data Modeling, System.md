@@ -3,9 +3,17 @@
 |-|-|-|
 |Vendors|MySQL, PostgreSQL, SQL Server, SQLite|MongoDB, DynamoDB|
 |Schema|Each table has a schema, which is the columns and types a record is required to have. Each schema must have at least one primary key that uniquely identifies that record.|Inherently schema-less; nested structure|
-|Change|A change in a schema must be applied to all records. This can sometimes cause breakages and big headaches during migrations.|Records can still have primary keys, but a change in the schema is done on an entry-by-entry basis.|
+|Change|A change in a schema must be applied to all records. This can sometimes cause breakages and big headaches during migrations.|Records can still have primary keys, but a change in the schema is done on an entry-by-entry basis. More suitable when there is constantly changing schema.|
 |Scalability|Difficult to distribute|Easier as a collection of related records can be easily stored on a particular node|
 
+* Other types
+  - Elastic Search: for text search; leverages its document-based database to create a powerful search tool.
+  - Redis (Cache Databases): hold frequently accessed data; alleviate load and serve requests faster; reside in memory
+
+### [Producer-Consumer pattern](https://realpython.com/data-engineer-interview-questions-python/#questions-on-design-patterns-and-etl-concepts)
+A worker (the Producer) produces data of some kind and outputs it to a pipeline. This pipeline can take many forms, including network messages and triggers. After the Producer outputs the data, the Consumer consumes and makes use of it. These workers typically work in an asynchronous manner and are executed in separate processes.
+
+In big data, the mapper can be seen as the Producer, while the reducer is effectively the Consumer.
 
 ### [Normalization](https://www.guru99.com/database-normalization.html)
 Purpose: eliminate redundant (repetitive) data and ensure data is stored logically
