@@ -17,12 +17,23 @@ In big data, the mapper can be seen as the Producer, while the reducer is effect
 
 ### [Normalization](https://www.guru99.com/database-normalization.html)
 Purpose: eliminate redundant (repetitive) data and ensure data is stored logically
-* 1NF (First Normal Form): each table cell should contain a single value; each record needs to be unique
-* 2NF (Second Normal Form): single column primary key that does not functionally dependant on any subset of candidate key relation
-* 3NF (Third Normal Form): has no transitive functional dependencies (when changing a non-key column, might cause any of the other non-key columns to change)
-* BCNF (Boyce-Codd Normal Form): 3NF and not have any dependency between two non-prime attributes
-* 4NF (Fourth Normal Form): no database table instance contains two or more, independent and multivalued data describing the relevant entity
-* 5NF (Fifth Normal Form): cannot be decomposed into any number of smaller tables without loss of data
+* Forms
+  - 1NF (First Normal Form): each table cell should contain a single value; each record needs to be unique
+  - 2NF (Second Normal Form): single column primary key that does not functionally dependant on any subset of candidate key relation
+  - 3NF (Third Normal Form): has no transitive functional dependencies (when changing a non-key column, might cause any of the other non-key columns to change)
+  - BCNF (Boyce-Codd Normal Form): 3NF and not have any dependency between two non-prime attributes
+  - 4NF (Fourth Normal Form): no database table instance contains two or more, independent and multivalued data describing the relevant entity
+  - 5NF (Fifth Normal Form): cannot be decomposed into any number of smaller tables without loss of data
+
+* Steps
+  - Removing duplicates (deduplication)
+  - Fixing conflicting data
+  - Conforming data to a specified data model
+
+### Data pipelines
+[Ex](https://realpython.com/python-data-engineer/): Imagine you work in a large organization with data scientists and a BI team, both of whom rely on your data. You may store unstructured data in a data lake to be used by your data science customers for exploratory data analysis. You may also store the normalized data in a relational database or a more purpose-built data warehouse to be used by the BI team in its reports.
+
+![](https://files.realpython.com/media/de_illus_editable.e091cb69d248.png)
 
 ### [ACID](https://www.ibm.com/docs/en/cics-ts/5.4?topic=processing-acid-properties-transactions)
 [Wiki](https://en.wikipedia.org/wiki/ACID): A set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps.
