@@ -1,3 +1,12 @@
+### [Relational vs Non-Relational Databases](https://realpython.com/data-engineer-interview-questions-python/#questions-on-design-patterns-and-etl-concepts)
+||Relational|Non-relation|
+|-|-|-|
+|Vendors|MySQL, PostgreSQL, SQL Server, SQLite|MongoDB, DynamoDB|
+|Schema|Each table has a schema, which is the columns and types a record is required to have. Each schema must have at least one primary key that uniquely identifies that record.|Inherently schema-less; nested structure|
+|Change|A change in a schema must be applied to all records. This can sometimes cause breakages and big headaches during migrations.|Records can still have primary keys, but a change in the schema is done on an entry-by-entry basis.|
+|Scalability|Difficult to distribute|Easier as a collection of related records can be easily stored on a particular node|
+
+
 ### [Normalization](https://www.guru99.com/database-normalization.html)
 Purpose: eliminate redundant (repetitive) data and ensure data is stored logically
 * 1NF (First Normal Form): each table cell should contain a single value; each record needs to be unique
@@ -34,8 +43,9 @@ Purpose: eliminate redundant (repetitive) data and ensure data is stored logical
 [Source](https://techdifferences.com/difference-between-oltp-and-olap.html)
 
 OLTP and OLAP both are the online processing systems. OLTP is a transactional processing while OLAP is an analytical processing system. OLTP is a system that manages transaction-oriented applications on the internet for example, ATM. OLAP is an online system that reports to multidimensional analytical queries like financial reporting, forecasting, etc.
-
-OLTP’s main operations are insert, update and delete whereas, OLAP’s main operation is to extract multidimensional data for analysis.
+* Main operations
+  - OLTP: insert, update and delete 
+  - OLAP: extract multidimensional data for analysis.
 
 
 ### Query optimization vs Database performance tuning
@@ -46,6 +56,9 @@ SQL performance tuning is narrower in scope than database performance tuning.
 SQL performance tuning refers to best practices and procedures designed to ensure relational databases are running as efficiently as possible. This primarily involves tuning, managing, and optimizing SQL queries and indexes.
 
 #### Techniques
+
+Factors: Joins, Aggregations, Traversals, Records
+
 [Example 1](https://beginner-sql-tutorial.com/sql-query-tuning.htm)
 * Use the actual columns names in SELECT statement instead of than '*'
 * Do not use HAVING clause for any other purposes than filtering
