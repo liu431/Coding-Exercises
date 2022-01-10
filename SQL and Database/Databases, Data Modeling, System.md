@@ -24,6 +24,12 @@ Purpose: eliminate redundant (repetitive) data and ensure data is stored logical
 * 4NF (Fourth Normal Form): no database table instance contains two or more, independent and multivalued data describing the relevant entity
 * 5NF (Fifth Normal Form): cannot be decomposed into any number of smaller tables without loss of data
 
+### [ACID](https://www.ibm.com/docs/en/cics-ts/5.4?topic=processing-acid-properties-transactions)
+[Wiki](https://en.wikipedia.org/wiki/ACID): A set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps.
+* Atomicity: all the changes are performed, or none of them are.
+* Consistency: data is in a consistent state when a transaction starts and when it ends.
+* Isolation: the intermediate state of a transaction is invisible to other transactions; transactions that run concurrently appear to be serialized.
+* Durability: after a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure.
 
 ### Schemas
 [Snowflake vs Star](https://www.xplenty.com/blog/snowflake-schemas-vs-star-schemas-what-are-they-and-how-are-they-different/)
