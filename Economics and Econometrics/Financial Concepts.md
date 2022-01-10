@@ -8,5 +8,11 @@ Total value of a company, defined in terms of its financing. It includes both th
 #### [EBITDA](https://www.investopedia.com/articles/06/ebitda.asp)
 Earnings before interest, taxes, depreciation, and amortization
 
+#### Price-to-Book (P/B) Ratio
+Measures the market's valuation of a company relative to its book value.
+
+#### Price-to-Sales (P/S) Ratio
+Compares a company’s stock price to its revenues
+
 #### Financial models
 [Top 10 types of financial models](https://corporatefinanceinstitute.com/resources/knowledge/modeling/types-of-financial-models/)
