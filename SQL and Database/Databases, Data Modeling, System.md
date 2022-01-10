@@ -1,3 +1,7 @@
+## Notes
+
+[Glossary of Common Database Terms](https://www.lifewire.com/databases-glossary-1019603#toc-stored-procedure)
+
 ### [Relational vs Non-Relational Databases](https://realpython.com/data-engineer-interview-questions-python/#questions-on-design-patterns-and-etl-concepts)
 ||Relational|Non-relation|
 |-|-|-|
@@ -29,6 +33,10 @@ Purpose: eliminate redundant (repetitive) data and ensure data is stored logical
   - Removing duplicates (deduplication)
   - Fixing conflicting data
   - Conforming data to a specified data model
+
+### [One-to-Many Relationships](https://www.lifewire.com/one-to-many-relationships-1019756)
+
+When each record in Table A may have many linked records in Table B, but each record in Table B may have only one corresponding record in Table A.
 
 ### Data pipelines
 [Ex](https://realpython.com/python-data-engineer/): Imagine you work in a large organization with data scientists and a BI team, both of whom rely on your data. You may store unstructured data in a data lake to be used by your data science customers for exploratory data analysis. You may also store the normalized data in a relational database or a more purpose-built data warehouse to be used by the BI team in its reports.
