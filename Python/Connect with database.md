@@ -1,4 +1,8 @@
-## Connect with SQL database to get data
+## Notes
+
+[Real Python - Introduction to Python SQL Libraries](https://realpython.com/python-sql-libraries/)
+
+### Connect with SQL database to get data
 
 ```python
 from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, inspect
