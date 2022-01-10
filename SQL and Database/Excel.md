@@ -1,3 +1,5 @@
+## Excel Notes
+
 ### Functions
 
 ##### String
@@ -13,7 +15,9 @@ Ex. =CHOOSE(WEEKDAY(A1,1),"S","M","T","W","T","F","S"): return first letter of w
 
 [=IF(OR(A1>=0,A1<=100),A2,"The grade is out of range")](https://support.microsoft.com/en-us/office/or-function-7d17ad14-8700-4281-b308-00b131e22af0): displays the value in cell A2 if A1 is between 0 and 100, otherwise it displays a message.
 
+##### Calculate values
 
+[=SUMIF(range, criteria, [sum_range])](https://support.microsoft.com/en-us/office/sumif-function-169b8c99-c05c-4483-a712-1697a653039b): sum the values in a range that meet criteria that you specify
 
 ##### Look up values
 [=VLOOKUP(What you want to look up, where you want to look for it, the column number in the range containing the value to return, return an Approximate or Exact match – indicated as 1/TRUE, or 0/FALSE)](https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1)
