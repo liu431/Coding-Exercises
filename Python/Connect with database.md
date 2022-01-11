@@ -24,6 +24,8 @@ engine = create_engine(conn_str, echo=False)
 pd.read_sql_query('select * from Sales',engine)
 # Join tables
 pd.merge(Sales, SalesPerson, on='SalesPersonID', how='left')
+# Write to RDBS
+df.to_sql('SalesReport', con=engine, if_exists='replace', index=False)
 ```
 
 ### Get query results as a list
