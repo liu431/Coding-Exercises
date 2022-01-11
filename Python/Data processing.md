@@ -96,9 +96,11 @@ import pandas as pd
 # Load data
 df = pd.read_csv(file.csv)
 df = pd.read_excel(file.xlsx, header=None)
+# Rename columns
+df.rename(columns={'MKT':'Marketing', 'Dev':'Development'}, inplace=True)
 ```
 
-#### Transforming data
+#### Transform data
 ##### [pd.DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html)
 ```python
 listA = [1,2]
@@ -121,10 +123,16 @@ df.sum(axis = 1) # Sum over the columns
 df['A'].sum() # Sum of one column
 ```
 
-#### Wrangling data
+#### Wrangle data
 ##### [df.str.len()](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.len.html): compute the length of each element in the Series/Index.
 
 ##### [df.str.split(' ')](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.split.html): split strings around given separator/delimiter.
+
+##### [df.replace](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.replace.html)
+```python
+reg_map={'AK': 'Alaska', 'IL': 'Illinois'}
+df = df.replace({'Reg': reg_map})
+```
 
 ##### [df.apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html)
 ```python
@@ -137,6 +145,21 @@ def extractLastName(val)
     return val.split(' ')[-1]
 df['Name'].apply(extractLastName)
 ```
+
+[Difference between map, applymap and apply methods in Pandas](https://stackoverflow.com/questions/19798153/difference-between-map-applymap-and-apply-methods-in-pandas)
+* `map`: defined on Series ONLY; accepts dicts, Series, or callable; elementwise for Series
+* `applymap`: defined on DataFrames ONLY; accept callables only; elementwise for DataFrames
+* `apply`: defined on BOTH; accept callables only; elementwise, suited to more complex operations and aggregation
+
+```python 
+# map: mapping values from one domain to another
+df['A'].map({1:'a', 2:'b', 3:'c'})
+# applymap: elementwise transformations across multiple rows/columns
+df[['A', 'B', 'C']].applymap(str.strip)
+# apply: apply any function that cannot be vectorised
+df['sentences'].apply(nltk.sent_tokenize)
+```
+
 ##### [df.astype()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.astype.html): cast a pandas object to a specified `dtype` dtype.
 ##### [df.str.strip()](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.strip.html): remove leading and trailing characters.
 ```python
@@ -160,11 +183,11 @@ df[df['Name].isin(nameList)] # rows with names in the list
 df[~df['Name].isin(nameList)] # roww with names not in the list
 ```
 
-#### Transforming table
+#### Transform table
 ##### [df.drop()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html)
 ##### [df.drop_duplicates()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html)
 ```python
-df.drop(columns=['ExtraCol'], inplace=True) # Drop columns in-place
+df.drop(columns=['ExtraCol1, ExtraCol2'], inplace=True) # Drop columns in-place
 df.drop_duplicates([subset=['Name']]) # Return df with duplicated rows of same name removed
 ```
 
