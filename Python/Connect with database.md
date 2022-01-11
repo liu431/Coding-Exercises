@@ -5,6 +5,7 @@
 ### Connect with SQL database to get data
 
 ```python
+# sqlalchemy: a Python SQL toolkit that provides us flexibility to make connection to various RDBS
 from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, inspect
 server = ''
 database = ''
