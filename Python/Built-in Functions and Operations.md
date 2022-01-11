@@ -1,3 +1,14 @@
+## Python Notes
+
+### Keyword
+* [Iterables](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html): object capable of returning its members one at a time, permitting it to be iterated over in a for-loop
+* Generators: functions that return an iterable generator object; contains one or more `yield` statements; generate the values on the fly
+* [`yield`](https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do): used like `return`, except the function will return a generator
+* `next()`: iterate through the items
+* `StopIteration`: raised when there are no values to be returned 
+
+
+
 ###  Miscellaneous operating system interfaces
 
 #### File open/write/close
