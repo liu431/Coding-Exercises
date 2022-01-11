@@ -18,6 +18,14 @@ conn_str = 'mssql+pyodbc:///?autocommit=true&odbc_connect={}'.format(params)
 engine = create_engine(conn_str, echo=False)
 ```
 
+### Pandas methods 
+```python
+# Extract data from Source
+pd.read_sql_query('select * from Sales',engine)
+# Join tables
+pd.merge(Sales, SalesPerson, on='SalesPersonID', how='left')
+```
+
 ### Get query results as a list
 ```python
 def GetList():
@@ -51,6 +59,7 @@ def GetTable():
     
 GetTable()
 ```
+
 
 ### Update table columns
 ```python
