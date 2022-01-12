@@ -9,6 +9,8 @@ Removes leading and trailing spaces from the text in the formula
 ##### Conditions
 [=IF(A1='Yes',1,2)](https://support.microsoft.com/en-us/office/if-function-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2) - IF(A1 = Yes, then return a 1, otherwise return a 2)
 
+=IF(A1>=80, 'Senior',IF(AND(B1>21, B1<70), "Adult", "Young")): [Nesting IFs to handle more conditions](https://exceljet.net/formula/if-else)
+
 [=CHOOSE(index_num, value1, [value2], ...)](https://support.microsoft.com/en-us/office/choose-function-fc5c184f-cb62-4ec7-a46e-38653b98f5bc) - return a value from the list of value arguments
 
 Ex. =CHOOSE(WEEKDAY(A1,1),"S","M","T","W","T","F","S"): return first letter of week days (Numbers 1 (Sunday) through 7 (Saturday))
