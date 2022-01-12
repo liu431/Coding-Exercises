@@ -114,6 +114,14 @@ import operator
 s = sorted(s, key = operator.itemgetter(1, 2))
 s.sort(key = operator.itemgetter(1, 2))
 ```
+
+
+##### Remove vowels from a letter
+```python
+letter = 'abcdEFGH'
+''.join([i for i in letter if i not in 'aeiou' and i not in 'AEIOU']) # 'bcdFGH'
+```
+
 ### Letters
 #### [Letters and numbers conversion](https://www.kite.com/python/answers/how-to-convert-letters-to-numbers-in-python)
 ```python
