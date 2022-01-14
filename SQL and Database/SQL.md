@@ -10,6 +10,7 @@ Links:
 * RIGHT (OUTER) JOIN: returns all records from the right table, and the matched records from the left table
 * FULL (OUTER) JOIN: returns all records when there is a match in either left or right table; Null for unmatched cells
 * CROSS JOIN: returns the Cartesian product which is the product of rows of two associated tables
+![](https://i2.wp.com/www.datascienceexamples.com/wp-content/uploads/2019/12/join_types.png?fit=1280%2C1200&ssl=1)
 
 #### SELF JOIN: a regular join, but the table is joined with itself
 ```sql
