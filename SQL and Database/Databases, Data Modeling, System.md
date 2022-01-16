@@ -43,6 +43,13 @@ When each record in Table A may have many linked records in Table B, but each re
 
 ![](https://files.realpython.com/media/de_illus_editable.e091cb69d248.png)
 
+### [When to use ELT vs ETL](https://www.qlik.com/us/etl/etl-vs-elt#:~:text=The%20ETL%20process%20is%20appropriate,and%20when%20timeliness%20is%20important.)
+  - ETL: for small data sets which require complex transformations
+  - ELT: for larger, structured and unstructured data sets and when timeliness is important.
+
+
+
+
 ### [ACID](https://www.ibm.com/docs/en/cics-ts/5.4?topic=processing-acid-properties-transactions)
 [Wiki](https://en.wikipedia.org/wiki/ACID): A set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps.
 * Atomicity: all the changes are performed, or none of them are.
