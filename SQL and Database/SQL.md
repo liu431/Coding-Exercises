@@ -244,6 +244,16 @@ ORDER BY 1
 * SUM(): return the total sum of a numeric column
 * AVG(): return the average of a numeric column
 
+##### [Find the top 10 persons who have visited the website in the last month](https://www.glassdoor.com/Interview/You-have-a-website-and-you-need-to-report-the-traffic-insights-on-this-website-to-the-Product-Manager-Write-a-SQL-query-to-QTN_2056563.htm)
+```sql
+SELECT id, COUNT(*) AS Visits
+FROM Tbl
+WHERE logdate > now() - interval 1 month
+GROUP BY 1
+ORDER BY COUNT(*) DESC
+LIMIT 10
+```
+
 ##### [Running total](https://popsql.com/learn-sql/mysql/how-to-calculate-cumulative-sum-running-total-in-mysql)
 ```sql
 WITH ClientCountsByYear AS 
@@ -449,5 +459,13 @@ AS
 SELECT * FROM ClientTable WHERE State = @City
 GO;
 EXEC SelectAllCustomers @State = 'Illinois';
+```
 
+
+#### [EXPLAIN](https://www.sitepoint.com/using-explain-to-write-better-mysql-queries/)
+* Tool to understand and optimize troublesome MySQL queries
+* Pre-pend it before the SELECT queries
+
+```sql
+EXPLAIN SELECT * FROM TBL
 ```
