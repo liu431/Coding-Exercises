@@ -306,7 +306,7 @@ Primary key: combination of all foreign keys (surrogare) relating back to dim ta
 | SCD Type | Techniques | Implications |
 | -------- | ---------- | ----------- |
 | Type 1 | "In-Place Update" ETL pattern | Simpliest, but no history maintained
-| Type 2 | Create new dim table row for each new history version | Most architecturally complex, but robust representation of hostory |
+| Type 2 | Create new dim table row for each new history version | Most architecturally complex, but robust representation of history |
 | Type 3 | Smallest number of dim table columns for multiple history versions | Easily switch back and forth between "as-is" and "as-was" reporting, but limited use cases |
 
 * Design a Type 1 SCD
