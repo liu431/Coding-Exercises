@@ -1,17 +1,17 @@
 ## Statistical Inference
 
 ### Statistic
-* [Standard error](https://www.investopedia.com/terms/s/standard-error.asp): measures how accurate is a sample represents a population.
-* [Standard deviation](https://www.khanacademy.org/math/probability/data-distributions-a1/summarizing-spread-distributions/a/calculating-standard-deviation-step-by-step): measure the statistical accuracy of an estimate. 
 
-[Difference](https://keydifferences.com/difference-between-standard-deviation-and-standard-error.html)
+* [Standard error v.s. Standard deviation](https://keydifferences.com/difference-between-standard-deviation-and-standard-error.html)
+  - [Standard error](https://www.investopedia.com/terms/s/standard-error.asp): measures how accurate is a sample represents a population.
+  - [Standard deviation](https://www.khanacademy.org/math/probability/data-distributions-a1/summarizing-spread-distributions/a/calculating-standard-deviation-step-by-step): measure the statistical accuracy of an estimate. 
 
-
-
-#### [Degrees of freedom](https://www.scribbr.com/statistics/t-test/)
+* [Degrees of freedom](https://www.scribbr.com/statistics/t-test/)
 Related to your sample size, and shows how many 'free' data points are available in your test for making comparisons. The greater the degrees of freedom, the better your statistical test will work
 
+* [Coefficient of correlation](https://www.investopedia.com/terms/c/correlationcoefficient.asp#:~:text=The%20correlation%20coefficient%20is%20a,range%20between%20%2D1.0%20and%201.0.&text=A%20correlation%20of%20%2D1.0%20shows,shows%20a%20perfect%20positive%20correlation.): statistical measure of the strength of the relationship between the relative movements of two variables
 
+* [Coefficient of determination (R^2)](https://en.wikipedia.org/wiki/Coefficient_of_determination): proportion of the variation in the dependent variable that is predictable from the independent variables
 
 
 
