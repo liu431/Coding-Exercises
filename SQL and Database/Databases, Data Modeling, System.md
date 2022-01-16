@@ -136,7 +136,15 @@ Movies
 Actor and Actress
 - ID
 - Name
-- Movie ID
+- Movie ID'
+
+
+##### Ex. Design a data model for a school
+Faculty (ID, Name, Title, Department, JoinDate)
+Student (ID, Name, Major, StartDate)
+Course (ID, Name, Term, Faculty, Department, Credit Hours)
+Course Registration (ID, StudentID, CourseID, RegistrationDate)
+
 
 ### Database Management
 [Create View](https://dev.mysql.com/doc/refman/8.0/en/create-view.html)
