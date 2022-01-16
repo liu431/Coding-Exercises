@@ -44,6 +44,29 @@ Row-Level Security restricts data access at the row level, whereas Column-Level 
 * Alias
 Alllow you to change how the field values shows up in your visualization without altering the underlying data source
 
+* [Dimensions vs. Measures](https://help.tableau.com/current/pro/desktop/en-us/datafields_typesandroles.htm)
+  - Dimensions: contain qualitative values (such as names, dates, or geographical data); used to categorize, segment, and reveal the details in your data; affect the level of detail in the view.
+  - Measures: contain numeric, quantitative values that you can measure; can be aggregated. When you drag a measure into the view, Tableau applies an aggregation to that measure (by default).
+
+* Discrete vs. Continuous
+  - Discrete field contains specific values. (blue color)
+  - Continuous field exists on a spectrum. (green color)
+  - Time can be both discrete and continuous, depending on analysis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
