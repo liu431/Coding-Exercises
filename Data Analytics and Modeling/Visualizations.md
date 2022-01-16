@@ -12,3 +12,38 @@
 ### Tableau
 #### [Row Level Security](https://www.thedataschool.com.au/mipadmin/row-level-security-in-tableau-using-user-functions/) vs [Column Level Security](https://www.thedataschool.com.au/mipadmin/column-level-security-in-tableau-uisng-user-functions/)
 Row-Level Security restricts data access at the row level, whereas Column-Level Security restricts access at the column level.
+
+[LinkedIn Learing: Using Tableau to Discover Powerful Business Insights](https://www.linkedin.com/learning/using-tableau-to-discover-powerful-business-insights)
+* Fundamental Concepts of "right" Visualization
+  - Keep visualizations simple
+  - Focus on teh important metrics
+  - Use the right visualization to uncover the trend
+
+* 4 functions
+  - Connect/join/union/blend to multiple types of data sources
+  - Explore and analyze data quickly by creating charts and applying filters and analytic models
+  - Share insights through basic visualizations or interactive dashboard
+  - Enable user to analyze data, including aggregation, dimensions, measures, and types of fields
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
