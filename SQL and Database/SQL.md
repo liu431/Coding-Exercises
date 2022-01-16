@@ -404,12 +404,20 @@ FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY continent ORDER BY name) AS id F
 GROUP BY id
 ```
 
-##### Rank a table by revenue (Add a Rank Column), without using Rank() function
+##### Ex. Rank a table by revenue (Add a Rank Column), without using Rank() function
 ```sql
 SELECT id, revenue, 
 	(select count(*)+1 FROM tbl t2 
 	WHERE t2.id = t1.id AND r1.revenue < r2.revenue)
 FROM tbl t1
+```
+
+##### Ex. Given [Airline(From, To, Dist) table](http://sqlfiddle.com/#!15/2915d8/15/0), how would you identify unique flights whichever city is the destination or arrival location.
+```sql
+select case when "From">"To" then "From" else "To" end as "FromA",
+case when "To">"From" then "From" else "To" end as "TOA" , max("Dist")
+from airlines
+group by 1, 2 
 ```
 
 ### Advanced topics 
