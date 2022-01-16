@@ -115,35 +115,40 @@ Cluster index is a type of index that sorts the data rows in the table on their 
 
 ### Data Models
 
-##### Ex. Can you give me a data model which will help answer the following questions. No SQL queries just the data model. (*Amazon BIE*)
-a. Top grossing movie last year?
+##### Ex. Design a data model which will help answer the following questions (*Amazon BIE*)
+- Movies (MovieID, Name, Year, BoxResults, Star Ratings)
+- Cast (MovieID, ActorID, ActorRole)
+- Actor (ActorID, Name, Gender)
 
+a. Top 10 grossing movie last year?
+```sql
+SELECT MovieID, Name
+FROM Movies
+WHERE Year = YEAR(NOW()) - 1
+ORDER BY BoxResults DESC
+LIMIT 10
+```
 b. All movies which starred Brad Pitt.
+```sql
+SELECT DISTINCT Movies.Name
+FROM Cast 
+LEFT JOIN Actor USING (ActorID)
+LEFT JOIN Movies USING (MovieID)
+WHERE Actor.Name = 'Brad Pitt'
+```
+c. Every actor which Brad Pitt has worked with.
+```sql
 
-c. Every actor which Bradd Pitt has worked with.
+```
+  
 
-d. Top Movies (star rating) for 2019?
-
-Ans:
-
-Movies
-- Movie ID
-- Movie Name
-- Movie Year
-- Movie Box Office Results
-- Star Ratings
-
-Actor and Actress
-- ID
-- Name
-- Movie ID'
 
 
 ##### Ex. Design a data model for a school
-Faculty (ID, Name, Title, Department, JoinDate)
-Student (ID, Name, Major, StartDate)
-Course (ID, Name, Term, Faculty, Department, Credit Hours)
-Course Registration (ID, StudentID, CourseID, RegistrationDate)
+- Faculty (ID, Name, Title, Department, JoinDate)
+- Student (ID, Name, Major, StartDate)
+- Course (ID, Name, Term, Faculty, Department, Credit Hours)
+- Course Registration (ID, StudentID, CourseID, RegistrationDate)
 
 
 ### Database Management
