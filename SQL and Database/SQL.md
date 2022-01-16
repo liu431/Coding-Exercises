@@ -412,13 +412,34 @@ SELECT id, revenue,
 FROM tbl t1
 ```
 
-### Process data 
-
-#### [JSON flattening](https://www.holistics.io/blog/how-to-extract-nested-json-data-in-mysql-8-0/)
-##### 2 main forms
+### Advanced topics 
+#### Process JSON data 
+##### [Flattening](https://www.holistics.io/blog/how-to-extract-nested-json-data-in-mysql-8-0/)
 * Key-value object: a single record which consists of multiple named or indexed fields (or keys) paired with values
 * Nested Array/Table: a table built with multiple key-value objects in a hierarchical format
-
 ##### Functions
 * [JSON_EXTRACT()](https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html) OR ->>
 * JSON_TABLE()
+
+#### [Views](https://www.w3schools.com/sql/sql_view.asp)
+* A _virtual_ table based on the result-set of an SQL statement
+* Always shows up-to-date data when user queries it
+
+```sql
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+```
+
+#### [Stored Procedures](https://www.w3schools.com/sql/sql_stored_procedures.asp)
+* A prepared SQL code that you can save, so the code can be reused over and over again
+* Can also pass parameters to a stored procedure
+```sql
+CREATE PROCEDURE SelectAllClientss @State nvarchar(30)
+AS
+SELECT * FROM ClientTable WHERE State = @City
+GO;
+EXEC SelectAllCustomers @State = 'Illinois';
+
+```
