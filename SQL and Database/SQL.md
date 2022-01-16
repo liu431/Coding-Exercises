@@ -404,6 +404,13 @@ FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY continent ORDER BY name) AS id F
 GROUP BY id
 ```
 
+##### Rank a table by revenue (Add a Rank Column), without using Rank() function
+```sql
+SELECT id, revenue, 
+	(select count(*)+1 FROM tbl t2 
+	WHERE t2.id = t1.id AND r1.revenue < r2.revenue)
+FROM tbl t1
+```
 
 ### Process data 
 
