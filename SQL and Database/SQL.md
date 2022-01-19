@@ -175,6 +175,8 @@ ORDER BY user_id
 
 
 ### [Windows](https://mode.com/sql-tutorial/sql-window-functions/)
+[How to Use SQL Window Functions by Madison Schott](https://towardsdatascience.com/how-to-use-sql-window-functions-5d297d29f810)
+
 Def:  performs a calculation across a set of table rows that are somehow related to the current row; the rows retain their separate identities
 
 _OVER()_: designates it as a window function
