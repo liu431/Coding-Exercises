@@ -243,6 +243,8 @@ ORDER BY 1
 * COUNT(): return the number of rows that matches a specified criterion.
 * SUM(): return the total sum of a numeric column
 * AVG(): return the average of a numeric column
+* MAX(): return the max of a numeric column
+* MIN(): return the min of a numeric column
 
 ##### [Find the top 10 persons who have visited the website in the last month](https://www.glassdoor.com/Interview/You-have-a-website-and-you-need-to-report-the-traffic-insights-on-this-website-to-the-Product-Manager-Write-a-SQL-query-to-QTN_2056563.htm)
 ```sql
