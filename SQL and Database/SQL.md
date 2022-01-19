@@ -4,6 +4,8 @@ Links:
 
 [Model Advanced SQL](https://mode.com/sql-tutorial/intro-to-advanced-sql/)
 
+[SQL Server technical documentation](https://docs.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver15)
+
 ### Table Joins (combine columns from two or more tables)
 * (INNER) JOIN: returns records that have matching values in both tables
 * LEFT (OUTER) JOIN: returns all records from the left table, and the matched records from the right table
