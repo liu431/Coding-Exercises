@@ -9,6 +9,26 @@
 4. Emphasize the most important facts
 5. Form should follow function
 
+### Chart Types
+[Tableau - Types of Charts and Graphs](https://www.tableau.com/learn/whitepapers/which-chart-or-graph-is-right-for-you)
+* Pie Chart: powerful for adding detail to other visualizations
+* Bar chart: compare data across categories, highlight differences, show trends and outliers, and reveal historical highs and lows at a glance.
+* Line Chart: visualize changes in one value relative to another
+* Maps: show how location correlates with trends in your data
+* Density Maps: identify locations with greater or fewer numbers of data points
+* Scatter Plot: investigate the relationship between different variables, showing if one variable is a good predictor of another, or if they tend to change independently
+* Gantt Chart: display a project schedule or show changes in activity over time
+* Bubble Chart: add detail to scatter plots or maps to show the relationship between three or more measures
+* Treemap: relate different segments of your data to the whole
+
+
+
+
+[How to Choose the Right Type of Chart for Your Message](https://education.microsoft.com/en-us/course/0a60eeb6/1)
+![](https://az801952.vo.msecnd.net/uploads/b9335f90-bb61-4773-899e-3927c923b9be.png)
+
+
+
 ### Tableau
 #### [Row Level Security](https://www.thedataschool.com.au/mipadmin/row-level-security-in-tableau-using-user-functions/) vs [Column Level Security](https://www.thedataschool.com.au/mipadmin/column-level-security-in-tableau-uisng-user-functions/)
 Row-Level Security restricts data access at the row level, whereas Column-Level Security restricts access at the column level.
@@ -16,7 +36,7 @@ Row-Level Security restricts data access at the row level, whereas Column-Level 
 [LinkedIn Learing: Using Tableau to Discover Powerful Business Insights](https://www.linkedin.com/learning/using-tableau-to-discover-powerful-business-insights)
 * Fundamental concepts of "right" visualization
   - Keep visualizations simple
-  - Focus on teh important metrics
+  - Focus on the important metrics
   - Use the right visualization to uncover the trend
 
 * 4 functions
