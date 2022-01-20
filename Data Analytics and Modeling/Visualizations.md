@@ -13,6 +13,9 @@
 [Tableau - Types of Charts and Graphs](https://www.tableau.com/learn/whitepapers/which-chart-or-graph-is-right-for-you)
 * Pie Chart: powerful for adding detail to other visualizations
 * Bar chart: compare data across categories, highlight differences, show trends and outliers, and reveal historical highs and lows at a glance.
+  * Common mistake: [adjust your starting axis](https://uxdesign.cc/the-most-common-mistake-designers-make-when-adjusting-their-bar-charts-6f7405d69703) 
+    * Problem: change the comparison points that people can make between the categories
+    * Solution: horizontal bar chart; rethink the visualization message
 * Line Chart: visualize changes in one value relative to another
 * Maps: show how location correlates with trends in your data
 * Density Maps: identify locations with greater or fewer numbers of data points
