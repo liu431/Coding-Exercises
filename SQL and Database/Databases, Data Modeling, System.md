@@ -116,42 +116,7 @@ Factors: Joins, Aggregations, Traversals, Records
 ### [Clustered and nonclustered indexes](https://www.guru99.com/clustered-vs-non-clustered-index.html)
 Cluster index is a type of index that sorts the data rows in the table on their key values whereas the Non-clustered index stores the data at one location and indices at another location.
 
-### Data Models
 
-##### Ex. Design a data model which will help answer the following questions (*Amazon BIE*)
-- Movies (MovieID, Name, Year, BoxResults, Star Ratings)
-- Cast (MovieID, ActorID, ActorRole)
-- Actor (ActorID, Name, Gender)
-
-a. Top 10 grossing movie last year?
-```sql
-SELECT MovieID, Name
-FROM Movies
-WHERE Year = YEAR(NOW()) - 1
-ORDER BY BoxResults DESC
-LIMIT 10
-```
-b. All movies which starred Brad Pitt.
-```sql
-SELECT DISTINCT Movies.Name
-FROM Cast 
-LEFT JOIN Actor USING (ActorID)
-LEFT JOIN Movies USING (MovieID)
-WHERE Actor.Name = 'Brad Pitt'
-```
-c. Every actor which Brad Pitt has worked with.
-```sql
-
-```
-  
-
-
-
-##### Ex. Design a data model for a school
-- Faculty (ID, Name, Title, Department, JoinDate)
-- Student (ID, Name, Major, StartDate)
-- Course (ID, Name, Term, Faculty, Department, Credit Hours)
-- Course Registration (ID, StudentID, CourseID, RegistrationDate)
 
 
 ### Database Management
