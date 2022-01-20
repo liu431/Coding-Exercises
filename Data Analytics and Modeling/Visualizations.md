@@ -23,7 +23,9 @@
 * Gantt Chart: display a project schedule or show changes in activity over time
 * Bubble Chart: add detail to scatter plots or maps to show the relationship between three or more measures
 * Treemap: relate different segments of your data to the whole
+* [Boxplot](https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51): display the distribution of data based on a five number summary (“minimum”, first quartile (Q1), median, third quartile (Q3), and “maximum”). It can tell you about your outliers and what their values are.
 
+<img src="https://miro.medium.com/max/924/1*NRlqiZGQdsIyAu0KzP7LaQ.png" width="800" height="1000" />
 
 
 
