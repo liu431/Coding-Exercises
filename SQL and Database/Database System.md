@@ -5,6 +5,41 @@
 [Book - Elmasri & Navathe: Fundamentals of Database Systems. 7 Edition. Pearson 2016.](https://www.amazon.com/Fundamentals-Database-Systems-Ramez-Elmasri/dp/0133970779)
 
 ### Fundamentals Of Databases
+* Models: represent a perception of structures of reality; helpful to examine or manage part of the real world
+  * only emphasizes selecetd aspects
+  * is described in some language
+  * can be erroneous
+  * may have featues that are not exist in reality
+  * When to use: data intebnsive apps; persistent storage of data; centralized control of data; control of redundancy; control of consistency and integrity; multiple use support; data sharing; documentation; independence; control of access abndsecurity; backup and recovery
+
+* Data modeling: fix a perception of structures of reality and represent this perception
+* Process modeling: may be represented by 1. embedded in program code; 2. executed ad-hoc
+* Data models: data structures; integrity constraints; operations
+  * Entity-relationship model
+  * Relational model: tables (schema: table name, data type, rows/columns); constraints (rules that cannot be expressed by the data structures alone);
+  * Hierarchical model
+* Keys: uniqueness constraints
+* Surrogate: system-generated, unqiue, internal identifiers; represent an entity of the real world inside the database; immutable by the application programs
+* Integrity: database reflects reality well; Consistency: database doesn't have internal conflicts
+* ANSI/SPARC 3-level DB architecture: separate schema and data
+  * External schema: use of data; describe parts of the information in the conceptual schema in a form convenient to a particular user group's view; derived from the ceonceptual schema; `view` virtual table
+  * Conceptual schema: meaning of data; describe all conceptually relevant, general, time-invariant structural aspects of reality; exclude aspects of data representation and physical organization, and access
+  * Internal schema: storage of data; describe how the information described in the ceonceptual schema is physically represented to provide the overall best performance 
+* Physical data independence: a measure of how much the internal schema can change without affecting the application programs
+* Logical data independence: a measure of how much the conceptual schema can change without affecting the application programs
+* Metadata 
+  * System metadata: critical in a DBMS
+  * Business metadata: critical in a data warehouse  
+
+
+
+
+
+
+
+
+
+
 
 ### Methodology I: ANALYSIS
 
