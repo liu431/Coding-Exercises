@@ -36,20 +36,32 @@ pipenv install pandas
 pipenv install awscli
 pipenv install jupyter
 pipenv install boto3
+pipenv install pyarrow
 # Launch virtual environment
 pipenv shell
 # AWS S3 location - check data access
 aws s3 ls deutsche-boerse-xetra-pds/2021-04-21 --recursive --no-sign-request
 # Launch jupyter notebook
+jupyter notebook
 ```
 
-
-
-
 ### Functional Approach
+* Structure the code in small chunks as functions
+* Output of a function only relies on teh given input arguments
+* Modular and clean code
+* Adv: efficiency, lazy evaluation, nested functions, bug-free code, parallel programming
+
 
 
 ### Object Oriented Approach
+* Use objects represent things: attributes contain data; methods manipulate attributes
+* 4 primary principles
+  * Encapsulation: separation between attributes and methods summarized in one object containing attributes and methods; attributes are not accessible by other objects; for manipulating and communciating with the objects, there are methods callable by other objects
+  * Abstration: objects are implemented in a way that other objects should not know their inner details in order to use it and can just use the interface of it
+  * Inheritance: ability to create parent and child classes; child class inherits attribues and methods from parent class
+  * Polymorphism: each class can use exactly the same methods as its parent class, but method for each child could also be implemented individually
+
+
 
 ### Setup and Class Frame Implementation
 
