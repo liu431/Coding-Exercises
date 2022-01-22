@@ -45,12 +45,18 @@ aws s3 ls deutsche-boerse-xetra-pds/2021-04-21 --recursive --no-sign-request
 jupyter notebook
 ```
 
+### Software Testing
+* Unit: test individual unit or component
+* Integration: test whether independently-developed units or software work correctly when they connect to each other
+* System: conducted on a complete, integrated system
+* Acceptance: determine whether the requirement is met
+
+
 ### Functional Approach
 * Structure the code in small chunks as functions
 * Output of a function only relies on teh given input arguments
 * Modular and clean code
 * Adv: efficiency, lazy evaluation, nested functions, bug-free code, parallel programming
-
 
 
 ### Object Oriented Approach
