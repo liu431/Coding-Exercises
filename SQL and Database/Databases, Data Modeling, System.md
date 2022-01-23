@@ -133,3 +133,10 @@ Stored procedure
 [With rollup](https://mariadb.com/kb/en/select-with-rollup/)
 
 [View Processing Algorithms](https://dev.mysql.com/doc/refman/8.0/en/view-algorithms.html#:~:text=The%20optional%20ALGORITHM%20clause%20for,MERGE%20%2C%20TEMPTABLE%20%2C%20or%20UNDEFINED%20.)
+
+
+
+### [Data Lineage](https://www.imperva.com/learn/data-security/data-lineage/#:~:text=Data%20lineage%20is%20the%20process,%2C%20what%20changed%2C%20and%20why.)
+Process of understanding, recording, and visualizing data as it flows from data sources to consumption
+
+![](https://www.imperva.com/learn/wp-content/uploads/sites/13/2021/01/11-Data-Lineage.png.webp)
