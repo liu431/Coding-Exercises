@@ -46,10 +46,15 @@ Alllow you to change how the field values shows up in your visualization without
 
 * [Level of Detail Expressions (LOD)](https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_lod.htm#how-to-create-lod-expressions)
 
-Purpose: allow you to compute values at the data source level and the visualization level
+Purpose: allow you to compute values at the data source level and the visualization level; give you even more control on the level of granularity you want to compute
+
   - FIXED: compute a value using the specified dimensions, without reference to the dimensions in the view
   - INCLUDE: compute values using the specified dimensions in addition to whatever dimensions are in the view
   - EXCLUDE: declare dimensions to omit from the view level of detail
+
+* [Calculated Field](https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_formulas.htm)
+  * Allow you to create new data from data that already exists in your data source
+  * Use cases: segment data; convert the data type of a field, such as converting a string to a date; aggregate data; filter results; calculate ratios
 
 
 * [Row Level Security](https://www.thedataschool.com.au/mipadmin/row-level-security-in-tableau-using-user-functions/) vs [Column Level Security](https://www.thedataschool.com.au/mipadmin/column-level-security-in-tableau-uisng-user-functions/)
