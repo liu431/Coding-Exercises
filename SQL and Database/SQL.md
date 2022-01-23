@@ -132,6 +132,17 @@ COALESCE() vs. ISNULL()
 * COALESCE translates to CASE expression and ISNULL is a built-in implemented in the database engine.
 * COALESCE() can have multiple inputs and it will evaluate in order until one of them is not null such as COALESCE(Col1, Col2, Col3, 'N/A')
 
+#### Select rows to display
+* `LIMIT`: get the top N rows with the highest or lowest value
+* `OFFSET`: skips the offset rows before beginning to return the rows
+```sql
+# return the second high
+LIMIT 1 OFFSET 2;
+# return five rows starting from the 4th row
+LIMIT 5 OFFSET 3;
+```
+
+
 ### Transform Data
 
 #### Change data types
