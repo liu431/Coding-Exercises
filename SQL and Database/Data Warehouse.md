@@ -168,7 +168,7 @@ List of OLAP operations
 
 | Star | Snowflake |
 | --- | ----------- |
-| All dimensions along a given hierarchy in one dim table | Each dim/dimensioanl level in its own table |
+| All dimensions along a given hierarchy in one dim table | Each dim/dimensional level in its own table |
 | Only one level away from fact table along each hierarchy | One or more levels away from fact table along each hierarchy |
 | With one fact table visually resembles a star | With one fact table visually resembles a snowflake |
 | Overall fewer database joins for drilling up/down | Overall more databases joins for drilling up/down |
@@ -296,10 +296,10 @@ Primary key: combination of all foreign keys (surrogare) relating back to dim ta
 * Techniques to manage history within data warehouse
 * Enables warehouse to appropriately manage history regardless of policies in transactional applications
 * 3 main policies for historical data
-  - Overwrite old date; no history retention -> Type 1
-  - Maintain unlimited history with new row -> Type 2
-  - Maintain limited history with new column -> Type 3
   - (Always retain original value -> Type 0)
+  - Overwrite old date; no history retention -> Type 1
+  - __Maintain unlimited history with new row -> Type 2__
+  - Maintain limited history with new column -> Type 3
 
 * Compare 3 main SCD types
 
