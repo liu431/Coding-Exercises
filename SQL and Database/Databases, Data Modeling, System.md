@@ -34,7 +34,8 @@ Purpose: eliminate redundant (repetitive) data and ensure data is stored logical
   - Fixing conflicting data
   - Conforming data to a specified data model
 
-[datacadamia - https://datacadamia.com/data/type/relation/modeling/normalization]
+[datacadamia](https://datacadamia.com/data/type/relation/modeling/normalization)
+
 ![](https://datacadamia.com/_media/data/modeling/normalization_steps.jpg?cache=)
 
 ### [One-to-Many Relationships](https://www.lifewire.com/one-to-many-relationships-1019756)
@@ -62,8 +63,8 @@ When each record in Table A may have many linked records in Table B, but each re
 
 ### Schemas
 [Snowflake vs Star](https://www.xplenty.com/blog/snowflake-schemas-vs-star-schemas-what-are-they-and-how-are-they-different/)
-* Star: contains the Fact Tables and the Dimension Tables; top-down model
-* Snowflake: contains the Fact Tables, Dimension Tables, and the Sub-Dimension Tables; bottom-up model
+* Star: contains the Fact Tables and the Dimension Tables; top-down model; not normalized; better for datamarts with simple relationships
+* Snowflake: contains the Fact Tables, Dimension Tables, and the Sub-Dimension Tables; bottom-up model; normalized; have no redundant data, so they're easier to maintain; good for data warehouses
 
 #### Primary key
 * A single column value used to identify a database record uniquely
