@@ -113,6 +113,15 @@ Factors: Joins, Aggregations, Traversals, Records
 * Reducing table size - filter data to include only the observations you need
 * Making joins less complicated - reduce table sizes before joining them
 
+### Database Index
+* Purpose: serve as lookup tables that efficiently store data for quicker retrieval
+* Create indexes to quickly lookup data that is not stored as a key.
+* [Key vs Index](https://stackoverflow.com/questions/769407/in-a-database-what-is-the-difference-betwen-a-key-and-an-index/769422#:~:text=An%20field%20which%20has%20unique,the%20rows%20in%20the%20table.&text=A%20key%20identifies%20the%20row,the%20end%20of%20a%20book.): An field which has unique values is, essentially, a key. However, a key is used to uniquely identify a row in a table, while an index is used to sort, or group, the rows in the table.
+
+```sql
+CREATE INDEX <index_name>
+ON <table_name> (column1, column2, ...)
+```
 
 ### [Clustered and nonclustered indexes](https://www.guru99.com/clustered-vs-non-clustered-index.html)
 Cluster index is a type of index that sorts the data rows in the table on their key values whereas the Non-clustered index stores the data at one location and indices at another location.
