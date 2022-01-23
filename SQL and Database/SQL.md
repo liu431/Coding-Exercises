@@ -299,26 +299,20 @@ GROUP BY ID;
 A query that we create using WITH clause before writing the main query
 
 #### Recursive CTE (having a subquery that refers to its own name)
-##### Generate values with given input
-```sql
-WITH RECURSIVE cte (n) AS
-(
-  SELECT 1
-  UNION ALL
-  SELECT n + 1 FROM cte WHERE n < 5
-)
-SELECT * FROM cte;
+##### Ex. (Leetcode 1613). Find the Missing IDs
 
-# Result table
-+------+
-| n    |
-+------+
-|    1 |
-|    2 |
-|    3 |
-|    4 |
-|    5 |
-+------+
+```sql
+## Generate all customer_id from 1 to maximum id
+## Exclude ids that are in the Customers table
+WITH RECURSIVE CTE(n) AS (
+    SELECT 1
+    UNION
+    SELECT n + 1 FROM CTE 
+    WHERE n < (SELECT MAX(customer_id) FROM Customers)
+)
+
+SELECT n AS ids FROM CTE
+WHERE n NOT IN (SELECT customer_id FROM Customers)
 ```
 
 ##### Ex. (Leetcode 1767) Find the Subtasks That Did Not Execute
