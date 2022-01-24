@@ -138,10 +138,10 @@ Measurement models (SEMs, factor analysis…)
 
 ### Linear Regression
 Model the relationship between a single dependent variable Y and one or more predictors
-* [4 Assumptions](https://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/R/R5_Correlation-Regression/R5_Correlation-Regression4.html)
+* [__4 Assumptions (LIHN)__](https://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/R/R5_Correlation-Regression/R5_Correlation-Regression4.html)
   - Linearity: the relationship between X and the mean of Y is linear.
-  - Homoscedasticity: the variance of residual is the same for any value of X.
   - Independence: observations are independent of each other.
+  - Homoscedasticity: the variance of residual is the same for any value of X.
   - Normality: for any fixed value of X, Y is normally distributed.
 
 * Multicolinearity
@@ -152,6 +152,9 @@ Model the relationship between a single dependent variable Y and one or more pre
 [Beyond OLS](https://stats.idre.ucla.edu/stata/webbooks/reg/chapter4/regressionwith-statachapter-4-beyond-ols-2/)
 
 ### Logistic Regression
+
+#### Churn prediction
+
 
 [Maxmimum Likelihood Estimation](https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1)
   - Determines values for the parameters of a model that maximise the likelihood that the process described by the model produced the data that were actually observed
