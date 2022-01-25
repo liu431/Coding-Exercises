@@ -61,6 +61,20 @@ a_file.writelines(list_of_lines)
 a_file.close()
 ```
 
+#### Create new line based on file template
+```python
+with open("existingfile.txt", "r+") as f:
+    with open("newfile.txt", "w+") as f2:
+        for linects, line in enumerate(f):
+            if condition1:
+                line = line.replace('X', 'XX')
+             else:
+                pass
+            f2.write(line)
+```
+
+
+
 #### Combine files in the directory
 ```python
 for file in os.listdir(path):
