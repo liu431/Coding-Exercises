@@ -95,7 +95,7 @@ import numpy as np
 import pandas as pd
 # Load data
 df = pd.read_csv(file.csv)
-df = pd.read_excel(file.xlsx, header=None)
+df = pd.read_excel(file.xlsx, sheet_name='Sheet2', header=None)
 # Rename columns
 df.rename(columns={'MKT':'Marketing', 'Dev':'Development'}, inplace=True)
 ```
@@ -132,7 +132,9 @@ df['A'].sum() # Sum of one column
 #### Wrangle data
 ##### [df.str.len()](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.len.html): compute the length of each element in the Series/Index.
 
-##### [df.str.split(' ')](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.split.html): split strings around given separator/delimiter.
+##### [df.str.split(sep)](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.split.html): split strings around given separator/delimiter.
+
+##### [df.str.join(sep)](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.join.html): join lists contained as elements in the Series/Index with passed delimiter.
 
 ##### [df.replace](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.replace.html)
 ```python
