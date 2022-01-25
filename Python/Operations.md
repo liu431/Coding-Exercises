@@ -1,4 +1,4 @@
-## Notes of Python Built-in Functions 
+## Notes of Python Operations Functions 
 
 ### Time
 > "Mysterious thing, Time. Powerful, and when meddled with, dangerous." ― J.K. Rowling
@@ -164,3 +164,16 @@ x | y
 # Does a "bitwise exclusive or". Each bit of the output is the same as the corresponding bit in x if that bit in y is 0, and it's the complement of the bit in x if that bit in y is 1.
 x ^ y
 ```
+
+### Applications
+[pyinstaller](https://pyinstaller.readthedocs.io/en/stable/usage.html): bundle a Python application and all its dependencies into a single package. The user can run the packaged app without installing a Python interpreter or any modules.
+
+```shell
+#pip install pyinstaller
+cd filepath
+pyinstaller --onefile program.py
+```
+
+
+
+
