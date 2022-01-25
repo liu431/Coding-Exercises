@@ -35,6 +35,17 @@ f.write(data.to_string(header = False, index = False))
 f.close() 
 ```
 
+#### Edit files
+```python
+a_file = open(filename, "r")
+list_of_lines = a_file.readlines()
+list_of_lines[2] = "New data" # Edit line data
+
+a_file = open(filename, "w")
+a_file.writelines(list_of_lines)
+a_file.close()
+```
+
 #### Combine files in the directory
 ```python
 for file in os.listdir(path):
