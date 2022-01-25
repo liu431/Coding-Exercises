@@ -13,6 +13,20 @@ endTime = time.time()
 print('Minutes:',round(((endTime - startTime)/60),0))
 ```
 
+### Run .py file
+#### Pass argument
+```python
+import sys
+def func(a, b):
+    pass
+
+if __name__ == "__main__":
+    a = int(sys.argv[1])
+    b = int(sys.argv[2])
+    func(a, b)
+```
+
+
 ### Keyword
 * [Iterables](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html): object capable of returning its members one at a time, permitting it to be iterated over in a for-loop
 * Generators: functions that return an iterable generator object; contains one or more `yield` statements; generate the values on the fly
