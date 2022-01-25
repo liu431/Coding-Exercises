@@ -116,6 +116,12 @@ if na_values > 0:
     df = df.fillna(0)
 ```
 
+##### [pd.Series.tolist()](https://pandas.pydata.org/docs/reference/api/pandas.Series.tolist.html): 
+Return a list of the values.
+```python
+df['Name].tolist()
+```
+
 ##### [df.sum](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sum.html)
 ```python
 df.sum(axis = 0) # Sum over the index
