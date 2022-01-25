@@ -1,4 +1,17 @@
-## Python Notes
+## Notes of Python Built-in Functions 
+
+### Time
+> "Mysterious thing, Time. Powerful, and when meddled with, dangerous." ― J.K. Rowling
+
+
+```python
+import time
+startTime = time.time()
+# Process
+time.sleep(60) # Delay process
+endTime = time.time()
+print('Minutes:',round(((endTime - startTime)/60),0))
+```
 
 ### Keyword
 * [Iterables](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html): object capable of returning its members one at a time, permitting it to be iterated over in a for-loop
@@ -7,10 +20,14 @@
 * `next()`: iterate through the items
 * `StopIteration`: raised when there are no values to be returned 
 
+### Path
+```python
+import os
+os.getcwd() # Get current directory
+os.chdir(path) # Change to a new directory
+```
 
-
-###  Miscellaneous operating system interfaces
-
+### File operations
 #### File open/write/close
 ```python
 f= open(filepath,"w+")
@@ -18,17 +35,36 @@ f.write(data.to_string(header = False, index = False))
 f.close() 
 ```
 
-#### Path
-```python
-import os
-os.getcwd() # Get current directory
-os.chdir(path) # Change to a new directory
-```
-
 #### Combine files in the directory
 ```python
 for file in os.listdir(path):
     df = pd.concat(df, pd.read_excel(file, header=None))
+```
+
+### Copy files with [shutil](https://www.geeksforgeeks.org/python-shutil-copy2-method/) and folder with [copy_tree](https://www.kite.com/python/docs/distutils.dir_util.copy_tree)
+```python
+# Copy folder
+from distutils.dir_util import copy_tree
+copy_tree(src, des)
+
+# Copy files
+import shutil
+shutil.copy2(file_copy_from, file_copy_to)
+```
+
+### Delete files
+```python
+os.remove(filepath)
+```
+
+### [Subprocess management](https://docs.python.org/3/library/subprocess.html)
+* Allow you to spawn new processes, connect to their input/output/error pipes, and obtain their return codes
+* Run shell command with Python
+
+```python
+import subprocess
+process = subprocess.Popen(arg, shell=True)
+process.terminate()
 ```
 
 ### Runtime
@@ -57,69 +93,6 @@ import sys
 try: ###
 except:
     traceback.print_exception(*sys.exc_info())
-```
-
-
-### List
-
-#### List comprehension
-```python
-# 243. Shortest Word Distance
-def shortestDistance(self, wordsDict: List[str], word1: str, word2: str) -> int:
-    # Get all indexes of word occurrences
-    w1_ind = [i for i in range(len(wordsDict)) if wordsDict[i] == word1] 
-    w2_ind = [i for i in range(len(wordsDict)) if wordsDict[i] == word2]
-
-    # Find closest indexes as the shortest distance
-    return min([abs(i1-i2) for i1 in w1_ind for i2 in w2_ind])
-```
-
-##### [Use a dictionary to count the items in a list](https://stackoverflow.com/questions/3496518/using-a-dictionary-to-count-the-items-in-a-list)
-```python
-# Use Counter
-from collections import Counter
-Counter(s)
-
-# Use .get method in dictionary
-counts = dict()
-for i in s:
-  counts[i] = counts.get(i, 0) + 1
-  
-# Use count method in list
-{x : s.count(x) for x in set(s)}
-
-# For loop
-counts = {}
-for i in s:
-    if i not in s:
-        s[i] = 1
-     else:
-        s[i] += 1
-```
-
-
-##### [Sort a list according to the second element in sublist](https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/)
-```python
-a = [[1,2],[2,3],[3,1]]
-sorted(a, key=lambda x: x[1], reverse=True) # [[2,3],[1,2],[3,1]]
-```
-
-##### [Sort a list by multiple attributes](https://stackoverflow.com/questions/4233476/sort-a-list-by-multiple-attributes/4233482)
-```python
-# Use lambda function that returns a tuple
-s = sorted(s, key = lambda x: (x[1], x[2]))
-
-# Use itemgetter 
-import operator
-s = sorted(s, key = operator.itemgetter(1, 2))
-s.sort(key = operator.itemgetter(1, 2))
-```
-
-
-##### Remove vowels from a letter
-```python
-letter = 'abcdEFGH'
-''.join([i for i in letter if i not in 'aeiou' and i not in 'AEIOU']) # 'bcdFGH'
 ```
 
 ### Letters
