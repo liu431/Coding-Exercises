@@ -37,8 +37,9 @@ if __name__ == "__main__":
 ### Path
 ```python
 import os
-os.getcwd() # Get current directory
-os.chdir(path) # Change to a new directory
+os.getcwd() # get current directory
+cwd = os.chdir(path) # change to a new directory
+os.listdir(cwd) # get the list of all files and directories in the specified directory
 ```
 
 ### File operations
