@@ -227,5 +227,17 @@ def column2Index(df, colname='ID'):
     return df
 ```
 
+#### Join tables
+[Merge, join, concatenate and compare](https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html)
+
+##### [df1.merge(df2, how='inner', on=None)](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html)
+Combine data on common columns or indices
+
+##### [df1.join(df2)](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.join.html)
+Combine data on a key column or an index
+
+#### [pd.concat([s1, s2])](https://pandas.pydata.org/docs/reference/api/pandas.concat.html)
+Combine DataFrames across rows or columns
+
 ### Summary of commands
 ![](https://media-exp1.licdn.com/dms/image/C4E22AQGEBF8Ihm81ng/feedshare-shrink_800/0/1640185264820?e=1643241600&v=beta&t=6TQHBPZPpuRpL5ue0hQNNk6hNUo_J91sgIaGlt9dlms)
