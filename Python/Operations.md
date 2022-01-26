@@ -236,6 +236,22 @@ cd filepath
 pyinstaller --onefile program.py
 ```
 
+### Process mails
+#### Outlook
+```python
+import win32com.client
+import os
+outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
+folder = outlook.Folders("MailboxName")
+inbox = folder.Folders("Inbox")
+messages = inbox.Items
+for message in list(messages):
+    try:
+      print(message.Sender, ',', message.Subject, ',', message.ReceivedTime, message.Body, message.SentOn)
+    except:
+      pass
+```
+
 
 
 
