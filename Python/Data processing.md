@@ -1,60 +1,6 @@
-## Date and Time
+## Notes on data processing
 
-### datetime
-```python
-import datetime
-```
-
-#### Display the current date
-```python
-datetime.datetime.now()
-```
-
-#### Data objects
-```python
-# Create a date object
-x = datetime.datetime(2021, 1, 2)
-# Format date objects into readable strings
-x.strftime("%B") # January
-x.strftime("%m") # 01
-x.strftime("%Y") # 2021
-x.strftime("%d") # 02
-```
-
-#### Waiting week days
-```python
-from datetime import datetime
-def WeekDays(Days):
-    '''Calculate the waiting week days by excluding the weekends'''
-    if Days >= 5:
-        Days = Days - 2 * (Days // 5)
-    else:
-        # When time clock starts from late last week or during the weekend
-        if Days > datetime.today().weekday():
-            if Days >= 2:
-                Days -= 2
-            else:
-                Days = 0
-    return Days
-WeekDays(1) # Work done by last Sunday -> 0
-WeekDays(2) # Work done by last Saturday -> 0
-WeekDays(3) # Work done by last Friday -> 1
-WeekDays(4) # Work done by last Thursday -> 2
-WeekDays(5) # Work done by last Wednesday -> 3
-```
-
-#### Convert between month name and month number
-```python
-# abbreviated month name
-month_name = "Jan"
-month_number = datetime.datetime.strptime(month_name, "%b").month # 1
-
-# full month names
-month_name = "January"
-month_number = datetime.datetime.strptime(month_name, "%B").month # 1
-```
-
-## List, Arrays
+### List, Arrays
 #### List comprehension
 ```python
 # Remove empty string form list
@@ -68,7 +14,7 @@ b = [i for i in a if i%2 == 1]
 c = [i for i in a if i not in b]
 ```
 
-## Numpy
+### Numpy
 #### [np.where(condition, val_if_yes, val_if_false)](https://numpy.org/doc/stable/reference/generated/numpy.where.html): return elements chosen from x or y depending on condition.
 
 ```python
@@ -87,7 +33,7 @@ np.savetxt('output.csv', arr, delimiter=',', fmt='%1.3f') # 3 decimal spaces
 np.savetxt('output.csv', arr, fmt='%s') # output as string
 ```
 
-## Pandas
+### Pandas
 #### Reading data
 ```python
 # Import packages
