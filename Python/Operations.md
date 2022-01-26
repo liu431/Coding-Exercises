@@ -2,8 +2,7 @@
 
 ### Time
 > "Mysterious thing, Time. Powerful, and when meddled with, dangerous." ― J.K. Rowling
-
-
+ `time` package
 ```python
 import time
 startTime = time.time()
@@ -12,6 +11,52 @@ time.sleep(60) # Delay process
 endTime = time.time()
 print('Minutes:',round(((endTime - startTime)/60),0))
 ```
+ `datetime` package
+```python
+import datetime
+datetime.datetime.now() # Display the current date
+# Create a date object
+x = datetime.datetime(2021, 1, 2)
+x2 = datetime.datetime(2021, 1, 1)
+x > x2 # True
+# Format date objects into readable strings
+x.strftime("%B") # January
+x.strftime("%m") # 01
+x.strftime("%Y") # 2021
+x.strftime("%d") # 02
+
+# Convert between month name and month number
+## Abbreviated month name
+month_name = "Jan"
+month_number = datetime.datetime.strptime(month_name, "%b").month # 1
+
+## Full month names
+month_name = "January"
+month_number = datetime.datetime.strptime(month_name, "%B").month # 1
+```
+
+#### Waiting week days
+```python
+from datetime import datetime
+def WeekDays(Days):
+    '''Calculate the waiting week days by excluding the weekends'''
+    if Days >= 5:
+        Days = Days - 2 * (Days // 5)
+    else:
+        # When time clock starts from late last week or during the weekend
+        if Days > datetime.today().weekday():
+            if Days >= 2:
+                Days -= 2
+            else:
+                Days = 0
+    return Days
+WeekDays(1) # Work done by last Sunday -> 0
+WeekDays(2) # Work done by last Saturday -> 0
+WeekDays(3) # Work done by last Friday -> 1
+WeekDays(4) # Work done by last Thursday -> 2
+WeekDays(5) # Work done by last Wednesday -> 3
+```
+
 
 ### Run .py file
 #### Pass argument
