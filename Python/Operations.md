@@ -237,7 +237,7 @@ pyinstaller --onefile program.py
 ```
 
 ### Process mails
-#### Outlook
+#### [Outlook](https://www.codeforests.com/2020/06/04/python-to-read-email-from-outlook/)
 ```python
 import win32com.client
 import os
