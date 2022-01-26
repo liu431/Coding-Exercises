@@ -14,11 +14,11 @@ print('Minutes:',round(((endTime - startTime)/60),0))
 ```
  `datetime` package
 ```python
-import datetime
-datetime.datetime.now() # Display the current date
+from datetime import datetime, timedelta
+yesterday = datetime.now() - timedelta(days=1) # Get yesterday's date
 # Create a date object
-x = datetime.datetime(2021, 1, 2)
-x2 = datetime.datetime(2021, 1, 1)
+x = datetime(2021, 1, 2)
+x2 = datetime(2021, 1, 1)
 x > x2 # True
 # Format date objects into readable strings
 x.strftime("%B") # January
@@ -29,11 +29,11 @@ x.strftime("%d") # 02
 # Convert between month name and month number
 ## Abbreviated month name
 month_name = "Jan"
-month_number = datetime.datetime.strptime(month_name, "%b").month # 1
+month_number = datetime.strptime(month_name, "%b").month # 1
 
 ## Full month names
 month_name = "January"
-month_number = datetime.datetime.strptime(month_name, "%B").month # 1
+month_number = datetime.strptime(month_name, "%B").month # 1
 ```
 
 #### Waiting week days
@@ -84,6 +84,7 @@ if __name__ == "__main__":
 ```python
 import os
 os.getcwd() # get current directory
+os.mkdir(foldername) # create new directory
 cwd = os.chdir(path) # change to a new directory
 os.listdir(cwd) # get the list of all files and directories in the specified directory
 ```
