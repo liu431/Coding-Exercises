@@ -3,6 +3,19 @@
 [Real Python - Common Python Data Structures](https://realpython.com/python-data-structures/)
 
 
+### String
+
+#### [isalnum()](https://www.programiz.com/python-programming/methods/string/isalnum)
+##### Ex. (Leetcode 125) Valid Palindrome
+```python
+def isPalindrome(self, s: str) -> bool:
+    # convert all uppercase letters into lowercase letters and remove all non-alphanumeric characters
+    s = [i.lower() for i in s if i.isalnum()]
+    return s == s[::-1]
+```
+
+
+
 ### List
 
 #### List comprehension
