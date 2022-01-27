@@ -81,3 +81,24 @@ def UpdateTable(age, name):
     
 UpdateTable(age=25, name='Ben')
 ```
+
+### Add new records
+```python
+def AddStudent(age, name):
+    '''Add information in the table'''
+    query = """
+            INSERT INTO TABLE (age, name)
+            VALUES = (?, ?)
+            """
+    with engine.connect() as con:
+        con.execute(query, (age, name))
+        con.close()
+    return None
+    
+AddStudent(age=30, name='John')
+```
+
+
+
+
+
