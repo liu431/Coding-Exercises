@@ -84,7 +84,7 @@ if __name__ == "__main__":
 ```python
 import os
 os.getcwd() # get current directory
-os.mkdir(foldername) # create new directory
+os.mkdir(foldername) # create new directory that doesn't exist 
 cwd = os.chdir(path) # change to a new directory
 os.listdir(cwd) # get the list of all files and directories in the specified directory
 ```
