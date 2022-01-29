@@ -25,14 +25,16 @@
 ### Modern data stack
 * Data sources
 * Loaders
-* Data platform: Snowflake, Redshift, Bigquery, Databricks
+* Data platform: Snowflake, Redshift, BigQuery, Databricks
   * dbt workflow -> manage transformation, test and document
 * BI tools (Tableau, Looker, mode, PowerBI)  / ML model / Operational Analytics
 
 ## Set up dbt cloud
 * dbt CLI: a command line tool that can be run locally.
 * dbt Cloud: a hosted version that streamlines development with an online Integrated Development Environment (IDE) and an interface to run dbt on a schedule.
-
+* Redshift
+  * Create new IAM Role to Redshift-Customizable that enables the AmazonRedshiftAllCommandsFullAccess
+  * Under `Serverless configuration tab`, associate the role under `Permissions`
 
 
 
