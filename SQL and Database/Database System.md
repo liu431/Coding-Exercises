@@ -33,17 +33,34 @@
 
 
 
-
-
-
-
-
-
-
-
 ### Methodology I: ANALYSIS
 
 ### Extended-Entity Relationship Model
+
+* Entity type and entity surrogates: reprsent users in the real world
+* Properties
+  * Single-valued: things that name other things, types could be lexical, visable, audible
+  * Identifying: at most one instance of the identified entity; each entity is uniquely referenced
+  * Composite: combine properties
+  * Multi-valued: one entity links with multiple properties
+* Relationship types
+  * 1-1: partial function; names of multiple relationship types between the same two entity types must be unique
+  * 1-many: partial function; Ex. employer with many employees 
+  * Mandatory 1-N: total function; Ex. each employee must be linked to one employer
+  * N-M: many to many
+  * N-ary: need multple attributes to uniquely identify one instance
+  * Many: cannot be reduced to a conjunction of binary relationship types
+  * Identifying relationships: when the primary key of the related entity contains the primary key of the “parent”
+  * Weak entity types: when the primary key of one of the related entities does not contain a primary key component of the other related entities
+  * Recursive: model hierarchy structure
+  * Inheritance (d): subtypes inherit properties from supertypes
+  * Union entity types: subclass represents a collection of objects that is a subset of the UNION of distinct entity types
+
+* Relational model
+  * Data structures, Constraints, Operations, Algebra Calculus (tuple calculus-SQL, domain calculus-QBE) 
+  * The value of a relation is independent of attribute order and tuple order.
+
+
 
 ### Methodology II: SPECIFICATION
 
