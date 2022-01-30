@@ -194,7 +194,7 @@ chr(65) #'A'
 ```
 
 
-### Bit
+### Bit and Bytes (1 byte = 8 bits)
 #### [Binary equivalent string of a given integer](https://www.programiz.com/python-programming/methods/built-in/bin)
 ```python
 # Int to binary
@@ -210,6 +210,14 @@ a = "11"
 b = "1"
 bin(int(a, 2) + int(b, 2))[2:] #"100"
 ```
+
+```python
+# Int to bytes
+## If byteorder is "big", the most significant byte is at the beginning of the byte array
+var = 1024.to_bytes(2, byteorder='big')
+# Bytes to int
+int.from_bytes(var, "big") # 1024
+```   
 
 #### [Bitwise Operators](https://wiki.python.org/moin/BitwiseOperators)
 ```python
