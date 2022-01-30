@@ -5,6 +5,29 @@
 [Book - Elmasri & Navathe: Fundamentals of Database Systems. 7 Edition. Pearson 2016.](https://www.amazon.com/Fundamentals-Database-Systems-Ramez-Elmasri/dp/0133970779)
 
 ### Fundamentals Of Databases
+* Database: a collection of related data that represents some aspect of teh real world
+* Database management system (DBMS): computerized system that enables users to create and maintain a databse
+* Program-data independence: the structure of data files is stored in the DBMS catelog separately from the access programs
+* Operations: 1. interface (operation name and the data types of its argument/parameters); 2. implementation (sepecified separately and can be changed without affecting the interface)
+* Data abstraction: program-data independence and program-operation independence
+* Transaction: an executing program or process that includes one or more database accesses, such as reading or updating of databse records
+* Data normalization: a database deisgn that stores each logical data item in only one place in the database
+* Denormalization: don't have to search multiple files to collect this data by placing all the data together
+* Advantages of using DBMS
+  * Control redundancy: avoid storing the same data multiple times
+  * Restrict unauthorized access: security and authorization subsystem to specify account restrictions
+  * Provide persistent storage for program objects and data structures
+  * Provide storage structures and search techniques for efficient query processing
+  * Provide backup and recovery
+  * Provide multiple user interfaces (GUIs)
+  * Represent complex relationships among data
+  * Enforce integrity constraints and business rules
+  * Permit inferencing and actions using rules and triggers; stored procedures
+  * Potential for enforcing standards
+  * Reduced application development time
+  * Flexibility to change the structure as requirements change
+  * Availability of up-to-date information
+  * Economies of scale by reducing overall costs of operation and management 
 * Models: represent a perception of structures of reality; helpful to examine or manage part of the real world
   * only emphasizes selecetd aspects
   * is described in some language
