@@ -4,13 +4,12 @@
 
 [Definiton](https://medium.com/the-telegraph-engineering/dbt-a-new-way-to-handle-data-transformation-at-the-telegraph-868ce3964eb4): command-line tool that enables data analysts and engineers to transform data in their warehouses simply by writing select statements.
 
-
-## Who is an analytics engineer?
-### Traditional data teams
+### Who is an analytics engineer?
+#### Traditional data teams
 * Data Engineer - maintain data infrastructure and the ETL process for creating tables and views (ETL, Orchestration, Python, Java, etc.) -> know how to build it
 * Data Analyst - query tables and views to drive business insights for stakeholders (Dashboards, Reporting, Excel, SQL) -> know what to build
 
-### ETL and ELT
+#### ETL and ELT
 * ETL: Extract, Transform, Load; require additional tools, languages, skills to orchestrate
 * Data warehouses: combine a database and super computer for transforming data
 * ELT: Extract, Load, Transform (in cloud data warehouse); noneed to extract and load repeatedly
@@ -22,14 +21,14 @@
 
 ![](https://www.getdbt.com/ui/img/guides/analytics-engineering/analytics-engineer-role.png)
 
-### Modern data stack
+#### Modern data stack
 * Data sources
 * Loaders
 * Data platform: Snowflake, Redshift, BigQuery, Databricks
   * dbt workflow -> manage transformation, test and document
 * BI tools (Tableau, Looker, mode, PowerBI)  / ML model / Operational Analytics
 
-## Set up [dbt cloud](https://cloud.getdbt.com/)
+### Set up [dbt cloud](https://cloud.getdbt.com/)
 * dbt CLI: a command line tool that can be run locally.
 * dbt Cloud: a hosted version that streamlines development with an online Integrated Development Environment (IDE) and an interface to run dbt on a schedule.
 * Redshift
@@ -56,8 +55,6 @@
 dbt run
 # build a specific model
 dbt run -m
-# generate doc
-dbt docs generate
 # run all models exist in models/staging
 dbt run -s staging
 ```
@@ -141,6 +138,67 @@ select * from final
 * Project organization
   * Marts: all intermediate, fact, and dimension models; subfolders to separate data by business function
   * Staging: staging models and source configurations; subfolders to separate data by data source
+
+### Sources
+* Represent the raw data that is loaded into the data warehouse
+* Benefits: make updates in one place; visualize raw tables in your lineage
+* The source function is used to build the dependency of one model to a source
+* Source freshness
+  * A threshold can be configured for giving a warning and an error with the keys warn_after and error_after.
+  * The freshness of sources can then be determine with the command dbt source freshness. 
+
+```sql
+dbt source freshness
+```
+
+### [Tests](https://docs.getdbt.com/reference/node-selection/test-selection-examples)
+* Make sure the data feeding into dashboard is reliable
+* Allow us to make sure that the SQL transformations we write produce a model that meets our assertions.
+* Singular test: specific queries that you run against your models; run on the entire model.
+* Generic test: written in YAML; run on specific columns in a model
+  * unique (every value in this column is unique) 
+  * not_null (every value in this column is not null) 
+  * accepted_values (every value in this column is a value from a given list) 
+  * relationships (every value in this column exists in the column of another table); [referential integrity](https://en.wikipedia.org/wiki/Referential_integrity)
+
+```sql
+# test model
+dbt test -s stg_orders
+# test source data
+dbt test --select source:jaffle_shop
+# runs all tests in the dbt project
+dbt test 
+dbt test --select test_type:generic
+dbt test --select test_type:singular
+dbt test --select one_specific_model
+```
+
+### Documentation 
+* Empower users to self-service questions about data and enables new team members to on-board quickly.
+* DAG are automatically generated
+* Add your own text descriptions
+
+```sql
+dbt docs generate
+```
+
+### Deployment
+* Development: process of building, refactoring, and organizing different files in your dbt project
+* Deployment: process of running dbt on a schedule in a deployment environment
+* The use of development environments and branches makes it possible to continue to build your dbt project without affecting the models, tests, and documentation that are running in production.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
