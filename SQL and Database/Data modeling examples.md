@@ -54,7 +54,11 @@ LEFT JOIN avgsales_tbl USING (REGION)
 WHERE salesamount > avgsales
 ```
   
-
+#### Food delivery App (Grubhub/Seamless)
+- Restaurant (ID, Contact, )
+- Customers (ID, Name, )
+- Orders (ID, CustomerID, RestaurantID, PaymentID, DateTime)
+- Payment (ID, Method, Status, Amount, DateTime)
 
 
 
