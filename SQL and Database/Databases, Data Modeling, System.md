@@ -61,11 +61,17 @@ When each record in Table A may have many linked records in Table B, but each re
 * Isolation: the intermediate state of a transaction is invisible to other transactions; transactions that run concurrently appear to be serialized.
 * Durability: after a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure.
 
-### Schemas
-[Snowflake vs Star](https://www.xplenty.com/blog/snowflake-schemas-vs-star-schemas-what-are-they-and-how-are-they-different/)
-* Star: contains the Fact Tables and the Dimension Tables; top-down model; not normalized; better for datamarts with simple relationships
-* Snowflake: contains the Fact Tables, Dimension Tables, and the Sub-Dimension Tables; bottom-up model; normalized; have no redundant data, so they're easier to maintain; good for data warehouses
+### Data Modeling Styles
+#### Data vault
+#### Strict Kimball
+#### Star schema
+Contains the Fact Tables and the Dimension Tables; top-down model; not normalized; better for datamarts with simple relationships
+#### Snowflake schema
+Contains the Fact Tables, Dimension Tables, and the Sub-Dimension Tables; bottom-up model; normalized; have no redundant data, so they're easier to maintain; good for data warehouses
 
+[Snowflake vs Star](https://www.xplenty.com/blog/snowflake-schemas-vs-star-schemas-what-are-they-and-how-are-they-different/)
+
+### Key
 #### Primary key
 * A single column value used to identify a database record uniquely
 * Cannot be null; given a value when new record is inserted
@@ -76,7 +82,7 @@ When each record in Table A may have many linked records in Table B, but each re
 * Can be null
 * Referential integrity: only be able to insert values into your foreign key that exist in the unique key in the parent table
 
-#### [DDL, DQL, DML, DCL and TCL](https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/)
+### [DDL, DQL, DML, DCL and TCL](https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/)
 * DDL – Data Definition Language; define the database schema
 * DQl – Data Query Language; get the data out of the database to perform operations with it (SELECT)
 * DML – Data Manipulation Language; includes: INSERT, UPDATE, DELETE, LOCK
