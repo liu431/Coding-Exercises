@@ -10,6 +10,10 @@
 * Monthly Active Users (MAU): the number of unique users to your app over a 30-day period.
 [DAU vs MAU](https://clevertap.com/blog/dau-vs-mau/)
 * [k-factor](https://www.intercom.com/blog/measuring-viral-distribution/): measure given a new user, how many additional new users will we get
+* Gross retention: total revenue (excluding expansion) minus revenue churn (contract expirations, cancelations, or downgrades)
+* Net retention: total revenue (including expansion) minus revenue churn (contract expirations, cancelations, or downgrades)
+  - Ex. How to measure a TV ad's effect in web traffic?
+
 
 #### User Feedback
 * [Net Promoter Score (NPS)](https://www.medallia.com/net-promoter-score/): measures the willingness of customers to recommend a company’s products or services to others
