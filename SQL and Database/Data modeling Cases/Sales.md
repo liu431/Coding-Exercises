@@ -1,3 +1,4 @@
+Tables
 - Sales (date, salesid, marketid, region, salesamount)
 
 a. Total sales of each region in the past one month
