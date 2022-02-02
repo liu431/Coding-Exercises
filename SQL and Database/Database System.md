@@ -55,9 +55,6 @@
   * Business metadata: critical in a data warehouse  
 
 
-
-### Methodology I: ANALYSIS
-
 ### Extended-Entity Relationship Model
 
 * Entity type and entity surrogates: reprsent users in the real world
@@ -83,13 +80,8 @@
   * Data structures, Constraints, Operations, Algebra Calculus (tuple calculus-SQL, domain calculus-QBE) 
   * The value of a relation is independent of attribute order and tuple order.
 
-
-
-### Methodology II: SPECIFICATION
-
 ### EER Relational Mapping
 
-### Methodology III: DESIGN
 
 ### Normalization
 
@@ -142,13 +134,38 @@ WHERE condition (AND, OR, NOT)
 ```
 
 
-
-
-
-
 ### Efficiency
 
-### Methodology IV: Implementation
 
 ### Metadata
- 
+
+
+
+
+
+
+
+### Methodology
+#### I: ANALYSIS
+* Assumptions: known business processes, documents, tasks, system boundary; one database schema unifying all views can be designed 
+* Software process: Business process redesign -> __Analysis__(information flow diagram) -> __Specification__(tasks, ER diagram) -> __Design__ (abstract code with SQL, relational schema) -> __Implementation__(PHP code with SQL, MySQL relational platform) -> Testing
+* Information flow diagram 
+  * Soild line for potential flow; dashed line for system boundary 
+  * never connect two documents or two tasks
+* Requirements
+  * Uniquely identify user by email address and password combination (input document)
+  * For new user registration, information will be written into the database (input document)
+  * Edit User profile contains Sex, Birthdate, CurrentCity, Hometown, Interests, Education, Professional (input & output document)
+  * View profile screen (output document)
+  * Friend requests (input & output document)
+  * Search for friends (output document)
+  * Friends list (output document)
+
+
+
+#### II: SPECIFICATION
+* Output: EER diagram, data formats, constrainst, task decomposition
+
+#### III: DESIGN
+
+#### IV: Implementation
