@@ -5,7 +5,7 @@ Table
 - Sports (ID, Sport)
 - Results (ID, OlympicGamesID, Sport, TeamID, Rank, Score)
 
-### In 2020, which country won the most medal?
+##### Which country won the most medal in 2021?
 
 ```sql
 SELECT Country
