@@ -160,11 +160,46 @@ WHERE condition (AND, OR, NOT)
   * Friend requests (input & output document)
   * Search for friends (output document)
   * Friends list (output document)
+  * Users must be either regular users or admin users (with last login); inherit properties for supertype User
+  * List of schools with graduation date; same school could appear multipel times; each school must have a schooltype 
+  * List of employers with name and titles; same employer appear multiple times with different titles
+  * Friend request (1-N)
+
 
 
 
 #### II: SPECIFICATION
 * Output: EER diagram, data formats, constrainst, task decomposition
+* Observation on what goes into and comes out of the database
+  * Everything in the database must come from somewhere
+  * Everything on the input documents must go somewhere
+  * Everything in the database must be used for something
+  * Everything on the output documents must come from somewhere
+* Use attribute names from the document in the EER
+* Data formats:  __beg, steal, borrow__ best practices
+* Constraints
+  * DateConnected is NULL until request is accepted
+  * Cannot be friend with yourself
+  * Can only comment on status of friends 
+* Task decomposition
+  * Considerations 
+    * Lookup vs. insert, delete, and update (different locks)
+    * How many schema constraints are involved? (many locks)
+    * Are enabling conditions consistent across tasks? (let run what can run)
+    * Are frequencies consistent across tasks? (index only what must be indexed)
+    * Is consistency essential? (ACID transaction properties)
+    * Is mother task needed or not?
+  * Decomposition
+    * View profile (all 3 sections are read-only and have same frequency)
+      * Subtasks: view profile, view education, view professional
+    * Edit profile (read, insert, delete, and update)
+      * Subtasks: view profile, update personal, add/del school, add/del job 
+    * Friend requests
+      * Subtasks: view requests, accept/reject/cancel, request friend  
+
+
+
+
 
 #### III: DESIGN
 
