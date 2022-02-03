@@ -1,4 +1,5 @@
 ## Notes
+[javatpoint - DBMS Tutorial](https://www.javatpoint.com/dbms-tutorial)
 
 [Glossary of Common Database Terms](https://www.lifewire.com/databases-glossary-1019603#toc-stored-procedure)
 
