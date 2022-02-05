@@ -9,7 +9,7 @@
 * Database management system (DBMS): computerized system that enables users to create and maintain a databse
 * Program-data independence: the structure of data files is stored in the DBMS catelog separately from the access programs
 * Operations: 1. interface (operation name and the data types of its argument/parameters); 2. implementation (sepecified separately and can be changed without affecting the interface)
-* Data abstraction: program-data independence and program-operation independence
+* Data abstraction: program-data independence and program-operation independence; suppression of details of data organization and storage and the highlighting of the essential features for an improved understanding of data
 * Transaction: an executing program or process that includes one or more database accesses, such as reading or updating of databse records
 * Data normalization: a database deisgn that stores each logical data item in only one place in the database
 * Denormalization: don't have to search multiple files to collect this data by placing all the data together
@@ -53,11 +53,26 @@
 * Metadata 
   * System metadata: critical in a DBMS
   * Business metadata: critical in a data warehouse  
-
-
+* State/Snapshot/Current set of occurences or instances: data in teh database at a particular moment in timw
+* 3-schema architecture
+  * Internal level: has internal schema that describes the physical storage structure of the database
+    * Physical data independence: capacity to change the internal schema without having to change the conceptual schema 
+  * Conceptual level: has conceptual schema that describes the structure of the whole database for a community of users
+    * Logical data independence: capacity to change the conceptual schema without having to change the external schema 
+  * Exernal or view level: describes the part that a particular use group is interested in and hides the rest
+ * Languages
+   * Data definition language (DDL): define the conceptual and internal schemas
+   * Storage definition language(SDL): specify the internal schema
+   * View definition language (VDL): specify user views and their mappings to the conceptual schema
+   * Data manipulation language (DML): retrieval, insertion, deletion , and modification of the database
+     * Low level / procedural: record-at-a-time, embedded in a general-purpose language
+     * High level (such as SQL): set-at-a-time, declarative (which data to retrieve rather than how to retrieve it)   
+*  
+ 
+ 
 ### Extended-Entity Relationship Model
 
-* Entity type and entity surrogates: reprsent users in the real world
+* Entity type and entity surrogates: reprsent object or conecpt in the real world
 * Properties
   * Single-valued: things that name other things, types could be lexical, visable, audible
   * Identifying: at most one instance of the identified entity; each entity is uniquely referenced
