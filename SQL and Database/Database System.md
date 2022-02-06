@@ -78,33 +78,63 @@
   * 3-tier: GUI/Web Interface (Presentation Layer) <-> Application Programs/Web pages (Business Logic Layer) <-> DBMS (Database Services Layer) 
  
  
-### Extended-Entity Relationship Model
+### Entity Relationship Model
 
 * Entity (rectangular box in ERD): reprsent object or concept in the real world
   * Entity type: define a collection of entities that have the same attribute
   * Entity set/collection: collection of all entities of a particular entity type in the database at any point in time 
+
 * Attributes (ovals in ERD): particular properties that describe the entity; key attribute to identify each entity uniquely (underlined in ERD)
   * Single-valued: things that name other things, types could be lexical, visable, audible; associated with value sets 
   * Multi-valued (double ovals in ERD): one entity links with multiple properties 
-  * Identifying: at most one instance of the identified entity; each entity is uniquely referenced
-  * Composite: combine properties (Ex. Address; could be divided into smaller subparts)
-  * Derived (Ex. age): determined from the stored attributed (Ex. birth_date)
+  * Composite (double ovals in ERD): combine properties (Ex. Address; could be divided into smaller subparts)
+  * Derived (dotted line in ERD): determined from the stored attributed (Ex. age from birth_date)
   * NULL: 1. missing values; 2. not known whether the attribute values exists
   
-* Relationship types
-  * 1-1: partial function; names of multiple relationship types between the same two entity types must be unique
-  * 1-many: partial function; Ex. employer with many employees 
-  * Mandatory 1-N: total function; Ex. each employee must be linked to one employer
-  * N-M: many to many
-  * N-ary: need multple attributes to uniquely identify one instance
-  * Many: cannot be reduced to a conjunction of binary relationship types
-  * Identifying relationships: when the primary key of the related entity contains the primary key of the “parent”
-  * Weak entity types: when the primary key of one of the related entities does not contain a primary key component of the other related entities
-  * Recursive: model hierarchy structure
-  * Inheritance (d): subtypes inherit properties from supertypes
-  * Union entity types: subclass represents a collection of objects that is a subset of the UNION of distinct entity types
+* Relationship types (diamond-shaped box in ERD)
+  * Degree
+    * Binary: 2 participating entity types
+    * Tenary: 3 participating entity types
+  * Types 
+    * 1-1: partial function; names of multiple relationship types between the same two entity types must be unique
+    * 1-N: partial function; Ex. employer with many employees 
+    * Mandatory 1-N: total function; Ex. each employee must be linked to one employer
+    * N-M: many to many
+    * N-ary: need multple attributes to uniquely identify one instance
+    * Many: cannot be reduced to a conjunction of binary relationship types
+    * Recursive/self-referencing: model hierarchy structure; same entity type name participates more than once in different roles
 
-* Relational model
+  * Structural constraints
+    * Total participation / existing dependency (double line in ERD): every entity in the total set of employee entities must be related to a department entity via WORKS_FOR
+    * Partital participation (single line in ERD): some of the set of employee entities are related to some department entity via MANAGES, but not necessarily all.
+  * Attributes
+    * 1:1: determined by either side
+    * 1:N: can be migrated only to the entity tpe on the N-side
+    * M:N: determined by the combination of participating entities in a relationship instance 
+  * Weak entity types (surrounded with double lines in ERD): entity types that don't have key attributes of their own
+    * When the primary key of one of the related entities does not contain a primary key component of the other related entities
+    * Have a partial key that can uniquely identify weak entities that are related to the same owner entity
+    * Strong entity types: have a key attribute
+    * Identifying relationships (double diamond in ERD): when the primary key of the related entity contains the primary key of the “parent”; at most one instance of the identified entity; each entity is uniquely referenced
+
+### Enhanced Entity-Relationship Model (EER)
+* Class/subclass relationship (circle in ERD)
+  * Every entity that is a member of one of the _Subtype / Subclass_ is alao of the _superclass/supertype_ entity type 
+  * Inheritance: subtypes inherit properties from supertypes
+* Specialization and Generalization
+  * Specialization: process of defining a set of subclass of an entity type; subclasses could have specific attributes
+    * Attribute-defined (arc in ERD): all subclasses in a specialization have their membership condition on the same attribute of the superclass
+    * Disjointness (d in ERD): subclasses of the specialization must be disjoint sets
+    * Overlapping (o in ERD): same entity may be a member of 1+ subclasses of the specialization
+    * Completness
+      * Total (double line in ERD): every entity in the superclass must be a member of at least one subclass
+      * Partial (single line in ERD): allow an entity not to belong to any of the subclasses  
+  * Generalization: suppress the differences among several entity types, identify common features, and generalize them into a single superclass
+
+* Union entity types: subclass represents a collection of objects that is a subset of the UNION of distinct entity types
+
+
+### Relational model
   * Data structures, Constraints, Operations, Algebra Calculus (tuple calculus-SQL, domain calculus-QBE) 
   * The value of a relation is independent of attribute order and tuple order.
 
