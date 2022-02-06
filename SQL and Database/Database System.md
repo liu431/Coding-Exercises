@@ -123,6 +123,7 @@
   * Inheritance: subtypes inherit properties from supertypes
 * Specialization and Generalization
   * Specialization: process of defining a set of subclass of an entity type; subclasses could have specific attributes
+    * Predicate-defined: determine exactly teh entities that will become membes of each subclass by plaicng a condition on the value of some attribute of the superclass
     * Attribute-defined (arc in ERD): all subclasses in a specialization have their membership condition on the same attribute of the superclass
     * Disjointness (d in ERD): subclasses of the specialization must be disjoint sets
     * Overlapping (o in ERD): same entity may be a member of 1+ subclasses of the specialization
@@ -131,7 +132,9 @@
       * Partial (single line in ERD): allow an entity not to belong to any of the subclasses  
   * Generalization: suppress the differences among several entity types, identify common features, and generalize them into a single superclass
 
-* Union entity types: subclass represents a collection of objects that is a subset of the UNION of distinct entity types
+* Union entity types (∪ in ERD): subclass represents a collection of objects that is a subset of the UNION of distinct entity types
+  * Total (double line in ERD): hold the union of all entities in its superclasses
+  * Partial (single line in ERD): hold a subset of the union 
 
 
 ### Relational model
