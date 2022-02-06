@@ -67,17 +67,30 @@
    * Data manipulation language (DML): retrieval, insertion, deletion , and modification of the database
      * Low level / procedural: record-at-a-time, embedded in a general-purpose language
      * High level (such as SQL): set-at-a-time, declarative (which data to retrieve rather than how to retrieve it)   
-*  
+*  Utilities
+   * Loading: load existing data files
+   * Backup: create a backup copy of the database to restore in case of catastrophic disk failure
+   * Storage reorganziation: create new access paths to improve performance
+   * Performance monitoring: provide statistics to DBA for making decisions
+* Client/Server
+  * Client: a user machine that provides user interface capabilities and local processing
+  * Server: system containing both hardware and software that can provide services to the client machines
+  * 3-tier: GUI/Web Interface (Presentation Layer) <-> Application Programs/Web pages (Business Logic Layer) <-> DBMS (Database Services Layer) 
  
  
 ### Extended-Entity Relationship Model
 
-* Entity type and entity surrogates: reprsent object or conecpt in the real world
-* Properties
-  * Single-valued: things that name other things, types could be lexical, visable, audible
+* Entity (rectangular box in ERD): reprsent object or concept in the real world
+  * Entity type: define a collection of entities that have the same attribute
+  * Entity set/collection: collection of all entities of a particular entity type in the database at any point in time 
+* Attributes (ovals in ERD): particular properties that describe the entity; key attribute to identify each entity uniquely (underlined in ERD)
+  * Single-valued: things that name other things, types could be lexical, visable, audible; associated with value sets 
+  * Multi-valued (double ovals in ERD): one entity links with multiple properties 
   * Identifying: at most one instance of the identified entity; each entity is uniquely referenced
-  * Composite: combine properties
-  * Multi-valued: one entity links with multiple properties
+  * Composite: combine properties (Ex. Address; could be divided into smaller subparts)
+  * Derived (Ex. age): determined from the stored attributed (Ex. birth_date)
+  * NULL: 1. missing values; 2. not known whether the attribute values exists
+  
 * Relationship types
   * 1-1: partial function; names of multiple relationship types between the same two entity types must be unique
   * 1-many: partial function; Ex. employer with many employees 
@@ -167,7 +180,7 @@ WHERE condition (AND, OR, NOT)
 * Information flow diagram 
   * Soild line for potential flow; dashed line for system boundary 
   * never connect two documents or two tasks
-* Requirements
+* Requirements of the social network app example
   * Uniquely identify user by email address and password combination (input document)
   * For new user registration, information will be written into the database (input document)
   * Edit User profile contains Sex, Birthdate, CurrentCity, Hometown, Interests, Education, Professional (input & output document)
