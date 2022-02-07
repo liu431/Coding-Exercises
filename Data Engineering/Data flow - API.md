@@ -4,15 +4,18 @@
 [Dataquest - Python API Tutorial: Getting Started with APIs](https://www.dataquest.io/blog/python-api-tutorial/)
 
 [Real Python - Python & APIs: A Winning Combo for Reading Public Data](https://realpython.com/python-api/)
-### API basics
-* API: a server that you can use to retrieve and send data to using code
-* API enables you make a request to a remote web server, and retrieve the data you need
-* Also called as `endpoints` when there are multiple 
 
-### Public API to play with
+
+#### Public API to play with
 [The Dog API - Dogs as a Service](https://www.thedogapi.com/)
 
 [Public APIs](https://github.com/public-apis/public-apis)
+
+### API basics
+* API: a server that you can use to retrieve and send data to using code
+* API enables you make a request to a remote web server, and retrieve the data you need
+* Also called as `endpoints` when there are multiple
+
 
 ### API Types
 * SOAP (Simple Object Access Protocol): typically associated with the enterprise world, has a stricter contract-based usage, and is mostly designed around actions.
@@ -33,7 +36,7 @@ CRUD operations : create, read, update and delete resources
 * Requests: relevant data regarding your API request call, such as the base URL, the endpoint, the method used, the headers, and so on.
 * Responses: contain relevant data returned by the server, including the data or content, the status code, and the headers.
 
-##### `GET` request: retrieve data
+#### `GET` request: retrieve data
 
 ```python
 import requests # need to install first
@@ -54,7 +57,6 @@ actotLoginName = [r['actor']['login'] for r in x]
 * 500: Your request wasn't expected and probably broke something on the server side.
 * 503: The server is not ready to handle the request.
 
-
 ```python
 response = requests.get("https://api.thedogapi.com/v1/breeds")
 response.status_code # 200
@@ -65,6 +67,7 @@ request.path_url # '/v1/breeds'
 request.method # 'GET'
 response.reason # 'OK'
 ```
+
 ##### HTTP Headers
 * `Accept`: What type of content the client can accept
 * `Content-Type`: What type of content the server will respond with
@@ -145,6 +148,7 @@ for r in response:
         print(f"Hampshire county case numbers on {r['Date'].split('T')[0]}: {r['Cases']}")
 ```
 
+#### `POST` request: send data
 
 
 
