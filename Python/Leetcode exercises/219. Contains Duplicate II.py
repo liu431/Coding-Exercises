@@ -1,3 +1,4 @@
+* Solution 1: 
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
         # Initialize the hash map
