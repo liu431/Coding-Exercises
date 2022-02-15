@@ -9,11 +9,11 @@ class Solution:
         p1, p2 = 0, 0
         for p in range(n + m):
             # Use the val from nums1_m
-            if (p1 < m and nums1_m[p1] <= nums2[p2]) or n <= p2:
+            if p2 >= n or (p1 < m and nums1_m[p1] <= nums2[p2]):
                 nums1[p] = nums1_m[p1]
                 p1 += 1
             # Use the val from nums2
             else:
                 nums1[p] = nums2[p2]
                 p2 += 1
-        
+
