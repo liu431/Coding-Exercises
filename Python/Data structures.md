@@ -33,8 +33,7 @@ def shortestDistance(self, wordsDict: List[str], word1: str, word2: str) -> int:
 ##### [Use a dictionary to count the items in a list](https://stackoverflow.com/questions/3496518/using-a-dictionary-to-count-the-items-in-a-list)
 ```python
 # Use Counter
-from collections import Counter
-Counter(s)
+collections.Counter(s)
 
 # Use .get method in dictionary
 counts = dict()
