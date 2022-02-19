@@ -1,5 +1,9 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # Sort both strings will result in two identical strings if t is an anagram of s
-        return sorted(s) == sorted(t)
+        # Sorting
+        #return sorted(s) == sorted(t)
+        # Hash map
+        dic_s = collections.Counter(s)
+        dic_t = collections.Counter(t)
+        return dic_s == dic_t
         
