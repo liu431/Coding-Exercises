@@ -147,6 +147,7 @@ LIMIT 5 OFFSET 3;
 
 #### Change data types
 * CAST(column_name AS integer)
+  * Get differences in two ranks: (CAST(rank_old as SIGNED) - CAST(rank_new as SIGNED)) AS rank_diff (LC 2175)
 * column_name::integer
 
 #### Strings
@@ -431,7 +432,7 @@ SUM(revenue) FOR month IN ([January], [February], [March], [April], [May], [June
 ) as PivotTable
 ```
 
-##### Ex. (Leetcode 618) Students Report By Geography if it is unknown which continent has the most students, 
+##### Ex. (LC 618) Students Report By Geography if it is unknown which continent has the most students, 
 
 ```sql
 ## MAX ignores any null values. MAX returns NULL when there is no row to select.
