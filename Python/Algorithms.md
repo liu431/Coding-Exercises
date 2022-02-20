@@ -31,7 +31,7 @@ def fib(n):
 ### Binary search
 
 Ex. [LC 74. Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)
-'''python
+```python
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         # Recusive function for binary search
@@ -59,5 +59,4 @@ class Solution:
         
         # Run binary search
         return binary(matrix, target, 0, len(matrix))
-               
-'''
+ ```        
