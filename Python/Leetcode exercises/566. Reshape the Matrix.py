@@ -4,18 +4,8 @@ class Solution:
         if m * n != r * c:
             return mat
         else:
-            # Convert to 1-d array
-            mat1d = [0] * (m * n)
-            for i in range(m):
-                for j in range(n):
-                    mat1d[n * i + j] = mat[i][j]
-            # Convert to r*c array
-            matrc = [[0] * c] * r
-            for i in range(r * c):
-                print(i//c, i%c, mat1d[i])
-                matrc[i // c][i % c] = int(mat1d[i])
-                print(matrc)
-            return matrc
-        
-        
-         
+            # Convert to r*c array        
+            ans = [[0] * c for _ in range(r)]
+            for i in range(m * n):
+                ans[i // c][i % c] = mat[i // n][i % n]
+            return ans
