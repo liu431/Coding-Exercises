@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        # initialize the result list
+        # Initialize the result list
         res = []
         
         # Recusive function
