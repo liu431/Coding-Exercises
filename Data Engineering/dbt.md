@@ -1,4 +1,4 @@
-## Note on DBT (Data Building Tool)
+## Note on dbt (Data Building Tool)
 
 [GitHub Repo](https://github.com/dbt-labs/dbt-core), [dbt Doc](https://docs.getdbt.com/docs/introduction), [Courses](https://courses.getdbt.com/collections), [Practical tips](https://medium.com/photobox-technology-product-and-design/practical-tips-to-get-the-best-out-of-data-building-tool-dbt-part-1-8cfa21ef97c5)
 
