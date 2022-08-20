@@ -4,7 +4,7 @@ class Solution:
         val_ind = [i for i, v in enumerate(nums) if v == val]
         # track num of val occurrence
         ct = 0
-        # loop through num and modify in place
+        # loop through nums and modify in place
         for i in val_ind:
             nums.pop(i - ct)
             nums.append('_')
