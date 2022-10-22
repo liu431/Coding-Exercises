@@ -19,3 +19,15 @@ class Solution:
         return len(nums) != len(set(nums))
         
         
+# Soultion 3: standard dictionary
+class Solution:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        dic = {}
+        for i, n in enumerate(nums):
+            if n not in dic:
+                dic[n] = [i]
+            else:
+                if (i <= dic[n][-1] + k):
+                    return True
+                dic[n].append(i)
+        return False
