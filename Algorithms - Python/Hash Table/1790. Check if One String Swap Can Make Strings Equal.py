@@ -11,7 +11,7 @@ class Solution:
                 s_dic.pop(i2, None)
             else:
                 s_dic[i2] += l2
-        # check if teh unmatched pairs can be swapped
+        # check if the unmatched pairs can be swapped
         if len(s_dic) == 2:
             print(s_dic)
             pairs = [value for key, value in s_dic.items()]
