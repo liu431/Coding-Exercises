@@ -5,12 +5,12 @@ class MyQueue:
 
     def push(self, x: int) -> None:
         self.queue.append(x)
-        return None
 
     def pop(self) -> int:
-        element = self.queue[0]
-        self.queue = self.queue[1:]
-        return element
+#         element = self.queue[0]
+#         self.queue = self.queue[1:]
+#         return element
+        return self.queue.pop(0)
 
     def peek(self) -> int:
         return self.queue[0]
