@@ -17,3 +17,15 @@ class Solution:
             else:
                 return False
         return True
+
+    
+
+class Solution:
+def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+    letters = collections.Counter(magazine)
+    for i in ransomNote:
+        if letters[i] <= 0:
+            return False
+        else:
+            letters[i] -= 1
+    return True
