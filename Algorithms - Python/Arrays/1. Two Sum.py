@@ -18,7 +18,7 @@ class Solution:
 
 # Time complexity: O(n). We traverse the list containing nnn elements only once. Each lookup in the table costs only O(1) time.
 
-# Space complexity: O(n). The extra space required depends on the number of items stored in the hash table, which stores at most nnn elements.
+# Space complexity: O(n). The extra space required depends on the number of items stored in the hash table, which stores at most n elements.
 
 ## Simplier code:
 class Solution:
