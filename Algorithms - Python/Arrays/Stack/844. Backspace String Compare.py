@@ -14,3 +14,20 @@ class Solution:
                         news.append(i)
             return news
         return new(s), new(t)
+
+    
+ class Solution:
+    def backspaceCompare(self, s: str, t: str) -> bool:
+        def convert(S):
+            stack = []
+            for i in S:
+                if i == '#':
+                    try:
+                        stack.pop()
+                    except:
+                        pass
+                else:
+                    stack.append(i)
+            return stack
+        return convert(s) == convert(t)
+                
