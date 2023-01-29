@@ -8,3 +8,8 @@ class Solution:
         # When n is missing
         return len(nums)
         
+
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        arr = [i for i in range(len(nums) + 1)]
+        return [i for i in arr if i not in nums][0]
